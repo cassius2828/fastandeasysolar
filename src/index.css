@@ -1,0 +1,174 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tw-gradient-stops: #130a28 0%, #2f81d3 40%, #a8bcd5 80%;
+  --tw-gradient-stops-infocard: #ffdd98 0%, #feac6a 15%, #c97968 30%, #826263 50%, #5e565e 60%, #494f58 100%;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAndUpLand {
+  from {
+    transform: translateY(300px);
+  }
+  to {
+    transform: translateY(200px);
+  }
+}
+@keyframes fadeInAndUpSky {
+  from {
+    opacity: 0;
+
+    transform: translateY(300px);
+  }
+  to {
+    opacity: 1;
+
+    transform: translateY(-400px);
+  }
+}
+@keyframes fadeInAndDown {
+  from {
+    transform: translateY(-600px);
+  }
+  to {
+    transform: translateY(-200px);
+  }
+}
+@keyframes fadeInScaleDown {
+  from {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.fade-in {
+  animation: fadeIn 2s ease-in-out forwards;
+}
+.fade-in-scale-down {
+  animation: fadeInScaleDown 2s ease-in-out forwards;
+}
+.fade-in-and-up-sky {
+  animation: fadeInAndUpSky 2s ease-in-out forwards;
+}
+.fade-in-and-up-land {
+  animation: fadeInAndUpLand 2s ease-in-out forwards;
+}
+.fade-in-and-down {
+  animation: fadeInAndDown 2s ease-in-out forwards;
+}
+/* general resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #130a28;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+
+/* flip card  */
+
+.card {
+  perspective: 150rem;
+  position: relative;
+  height: 52rem;
+}
+
+.card__side {
+  height: 52rem;
+  transition: all .8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
+}
+
+.card__side--front {
+  /* background-color: white; */
+  /* background-color: #c2cddacd; */
+}
+
+.card__side--back {
+  transform: rotateY(180deg);
+  background-color: #494f58;
+}
+
+ 
+
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card__side--back {
+  transform: rotateY(0);
+}
+
+ /* SVG */
+
+ #sun-svg {
+  left: -55%
+ }
+ 
+ 
+ 
+ 
+
+ 
+
+/* @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+  .card {
+      height: auto;
+      border-radius: 3px;
+      background-color: white;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
+  }
+
+  .card__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+  }
+
+  .card__side--back {
+      transform: rotateY(0);
+      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .card:hover .card__side--front {
+      transform: rotateY(0);
+  }
+ 
+
+ 
+} */
