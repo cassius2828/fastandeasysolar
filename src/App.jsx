@@ -3,22 +3,21 @@ import React from "react";
 import Nav from "./components/Nav";
 import Landing from "./components/Landing";
 import About from "./components/About";
-import Contact from "./components/Contact";
+import Form from "./components/Form";
 import Footer from "./components/Footer";
-import { ParallaxProvider } from "react-scroll-parallax";
+import Background from "./components/Background";
 
 const App = () => {
   return (
-    <ParallaxProvider>
+    <>
       {/* <Nav /> */}
       <Landing />
+      <Background />
       <div id="gap" className="h-screen w-screen "></div>
-      <Contact />
+      <Form />
       <About />
-      <div className="h-screen w-screen bg-gray-200 relative z-30"></div>
-
       <Footer />
-    </ParallaxProvider>
+    </>
   );
 };
 

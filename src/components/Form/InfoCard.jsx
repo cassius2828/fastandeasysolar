@@ -1,6 +1,6 @@
 const InfoCard = () => {
   return (
-    <div style={{maxWidth:'40rem'}} className="w-full px-8 py-12 mb-8 lg:mb-0  bg-blue-900 rounded-2xl relative z-40 lg:-left-24 left-0">
+    <div style={{maxWidth:'40rem'}} className="w-full px-8 py-12 mb-8 lg:mb-0  bg-blue-900 rounded-2xl ">
       <div className="flex flex-col text-white">
         <h1 className="font-bold uppercase text-4xl my-4">
           Drop in our office
@@ -28,9 +28,9 @@ const InfoCard = () => {
             <i className="fas fa-phone-alt pt-2 pr-2" />
           </div>
           <div className="flex flex-col">
-            <h2 className="text-2xl">Call Us</h2>
+            <h2 className="text-2xl">Contact Us</h2>
             <p className="text-gray-400">Tel: xxx-xxx-xxx</p>
-            <p className="text-gray-400">Fax: xxx-xxx-xxx</p>
+            <p className="text-gray-200">Email: fastandeasysolar@gmail.com</p>
           </div>
         </div>
 
