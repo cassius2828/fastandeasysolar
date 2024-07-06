@@ -27,6 +27,9 @@ const Nav = () => {
         </li>
         <li>
           <a href="#contact">contact</a>
+        </li>{" "}
+        <li>
+          <a href="#about">about</a>
         </li>
       </ul>
     </nav>

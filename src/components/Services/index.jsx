@@ -2,11 +2,12 @@ import { UilSun } from "@iconscout/react-unicons";
 
 // src/components/About.jsx
 import React, { useState } from "react";
+import { ContactBtn } from "../Reusables/Buttons";
 
 const Services = () => {
   return (
     <>
-    <div id="scroll-to-services" className="relative -top-56 "></div>
+      <div id="scroll-to-services" className="relative -top-56 "></div>
       <section
         id="services"
         className="relative z-30 h-full min-h-screen bg-transparent  flex items-center justify-center"
@@ -43,9 +44,7 @@ export const InfoCard = () => {
         </p>
       </div>
       <div className="footer my-12">
-        <button className="p-4 border border-blue-900 text-blue-900 hover:opacity-90 hover:text-gray-200 hover:bg-blue-900 transition-all duration-300 ease-in-out text-3xl rounded-lg">
-          consult an expert today
-        </button>
+<ContactBtn text="consult an expert today" propColor={`blue`}/>
       </div>
     </div>
   );

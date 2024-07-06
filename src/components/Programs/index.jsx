@@ -1,12 +1,21 @@
 import { useState } from "react";
+import { ContactBtn } from "../Reusables/Buttons";
 
 const Programs = () => {
   const [selectedProgram, setSelectedProgram] = useState(1);
   return (
     <>
       {" "}
-      <h2 id="scroll-to-programs" className="text-5xl relative z-30 text-center -top-20 text-gray-200 font-bold my-40 lf:my-0">Click Each Button to Learn More</h2>
-      <section id="programs" className="bg-gray-100 w-full lg:w-9/12 lg:h-[50rem] flex flex-col justify-center items-center mx-auto rounded-lg relative z-30 shadow-lg my-12">
+      <h2
+        id="scroll-to-programs"
+        className="text-5xl relative z-30 text-center -top-20 text-gray-200 font-bold my-40 lf:my-0"
+      >
+        Click Each Button to Learn More
+      </h2>
+      <section
+        id="programs"
+        className="bg-gray-100 w-full lg:w-9/12 lg:h-[50rem] flex flex-col justify-center items-center mx-auto rounded-lg relative z-30 shadow-lg my-12"
+      >
         <span
           onClick={() => setSelectedProgram(1)}
           className={` cursor-pointer absolute -top-10 left-20 lg:left-96 shadow-lg p-4 text-gray-200 bg-blue-500 rounded-full flex justify-center items-center text-3xl font-bold ${
@@ -44,18 +53,6 @@ const Programs = () => {
 };
 export default Programs;
 
-export const Purchase = () => {
-  return <div>Purchase</div>;
-};
-
-export const Lease = () => {
-  return <div>Lease</div>;
-};
-
-export const PPA = () => {
-  return <div>PPA</div>;
-};
-
 export const ProgramContent = ({ title, text, img }) => {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-around">
@@ -67,7 +64,7 @@ export const ProgramContent = ({ title, text, img }) => {
           alt=""
         />
       </div>
-      <div className="p-12 text-2xl ">
+      <div className="p-12 text-2xl flex flex-col items-center justify-center h-full">
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi
           odit voluptatibus nobis. Ducimus, dignissimos quo. Delectus
@@ -77,6 +74,8 @@ export const ProgramContent = ({ title, text, img }) => {
           nesciunt laboriosam autem, enim aliquid est illum, ab similique!
           Tempore repellat facere, obcaecati consequatur nisi sunt mollitia.
         </p>
+        <ContactBtn text="consult an expert today" propColor={`blue`} topPos/>
+
       </div>
     </div>
   );

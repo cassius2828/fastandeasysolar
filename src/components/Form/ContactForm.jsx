@@ -72,16 +72,16 @@ export const InputGroupContact = () => {
         <div className="my-2 w-1/2 lg:w-1/4">
           <button
             onClick={(e) => prevStep(e)}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg focus:outline-none focus:shadow-outline"
+            className="bg-blue-500 text-white px-8 py-2 text-xl rounded-lg focus:outline-none focus:shadow-outline hover:-translate-y-1 transition-all duration-150 ease-in-out hover:shadow-lg"
           >
             Back
           </button>
         </div>
 
-        <div className="my-2 w-1/2 lg:w-1/4">
+        <div className="my-2 w-1/2 lg:w-1/3">
           <button
-            className="uppercase text-sm font-bold tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full 
-              focus:outline-none focus:shadow-outline"
+            className="uppercase px-2 py-2 text-xl  tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full 
+              focus:outline-none focus:shadow-outline hover:-translate-y-1 transition-all duration-150 ease-in-out hover:shadow-lg"
           >
             Send Message
           </button>

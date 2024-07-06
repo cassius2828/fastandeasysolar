@@ -2,11 +2,12 @@
 import React from "react";
 import Nav from "./components/Nav";
 import Landing from "./components/Landing";
-import About from "./components/Services";
+import Services from "./components/Services";
 import Form from "./components/Form";
 import Footer from "./components/Footer";
 import Background from "./components/Background";
 import Programs from "./components/Programs";
+import About from "./components/About";
 
 const App = () => {
   return (
@@ -16,8 +17,9 @@ const App = () => {
       <Background />
       <div id="gap" className="h-screen w-screen "></div>
       <Form />
-      <About />
+      <Services />
       <Programs/>
+      <About/>
       <Footer />
     </>
   );
