@@ -6,6 +6,7 @@ import About from "./components/About";
 import Form from "./components/Form";
 import Footer from "./components/Footer";
 import Background from "./components/Background";
+import Programs from "./components/Programs";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <div id="gap" className="h-screen w-screen "></div>
       <Form />
       <About />
+      <Programs/>
       <Footer />
     </>
   );
