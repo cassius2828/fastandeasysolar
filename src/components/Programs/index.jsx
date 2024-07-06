@@ -5,8 +5,8 @@ const Programs = () => {
   return (
     <>
       {" "}
-      <h2 className="text-5xl relative z-30 text-center -top-20 text-gray-200 font-bold my-40 lf:my-0">Click Each Button to Learn More</h2>
-      <section className="bg-gray-100 w-full lg:w-9/12 lg:h-[50rem] flex flex-col justify-center items-center mx-auto rounded-lg relative z-30 shadow-lg my-12">
+      <h2 id="scroll-to-programs" className="text-5xl relative z-30 text-center -top-20 text-gray-200 font-bold my-40 lf:my-0">Click Each Button to Learn More</h2>
+      <section id="programs" className="bg-gray-100 w-full lg:w-9/12 lg:h-[50rem] flex flex-col justify-center items-center mx-auto rounded-lg relative z-30 shadow-lg my-12">
         <span
           onClick={() => setSelectedProgram(1)}
           className={` cursor-pointer absolute -top-10 left-20 lg:left-96 shadow-lg p-4 text-gray-200 bg-blue-500 rounded-full flex justify-center items-center text-3xl font-bold ${
