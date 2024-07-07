@@ -37,7 +37,7 @@ const Nav = () => {
       </ul>
    
       <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
-      {isOpen && <MobileNav scrollToTop={scrollToTop} />}
+      {isOpen && <MobileNav setIsOpen={setIsOpen} scrollToTop={scrollToTop} />}
    
     </nav>
   );
