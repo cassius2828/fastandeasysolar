@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { ContactBtn } from "../Reusables/Buttons";
+
+import { ProgramBtn } from "./ProgramBtn";
+import { ProgramContent } from "./ProgramContent";
 
 const Programs = () => {
   const [selectedProgram, setSelectedProgram] = useState(1);
@@ -8,7 +10,7 @@ const Programs = () => {
       {" "}
       <h2
         id="scroll-to-programs"
-        className="text-5xl relative z-30 text-center -top-20 text-gray-200 font-bold my-40 lf:my-0"
+        className="text-5xl relative z-30 text-center -top-20 text-gray-200 font-bold mt-96"
       >
         Click Each Button to Learn More
       </h2>
@@ -16,30 +18,27 @@ const Programs = () => {
         id="programs"
         className="bg-gray-100 w-full lg:w-9/12 lg:h-[50rem] flex flex-col justify-center items-center mx-auto rounded-lg relative z-30 shadow-lg my-12"
       >
-        <span
-          onClick={() => setSelectedProgram(1)}
-          className={` cursor-pointer absolute -top-10 left-20 lg:left-96 shadow-lg p-4 text-gray-200 bg-blue-500 rounded-full flex justify-center items-center text-3xl font-bold ${
-            selectedProgram !== 1 && "bg-gray-600"
-          }`}
-        >
-          Purchase
-        </span>{" "}
-        <span
-          onClick={() => setSelectedProgram(2)}
-          className={` cursor-pointer absolute -top-10 shadow-lg p-4 text-gray-200 bg-blue-500 rounded-full flex justify-center items-center text-3xl font-bold ${
-            selectedProgram !== 2 && "bg-gray-600"
-          }`}
-        >
-          Lease
-        </span>{" "}
-        <span
-          onClick={() => setSelectedProgram(3)}
-          className={` cursor-pointer absolute -top-10 right-32 lg:right-96  shadow-lg p-4 text-gray-200 bg-blue-500 rounded-full flex justify-center items-center text-3xl font-bold ${
-            selectedProgram !== 3 && "bg-gray-600"
-          }`}
-        >
-          PPA
-        </span>
+        <div className="flex justify-evenly w-full">
+          <ProgramBtn
+            selectedProgram={selectedProgram}
+            setSelectedProgram={setSelectedProgram}
+            programNum={1}
+            title={`Purchase`}
+          />
+          <ProgramBtn
+            selectedProgram={selectedProgram}
+            setSelectedProgram={setSelectedProgram}
+            programNum={2}
+            title={`Lease`}
+          />
+          <ProgramBtn
+            selectedProgram={selectedProgram}
+            setSelectedProgram={setSelectedProgram}
+            programNum={3}
+            title={`PPA`}
+          />
+        </div>
+
         {selectedProgram === 1 ? (
           <ProgramContent title="title 1" />
         ) : selectedProgram === 2 ? (
@@ -53,30 +52,4 @@ const Programs = () => {
 };
 export default Programs;
 
-export const ProgramContent = ({ title, text, img }) => {
-  return (
-    <div className="flex flex-col lg:flex-row items-center justify-around">
-      <div className="flex flex-col justify-center items-center p-12">
-        <h1 className="text-6xl my-12">{title}</h1>
-        <img
-          className=""
-          src="https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg"
-          alt=""
-        />
-      </div>
-      <div className="p-12 text-2xl flex flex-col items-center justify-center h-full">
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi
-          odit voluptatibus nobis. Ducimus, dignissimos quo. Delectus
-          perferendis vel in nesciunt illo quaerat dolorum, dolor rerum maxime,
-          vitae possimus velit mollitia.lorem Lorem, ipsum dolor sit amet
-          consectetur adipisicing elit. Atque qui debitis, sapiente unde
-          nesciunt laboriosam autem, enim aliquid est illum, ab similique!
-          Tempore repellat facere, obcaecati consequatur nisi sunt mollitia.
-        </p>
-        <ContactBtn text="consult an expert today" propColor={`blue`} topPos/>
 
-      </div>
-    </div>
-  );
-};

@@ -7,10 +7,10 @@ export const InputGroupContact = () => {
     <div className="input-group">
       {/* first name */}
       <div className="my-2">
-        <label className="block text-gray-700">First Name*</label>
+        <label className="block text-gray-700 text-xl lg:text-2xl">First Name*</label>
         <input
           required
-          className="w-full  bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline text-xl lg:text-2xl"
           type="text"
           name="firstName"
           placeholder="First Name*"
@@ -20,10 +20,10 @@ export const InputGroupContact = () => {
       </div>
       {/* last name */}
       <div className="my-2">
-        <label className="block text-gray-700">Last Name*</label>
+        <label className="block text-gray-700 text-xl lg:text-2xl">Last Name*</label>
         <input
           required
-          className="w-full  bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline text-xl lg:text-2xl"
           type="text"
           name="lastName"
           placeholder="Last Name*"
@@ -33,10 +33,10 @@ export const InputGroupContact = () => {
       </div>
       {/* email */}
       <div className="my-2">
-        <label className="block text-gray-700">Email*</label>
+        <label className="block text-gray-700 text-xl lg:text-2xl">Email*</label>
         <input
           required
-          className="w-full  bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline text-xl lg:text-2xl"
           type="email"
           name="email"
           placeholder="Email*"
@@ -46,10 +46,10 @@ export const InputGroupContact = () => {
       </div>
       {/* phone */}
       <div className="my-2">
-        <label className="block text-gray-700">Phone*</label>
+        <label className="block text-gray-700 text-xl lg:text-2xl">Phone*</label>
         <input
           required
-          className="w-full  bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline text-xl lg:text-2xl"
           type="number"
           name="phone"
           placeholder="Phone*"
@@ -59,10 +59,10 @@ export const InputGroupContact = () => {
       </div>
       {/* message */}
       <div className="my-4">
-        <label className="block text-gray-700">Message</label>
+        <label className="block text-gray-700 text-xl lg:text-2xl">Message</label>
         <textarea
           placeholder="Message*"
-          className="w-full  h-32 bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          className="w-full h-32 bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline text-xl lg:text-2xl"
           name="message"
           value={form.message}
           onChange={handleUpdateForm}
@@ -80,8 +80,7 @@ export const InputGroupContact = () => {
 
         <div className="my-2 w-1/2 lg:w-1/3">
           <button
-            className="uppercase px-2 py-2 text-xl  tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full 
-              focus:outline-none focus:shadow-outline hover:-translate-y-1 transition-all duration-150 ease-in-out hover:shadow-lg"
+            className="uppercase px-2 py-2 text-xl tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline hover:-translate-y-1 transition-all duration-150 ease-in-out hover:shadow-lg"
           >
             Send Message
           </button>

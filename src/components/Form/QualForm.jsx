@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useFormContext } from "../../context/useFormContext";
 
 export const InputGroupQualifications = () => {
@@ -8,37 +7,37 @@ export const InputGroupQualifications = () => {
     <div className="input-group flex flex-col justify-between h-full">
       <div>
         <div className="my-2">
-          <label className="block text-gray-700">Current Bill</label>
+          <label className="block text-gray-700 text-xl lg:text-2xl">Current Bill</label>
           <input
             required
             onChange={(e) => handleUpdateForm(e)}
             value={form.bill}
             name="bill"
-            className="w-full   bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline text-xl lg:text-2xl"
             type="text"
           />
         </div>
         <div className="my-2">
-          <label className="block text-gray-700">Your Location</label>
+          <label className="block text-gray-700 text-xl lg:text-2xl">Your Location</label>
           <input
             required
             onChange={(e) => handleUpdateForm(e)}
             value={form.location}
-            className="w-full   bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline text-xl lg:text-2xl"
             type="text"
             name="location"
             placeholder="ex: Vacaville"
           />
         </div>
         <div className="my-2">
-          <label className="block text-gray-700">Select a Program</label>
+          <label className="block text-gray-700 text-xl lg:text-2xl">Select a Program</label>
           <select
             required
             onChange={(e) => handleUpdateForm(e)}
             value={form.program}
             name="program"
             id="program"
-            className="w-full   bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline text-xl lg:text-2xl"
           >
             <option value="">Select a program</option>
             <option value="">Program 1</option>

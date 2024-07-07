@@ -22,10 +22,10 @@ const About = () => {
   return (
     <section
       id="about"
-      className="h-screen relative z-30 flex flex-col lg:flex-row items-center justify-center"
+      className="h-screen relative z-30 flex flex-col lg:flex-row items-center justify-center my-96 lg:my-48"
     >
       <div className="flex flex-col items-center justify-around lg:w-1/2 w-full py-12 lg:mr-12 rounded-lg bg-gradient-to-br">
-        <h1 className="text-7xl text-gray-200 text-center">
+        <h1 className="text-7xl text-gray-200 text-center p-4">
           What is Fast and Easy Solar?
         </h1>
         <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-10">
