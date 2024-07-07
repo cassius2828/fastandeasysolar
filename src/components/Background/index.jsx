@@ -11,7 +11,7 @@ const Background = () => {
       <div className="absolute z-0 h-full w-full inset-0 bg-gradient-vertical fade-in-and-up-sky"></div>
       <picture className="absolute z-0 h-full w-full">
         <source
-          className=" fade-in-and-up-land absolute top-0 left-0"
+          className="absolute top-0 left-0"
           srcSet="/images/city-bg-tall.webp"
           media="(max-width: 599px)"
         />
