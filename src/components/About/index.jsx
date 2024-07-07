@@ -24,7 +24,7 @@ const About = () => {
       id="about"
       className="h-screen relative z-30 flex flex-col lg:flex-row items-center justify-center"
     >
-      <div className="flex flex-col items-center justify-around lg:w-1/2 w-full py-12 lg:mr-12 rounded-lg bg-blue-900">
+      <div className="flex flex-col items-center justify-around lg:w-1/2 w-full py-12 lg:mr-12 rounded-lg bg-gradient-to-br">
         <h1 className="text-7xl text-gray-200 text-center">
           What is Fast and Easy Solar?
         </h1>

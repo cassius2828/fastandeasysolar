@@ -44,7 +44,7 @@ export const InfoCard = () => {
         </p>
       </div>
       <div className="footer my-12">
-<ContactBtn text="consult an expert today" propColor={`blue`}/>
+        <ContactBtn text="consult an expert today" propColor={`blue`} />
       </div>
     </div>
   );
