@@ -6,8 +6,8 @@ export const InputGroupQualifications = () => {
   return (
     <div className="input-group flex flex-col justify-between h-full">
       <div>
-        <div className="my-2">
-          <label className="block text-gray-700 text-xl lg:text-2xl">Current Bill</label>
+        <div className="my-12">
+          <label className="block text-gray-700 text-xl lg:text-2xl mb-2">Current Bill</label>
           <input
             required
             onChange={(e) => handleUpdateForm(e)}
@@ -17,8 +17,8 @@ export const InputGroupQualifications = () => {
             type="text"
           />
         </div>
-        <div className="my-2">
-          <label className="block text-gray-700 text-xl lg:text-2xl">Your Location</label>
+        <div className="my-12">
+          <label className="block text-gray-700 text-xl lg:text-2xl mb-2">Your Location</label>
           <input
             required
             onChange={(e) => handleUpdateForm(e)}
@@ -29,8 +29,8 @@ export const InputGroupQualifications = () => {
             placeholder="ex: Vacaville"
           />
         </div>
-        <div className="my-2">
-          <label className="block text-gray-700 text-xl lg:text-2xl">Select a Program</label>
+        <div className="my-12">
+          <label className="block text-gray-700 text-xl lg:text-2xl my-2">Select a Program</label>
           <select
             required
             onChange={(e) => handleUpdateForm(e)}

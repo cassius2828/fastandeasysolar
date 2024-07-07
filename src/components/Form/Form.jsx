@@ -24,7 +24,7 @@ const Form = () => {
             find out how much you can save today
           </h1>
         </div>
-        <div className="mt-5 w-full h-[40rem]">
+        <div className="mt-5 w-full h-[45rem]">
           {form.formStep === 1 ? (
             <InputGroupQualifications />
           ) : (

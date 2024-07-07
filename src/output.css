@@ -881,6 +881,18 @@ video {
   margin-top: 24rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -951,6 +963,10 @@ video {
 
 .h-12 {
   height: 3rem;
+}
+
+.h-\[45rem\] {
+  height: 45rem;
 }
 
 .min-h-screen {
@@ -1300,6 +1316,11 @@ video {
 .bg-slate-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+}
+
+.bg-blue-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-vertical {

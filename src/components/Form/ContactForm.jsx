@@ -6,7 +6,7 @@ export const InputGroupContact = () => {
   return (
     <div className="input-group">
       {/* first name */}
-      <div className="my-2">
+      <div className="my-6">
         <label className="block text-gray-700 text-xl lg:text-2xl">First Name*</label>
         <input
           required
@@ -19,7 +19,7 @@ export const InputGroupContact = () => {
         />
       </div>
       {/* last name */}
-      <div className="my-2">
+      <div className="my-6">
         <label className="block text-gray-700 text-xl lg:text-2xl">Last Name*</label>
         <input
           required
@@ -32,7 +32,7 @@ export const InputGroupContact = () => {
         />
       </div>
       {/* email */}
-      <div className="my-2">
+      <div className="my-6">
         <label className="block text-gray-700 text-xl lg:text-2xl">Email*</label>
         <input
           required
@@ -45,7 +45,7 @@ export const InputGroupContact = () => {
         />
       </div>
       {/* phone */}
-      <div className="my-2">
+      <div className="my-6">
         <label className="block text-gray-700 text-xl lg:text-2xl">Phone*</label>
         <input
           required
@@ -69,7 +69,7 @@ export const InputGroupContact = () => {
         ></textarea>
       </div>
       <div className="flex space-x-4">
-        <div className="my-2 w-1/2 lg:w-1/4">
+        <div className="my-6 w-1/2 lg:w-1/4">
           <button
             onClick={(e) => prevStep(e)}
             className="bg-blue-500 text-white px-8 py-2 text-xl rounded-lg focus:outline-none focus:shadow-outline hover:-translate-y-1 transition-all duration-150 ease-in-out hover:shadow-lg"
@@ -78,7 +78,7 @@ export const InputGroupContact = () => {
           </button>
         </div>
 
-        <div className="my-2 w-1/2 lg:w-1/3">
+        <div className="my-6 w-1/2 lg:w-1/3">
           <button
             className="uppercase px-2 py-2 text-xl tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline hover:-translate-y-1 transition-all duration-150 ease-in-out hover:shadow-lg"
           >
