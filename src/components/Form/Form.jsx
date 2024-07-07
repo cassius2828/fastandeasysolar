@@ -8,7 +8,7 @@ const Form = () => {
 
 
   return (
-    <div className="flex flex-col items-center relative">
+    <div className="flex flex-col items-center relative mt-12 lg:mt-0">
       {/* form step status */}
       <span className=" absolute -top-10 shadow-lg w-20 h-20 text-gray-200 bg-blue-900 rounded-full flex justify-center items-center text-3xl font-bold">
        {form.formStep === 1 ? '1/2': '2/2'}

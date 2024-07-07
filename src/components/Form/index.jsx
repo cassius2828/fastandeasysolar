@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="h-screen relative z-40 bg-trasnsparent p-8 flex flex-col items-center justify-center"
+      className="h-screen relative z-30 bg-trasnsparent  flex flex-col items-center justify-center mb-96 "
     >
       <div className="flex mx-auto  items-center w-screen h-screen">
         {/* <!-- COMPONENT CODE --> */}
