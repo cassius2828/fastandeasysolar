@@ -747,6 +747,18 @@ video {
   margin-left: 2.5rem;
 }
 
+.mt-32 {
+  margin-top: 8rem;
+}
+
+.mt-36 {
+  margin-top: 9rem;
+}
+
+.mt-40 {
+  margin-top: 10rem;
+}
+
 .block {
   display: block;
 }
@@ -801,6 +813,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-1\/2 {
+  height: 50%;
 }
 
 .min-h-screen {
@@ -938,6 +954,10 @@ video {
   align-items: center;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -968,6 +988,14 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-24 {
+  gap: 6rem;
+}
+
+.gap-32 {
+  gap: 8rem;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
