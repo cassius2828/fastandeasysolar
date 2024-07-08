@@ -1,12 +1,23 @@
 import { MailtrapClient } from "mailtrap";
 
+//////////////////////
+// Constants       //
+//////////////////////
+
 const TOKEN = process.env.VITE_MT_TOKEN;
 const ENDPOINT = "https://send.api.mailtrap.io/";
+
+///////////////////////////////
+// Lambda Handler Function //
+///////////////////////////////
 
 export const handler = async (event, context) => {
   let formData;
 
-  // seeing if the formdata exists and is valid JSON
+  ////////////////////////////////
+  // Validate JSON in Event Body //
+  ////////////////////////////////
+
   try {
     formData = JSON.parse(event.body);
   } catch (error) {
@@ -15,6 +26,34 @@ export const handler = async (event, context) => {
       body: JSON.stringify({ error: "Invalid JSON" }),
     };
   }
+
+  ///////////////////////////
+  // Validate Form Data    //
+  ///////////////////////////
+
+  const requiredFields = [
+    "bill",
+    "location",
+    "program",
+    "firstName",
+    "lastName",
+    "email",
+    "phone",
+    "message",
+  ];
+
+  for (const field of requiredFields) {
+    if (!formData[field]) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: `Missing field: ${field}` }),
+      };
+    }
+  }
+
+  ///////////////////////////
+  // Try Sending the Email //
+  ///////////////////////////
 
   try {
     const client = new MailtrapClient({ endpoint: ENDPOINT, token: TOKEN });
