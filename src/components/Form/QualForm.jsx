@@ -8,16 +8,17 @@ export const InputGroupQualifications = () => {
     <div className={`input-group flex flex-col justify-between h-full`}>
       {/* current bill */}
       <div>
-        <div className={`my-12`}>
-          <label className={`block text-gray-700 text-xl lg:text-2xl mb-2`}>Current Bill</label>
+        <div className={`my-12 relative`}>
+          <label className={`block text-gray-700 text-xl lg:text-2xl mb-2`}>Current PG&E Bill</label>
           <input
             required
             onChange={(e) => handleUpdateForm(e)}
             value={form.bill}
             name="bill"
             className={`w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 ${formErrors.bill && 'border-red-500'} text-xl lg:text-2xl`}
-            type="number"
+            type="text"
           />
+
         </div>
         {/* location */}
         <div className={`my-12`}>

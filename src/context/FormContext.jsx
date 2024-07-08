@@ -11,7 +11,7 @@ import React, { createContext, useState } from "react";
 const initialFormData = {
   formStep: 1,
   //   qual section
-  bill: "",
+  bill: "$",
   location: "",
   program: "",
   //   contact section
@@ -79,6 +79,7 @@ export const FormProvider = ({ children }) => {
 
   const handleUpdateForm = (e) => {
     const { name, value } = e.target;
+
     setForm({ ...form, [name]: value });
 
     if (name === "message") {
