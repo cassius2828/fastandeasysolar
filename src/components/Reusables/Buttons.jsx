@@ -1,10 +1,13 @@
-export const ContactBtn = ({
-  propColor,
-  text ,
-  topPos,
-}) => {
+export const ContactBtn = ({ propColor, text, topPos }) => {
+  ///////////////////////////
+  // Initialize Colors
+  ///////////////////////////
   let color = "";
   let bgColor = "";
+
+  ///////////////////////////
+  //   Determine Colors
+  ///////////////////////////
   if (propColor === "white") {
     color = "gray-200";
     bgColor = "blue-900";
@@ -12,6 +15,7 @@ export const ContactBtn = ({
     color = "blue-900";
     bgColor = "gray-200";
   }
+
   return (
     <a href="#contact">
       <button
@@ -24,4 +28,3 @@ export const ContactBtn = ({
     </a>
   );
 };
-

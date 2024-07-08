@@ -4,16 +4,24 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap');
 
-/* Example CSS using the font */
+/* /////////////////////////// */
+/* Font Family */
+/* /////////////////////////// */
 body {
   font-family: 'Old Standard TT', serif;
 }
 
+/* /////////////////////////// */
+/* Root Variables */
+/* /////////////////////////// */
 :root {
   --tw-gradient-stops: #130a28 0%, #2f81d3 40%, #a8bcd5 80%;
-  /* --tw-gradient-stops-infocard: #ffdd98 0%, #feac6a 15%, #c97968 30%, #826263 50%, #5e565e 60%, #494f58 100%; */
   --tw-gradient-stops-infocard: #241475 0%,  #5d6ad0 40%, #b4b8db 60%, #c6c9ce 100%;
 }
+
+/* /////////////////////////// */
+/* Keyframes */
+/* /////////////////////////// */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -31,18 +39,18 @@ body {
     transform: translateY(100px);
   }
 }
+
 @keyframes fadeInAndUpSky {
   from {
     opacity: 0;
-
     transform: translateY(100px);
   }
   to {
     opacity: 1;
-
     transform: translateY(-400px);
   }
 }
+
 @keyframes fadeInAndDown {
   from {
     transform: translateY(-600px);
@@ -51,6 +59,7 @@ body {
     transform: translateY(-200px);
   }
 }
+
 @keyframes fadeInScaleDown {
   from {
     opacity: 0;
@@ -61,25 +70,33 @@ body {
     transform: scale(1);
   }
 }
+
+/* /////////////////////////// */
+/* Animations */
+/* /////////////////////////// */
 .fade-in {
   animation: fadeIn 2s ease-in-out forwards;
 }
+
 .fade-in-scale-down {
   animation: fadeInScaleDown 2s ease-in-out forwards;
 }
+
 .fade-in-and-up-sky {
   animation: fadeInAndUpSky 2s ease-in-out forwards;
 }
+
 .fade-in-and-up-land {
   animation: fadeInAndUpLand 2s ease-in-out forwards;
 }
+
 .fade-in-and-down {
   animation: fadeInAndDown 2s ease-in-out forwards;
 }
 
-
-
-/* general resets */
+/* /////////////////////////// */
+/* General Resets */
+/* /////////////////////////// */
 *,
 *::before,
 *::after {
@@ -89,13 +106,13 @@ body {
 }
 
 html {
-  font-size: 62.5%;  scroll-behavior: smooth;
+  font-size: 62.5%;  
+  scroll-behavior: smooth;
 }
 
 body {
   box-sizing: border-box;
   background-color: #130a28;
-
 }
 
 ul,
@@ -103,44 +120,9 @@ li {
   list-style: none;
 }
 
-
-
-
- /* SVG */
-
- #sun-svg {
-  left: -55%
- }
- 
- 
- 
- 
-
- 
-
-/* @media only screen and (max-width: 56.25em), only screen and (hover: none) {
-  .card {
-      height: auto;
-      border-radius: 3px;
-      background-color: white;
-      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
-  }
-
-  .card__side {
-      height: auto;
-      position: relative;
-      box-shadow: none;
-  }
-
-  .card__side--back {
-      transform: rotateY(0);
-      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
-  }
-
-  .card:hover .card__side--front {
-      transform: rotateY(0);
-  }
- 
-
- 
-} */
+/* /////////////////////////// */
+/* SVG Styling */
+/* /////////////////////////// */
+#sun-svg {
+  left: -55%;
+}

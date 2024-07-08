@@ -1,9 +1,16 @@
 import { UilAngleLeft, UilAngleRight } from "@iconscout/react-unicons";
 import { useState } from "react";
 import { ContactBtn } from "../Reusables/Buttons";
+
 const About = () => {
+  //////////////////////
+  // State Management
+  //////////////////////
   const [carouselStep, setCarouselStep] = useState(1);
-  //   handleNextStep
+
+  //////////////////////
+  // Handle Next Step
+  //////////////////////
   const handleNextStep = () => {
     if (carouselStep === 3) {
       setCarouselStep(1);
@@ -11,7 +18,10 @@ const About = () => {
       setCarouselStep((prev) => prev + 1);
     }
   };
-  //   handlePrevStep
+
+  //////////////////////
+  // Handle Previous Step
+  //////////////////////
   const handlePrevStep = () => {
     if (carouselStep === 1) {
       setCarouselStep(3);
@@ -19,6 +29,7 @@ const About = () => {
       setCarouselStep((prev) => prev - 1);
     }
   };
+
   return (
     <section
       id="about"
@@ -39,13 +50,15 @@ const About = () => {
         </p>
         <ContactBtn text=" learn more about us today" propColor={`white`} />
       </div>
-      <div className=" rounded-xl lg:w-1/3  w-full flex  items-center justify-between gap-4 mt-12 lg:mt-0">
+      <div className="rounded-xl lg:w-1/3 w-full flex items-center justify-between gap-4 mt-12 lg:mt-0">
+        {/* Previous Step Button */}
         <div
           onClick={handlePrevStep}
-          className="flex items-center justify-center text-blue-900 bg-gray-200 hover:text-gray-200   hover:bg-blue-900  transition-all duration-200 ease-in-out cursor-pointer rounded-full p-2 ml-5 lg:ml-0"
+          className="flex items-center justify-center text-blue-900 bg-gray-200 hover:text-gray-200 hover:bg-blue-900 transition-all duration-200 ease-in-out cursor-pointer rounded-full p-2 ml-5 lg:ml-0"
         >
           <UilAngleLeft size="24" />
         </div>
+        {/* Carousel Images */}
         {carouselStep === 1 ? (
           <img
             id="about-carousel-1"
@@ -68,10 +81,10 @@ const About = () => {
             alt=""
           />
         )}
-
+        {/* Next Step Button */}
         <div
           onClick={handleNextStep}
-          className="flex items-center justify-center text-blue-900 bg-gray-200 hover:text-gray-200   hover:bg-blue-900 transition-all duration-200 ease-in-out cursor-pointer rounded-full p-2 mr-5 lg:mr-0"
+          className="flex items-center justify-center text-blue-900 bg-gray-200 hover:text-gray-200 hover:bg-blue-900 transition-all duration-200 ease-in-out cursor-pointer rounded-full p-2 mr-5 lg:mr-0"
         >
           <UilAngleRight size="24" />
         </div>
@@ -79,4 +92,5 @@ const About = () => {
     </section>
   );
 };
+
 export default About;

@@ -8,11 +8,22 @@ import {
 } from "@iconscout/react-unicons";
 import { useProgramContext } from "../../context/useProgramContext";
 
+//////////////////////
+// Footer Component
+////////////////////
 const Footer = () => {
+  //////////////////////
+  // Scroll To Top
+  //////////////////////
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  //////////////////////
+  // Set Selected Program
+  //////////////////////
   const { setSelectedProgram } = useProgramContext();
+
   return (
     <footer className="bg-blue-900 p-12 text-center text-white relative z-30">
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
@@ -31,7 +42,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        {/* <!-- services col --> */}
+        {/* services col */}
         <div>
           <h4 className="text-3xl text-blue-400 mb-8">Services</h4>
           <ul className="text-xl flex flex-col justify-center items-center gap-4">
@@ -114,6 +125,7 @@ const Footer = () => {
         <p>&copy; 2024 Our Company. All rights reserved.</p>
       </div>
 
+      {/* Scroll to Top Button */}
       <div
         onClick={scrollToTop}
         className="flex items-center justify-center fixed bottom-12 right-6 z-50 bg-gray-500 hover:bg-blue-500 transition-all duration-200 ease-in-out cursor-pointer rounded-full p-2"

@@ -2,9 +2,18 @@ import React from "react";
 import axios from "axios";
 import { useFormContext } from "../../context/useFormContext";
 
+//////////////////////
+// InputGroupContact Component
+////////////////////
 export const InputGroupContact = () => {
+  //////////////////////
+  // Context
+  //////////////////////
   const { handleUpdateForm, prevStep, form, formErrors } = useFormContext();
 
+  //////////////////////
+  // Handle Submit
+  //////////////////////
   const handleSubmit = async () => {
     if (Object.values(form).some(value => !value)) {
       return alert('Please fill out all fields to submit the form');
@@ -30,7 +39,7 @@ export const InputGroupContact = () => {
 
   return (
     <div className={`input-group`}>
-      {/* first name */}
+      {/* First Name */}
       <div className={`my-6`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>First Name*</label>
         <input
@@ -43,7 +52,7 @@ export const InputGroupContact = () => {
           onChange={handleUpdateForm}
         />
       </div>
-      {/* last name */}
+      {/* Last Name */}
       <div className={`my-6`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>Last Name*</label>
         <input
@@ -56,7 +65,7 @@ export const InputGroupContact = () => {
           onChange={handleUpdateForm}
         />
       </div>
-      {/* email */}
+      {/* Email */}
       <div className={`my-6`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>Email*</label>
         <input
@@ -69,7 +78,7 @@ export const InputGroupContact = () => {
           onChange={handleUpdateForm}
         />
       </div>
-      {/* phone */}
+      {/* Phone */}
       <div className={`my-6`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>Phone*</label>
         <input
@@ -82,7 +91,7 @@ export const InputGroupContact = () => {
           onChange={handleUpdateForm}
         />
       </div>
-      {/* message */}
+      {/* Message */}
       <div className={`my-4`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>Message</label>
         <textarea
@@ -94,6 +103,7 @@ export const InputGroupContact = () => {
         ></textarea>
       </div>
       <div className={`flex space-x-4`}>
+        {/* Previous Step Button */}
         <div className={`my-6 w-1/2 lg:w-1/4`}>
           <button
             onClick={prevStep}
@@ -102,7 +112,7 @@ export const InputGroupContact = () => {
             Back
           </button>
         </div>
-
+        {/* Submit Button */}
         <div className={`my-6 w-1/2 lg:w-1/3`}>
           <button onClick={handleSubmit}
             className={`uppercase px-2 py-2 text-xl tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline hover:-translate-y-1 transition-all duration-150 ease-in-out hover:shadow-lg`}

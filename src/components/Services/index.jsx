@@ -4,10 +4,15 @@ import { UilSun } from "@iconscout/react-unicons";
 import React, { useState } from "react";
 import { ContactBtn } from "../Reusables/Buttons";
 
+//////////////////////
+// Services Component
+//////////////////////
 const Services = () => {
   return (
     <>
+      {/* Scroll Target */}
       <div id="scroll-to-services" className="relative -top-56 "></div>
+      {/* Services Section */}
       <section
         id="services"
         className="relative z-30 h-full min-h-screen bg-transparent  flex items-center justify-center"
@@ -27,13 +32,18 @@ const Services = () => {
 
 export default Services;
 
+//////////////////////
+// InfoCard Component
+//////////////////////
 export const InfoCard = () => {
   return (
     <div className=" bg-gray-100 flex flex-col justify-around card  w-full lg:h-[50rem] text-center rounded-lg ">
+      {/* Icon */}
       <div className="flex justify-center w-full my-6">
         <UilSun className="text-center" size="100" color="#1e3a8a" />
       </div>
 
+      {/* Title and Description */}
       <div className="">
         <h3 className="text-blue-900 text-7xl mb-6">title</h3>
         <p className="p-4 text-blue-900 text-2xl">
@@ -43,6 +53,8 @@ export const InfoCard = () => {
           inventore! Ipsum.
         </p>
       </div>
+
+      {/* Contact Button */}
       <div className="footer my-12">
         <ContactBtn text="consult an expert today" propColor={`blue`} />
       </div>

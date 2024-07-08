@@ -1,15 +1,16 @@
 import { useState } from "react";
-
 import { ProgramBtn } from "./ProgramBtn";
 import { ProgramContent } from "./ProgramContent";
 import { useProgramContext } from "../../context/useProgramContext";
 
 const Programs = () => {
-//   const [selectedProgram, setSelectedProgram] = useState(1);
-  const {selectedProgram, setSelectedProgram} = useProgramContext()
+  //////////////////////
+  // Context
+  //////////////////////
+  const { selectedProgram, setSelectedProgram } = useProgramContext();
+
   return (
     <>
-      {" "}
       <h2
         id="scroll-to-programs"
         className="text-5xl relative z-30 text-center -top-20 text-gray-200 font-bold mt-96"
@@ -21,6 +22,7 @@ const Programs = () => {
         className="bg-gray-100 w-full lg:w-9/12 lg:h-[50rem] flex flex-col justify-center items-center mx-auto rounded-lg relative z-30 shadow-lg my-12"
       >
         <div className="flex justify-evenly w-full">
+          {/* Program Buttons */}
           <ProgramBtn
             selectedProgram={selectedProgram}
             setSelectedProgram={setSelectedProgram}
@@ -41,6 +43,7 @@ const Programs = () => {
           />
         </div>
 
+        {/* Program Content */}
         {selectedProgram === 1 ? (
           <ProgramContent title="title 1" />
         ) : selectedProgram === 2 ? (
@@ -52,6 +55,5 @@ const Programs = () => {
     </>
   );
 };
+
 export default Programs;
-
-

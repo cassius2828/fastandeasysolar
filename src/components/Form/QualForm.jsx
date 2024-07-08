@@ -3,24 +3,27 @@ import { useFormContext } from "../../context/useFormContext";
 export const InputGroupQualifications = () => {
   const { handleUpdateForm, nextStep, form, formErrors } = useFormContext();
   console.log(formErrors);
-  
+
   return (
     <div className={`input-group flex flex-col justify-between h-full`}>
-      {/* current bill */}
+      {/* Current PG&E Bill */}
       <div>
         <div className={`my-12 relative`}>
           <label className={`block text-gray-700 text-xl lg:text-2xl mb-2`}>Current PG&E Bill</label>
-          <input
-            required
-            onChange={(e) => handleUpdateForm(e)}
-            value={form.bill}
-            name="bill"
-            className={`w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 ${formErrors.bill && 'border-red-500'} text-xl lg:text-2xl`}
-            type="text"
-          />
-
+          <div className="relative">
+            <span className="absolute left-3 top-3 text-xl lg:text-2xl text-gray-600">$</span>
+            <input
+              required
+              onChange={(e) => handleUpdateForm(e)}
+              value={form.bill}
+              name="bill"
+              className={`w-full bg-gray-100 text-gray-900 p-3 pl-8 rounded-lg focus:outline-none focus:shadow-outline border-2 ${formErrors.bill && 'border-red-500'} text-xl lg:text-2xl`}
+              type="text"
+            />
+          </div>
         </div>
-        {/* location */}
+        
+        {/* Your Location */}
         <div className={`my-12`}>
           <label className={`block text-gray-700 text-xl lg:text-2xl mb-2`}>Your Location</label>
           <input
@@ -33,7 +36,8 @@ export const InputGroupQualifications = () => {
             placeholder="ex: Vacaville"
           />
         </div>
-        {/* program */}
+        
+        {/* Select a Program */}
         <div className={`my-12`}>
           <label className={`block text-gray-700 text-xl lg:text-2xl my-2`}>Select a Program</label>
           <select
@@ -52,6 +56,7 @@ export const InputGroupQualifications = () => {
         </div>
       </div>
 
+      {/* Next Button */}
       <div className={`flex space-x-4 my-4`}>
         <button
           onClick={(e) => nextStep(e)}
