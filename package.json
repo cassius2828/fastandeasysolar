@@ -12,7 +12,10 @@
     "install:clean": "rm -rf node_modules package-lock.json && npm install"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@iconscout/react-unicons": "^2.0.2",
+    "mailtrap": "^3.3.0",
+    "netlify-cli": "^17.33.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scroll-parallax": "^3.4.5"

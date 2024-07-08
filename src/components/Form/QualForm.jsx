@@ -5,6 +5,7 @@ export const InputGroupQualifications = () => {
 
   return (
     <div className="input-group flex flex-col justify-between h-full">
+      {/* current bill */}
       <div>
         <div className="my-12">
           <label className="block text-gray-700 text-xl lg:text-2xl mb-2">Current Bill</label>
@@ -17,6 +18,7 @@ export const InputGroupQualifications = () => {
             type="text"
           />
         </div>
+        {/* location */}
         <div className="my-12">
           <label className="block text-gray-700 text-xl lg:text-2xl mb-2">Your Location</label>
           <input
@@ -29,6 +31,7 @@ export const InputGroupQualifications = () => {
             placeholder="ex: Vacaville"
           />
         </div>
+        {/* program */}
         <div className="my-12">
           <label className="block text-gray-700 text-xl lg:text-2xl my-2">Select a Program</label>
           <select
@@ -40,9 +43,9 @@ export const InputGroupQualifications = () => {
             className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline text-xl lg:text-2xl"
           >
             <option value="">Select a program</option>
-            <option value="">Program 1</option>
-            <option value="">Program 2</option>
-            <option value="">Program 3</option>
+            <option value="1">Program 1</option>
+            <option value="2">Program 2</option>
+            <option value="3">Program 3</option>
           </select>
         </div>
       </div>

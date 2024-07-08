@@ -39,3 +39,14 @@ Impressed by the numbers? Let's Make it happen! Fill out the form to get started
 
 
  y
+
+
+ ///////////////////////////
+ Emails
+ ///////////////////////////
+
+ EmailJS
+ - $9 month
+ - 2000 emails 
+ - auto add contacts from emails 
+ 
