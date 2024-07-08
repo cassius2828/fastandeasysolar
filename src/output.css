@@ -1551,6 +1551,10 @@ li {
     flex-direction: row;
   }
 
+  .lg\:gap-12 {
+    gap: 3rem;
+  }
+
   .lg\:pl-20 {
     padding-left: 5rem;
   }

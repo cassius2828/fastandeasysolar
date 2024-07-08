@@ -13,7 +13,7 @@ const Nav = () => {
       id="nav"
       className=" bg-gray-100 shadow-lg p-0 m-0 fixed z-40 w-full flex items-center justify-between"
     >
-      <div className="flex items-center gap-12">
+      <div className="flex items-center lg:gap-12">
         <img className="w-40 ml-10 lg:ml-40" src="/images/logo-notext.svg" alt="logo" />
         <h2 className=" text-3xl lg:text-6xl text-blue-900 uppercase" style={{ textShadow: "2px 2px 0 #93C5FD" }}>
   Fast and easy solar
