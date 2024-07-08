@@ -2,9 +2,11 @@ import { useState } from "react";
 
 import { ProgramBtn } from "./ProgramBtn";
 import { ProgramContent } from "./ProgramContent";
+import { useProgramContext } from "../../context/useProgramContext";
 
 const Programs = () => {
-  const [selectedProgram, setSelectedProgram] = useState(1);
+//   const [selectedProgram, setSelectedProgram] = useState(1);
+  const {selectedProgram, setSelectedProgram} = useProgramContext()
   return (
     <>
       {" "}

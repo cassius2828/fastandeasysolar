@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Background from "./components/Background";
 import Programs from "./components/Programs";
 import About from "./components/About";
+import { ProgramProvider } from "./context/ProgramContext";
 
 const App = () => {
   return (
@@ -17,10 +18,12 @@ const App = () => {
       <Background />
       <div id="gap" className="h-screen w-screen "></div>
       <Form />
-      <Services />
-      <Programs/>
-      <About/>
-      <Footer />
+      <Services />{" "}
+      <ProgramProvider>
+        <Programs />
+        <About />
+        <Footer />
+      </ProgramProvider>
     </>
   );
 };

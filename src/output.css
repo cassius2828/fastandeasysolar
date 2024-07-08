@@ -707,8 +707,8 @@ video {
   margin-left: 0.25rem;
 }
 
-.ml-40 {
-  margin-left: 10rem;
+.ml-10 {
+  margin-left: 2.5rem;
 }
 
 .ml-5 {
@@ -731,6 +731,10 @@ video {
   margin-top: 3rem;
 }
 
+.mt-40 {
+  margin-top: 10rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -741,22 +745,6 @@ video {
 
 .mt-96 {
   margin-top: 24rem;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
-}
-
-.mt-32 {
-  margin-top: 8rem;
-}
-
-.mt-36 {
-  margin-top: 9rem;
-}
-
-.mt-40 {
-  margin-top: 10rem;
 }
 
 .block {
@@ -815,10 +803,6 @@ video {
   height: 100vh;
 }
 
-.h-1\/2 {
-  height: 50%;
-}
-
 .min-h-screen {
   min-height: 100vh;
 }
@@ -857,10 +841,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[30rem\] {
-  width: 30rem;
 }
 
 .min-w-40 {
@@ -982,20 +962,16 @@ video {
   gap: 5rem;
 }
 
+.gap-32 {
+  gap: 8rem;
+}
+
 .gap-4 {
   gap: 1rem;
 }
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-24 {
-  gap: 6rem;
-}
-
-.gap-32 {
-  gap: 8rem;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -1519,6 +1495,10 @@ li {
     margin-left: 0px;
   }
 
+  .lg\:ml-40 {
+    margin-left: 10rem;
+  }
+
   .lg\:mr-0 {
     margin-right: 0px;
   }
@@ -1533,10 +1513,6 @@ li {
 
   .lg\:mt-0 {
     margin-top: 0px;
-  }
-
-  .lg\:ml-40 {
-    margin-left: 10rem;
   }
 
   .lg\:flex {
@@ -1606,13 +1582,13 @@ li {
     line-height: 2.5rem;
   }
 
-  .lg\:text-8xl {
-    font-size: 6rem;
+  .lg\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1;
   }
 
-  .lg\:text-6xl {
-    font-size: 3.75rem;
+  .lg\:text-8xl {
+    font-size: 6rem;
     line-height: 1;
   }
 }
