@@ -2,6 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap');
+
+/* Example CSS using the font */
+body {
+  font-family: 'Old Standard TT', serif;
+}
 
 :root {
   --tw-gradient-stops: #130a28 0%, #2f81d3 40%, #a8bcd5 80%;
