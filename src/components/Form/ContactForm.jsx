@@ -1,7 +1,28 @@
+import React from "react";
+import axios from "axios";
 import { useFormContext } from "../../context/useFormContext";
 
 export const InputGroupContact = () => {
   const { handleUpdateForm, prevStep, form } = useFormContext();
+
+  const handleSubmit = async () => {
+    const url = '/.netlify/functions/sendForm';
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: JSON.stringify(form), 
+    };
+
+    try {
+      const response = await axios(url, options);
+      const data = response.data;
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   return (
     <div className="input-group">
@@ -71,7 +92,7 @@ export const InputGroupContact = () => {
       <div className="flex space-x-4">
         <div className="my-6 w-1/2 lg:w-1/4">
           <button
-            onClick={(e) => prevStep(e)}
+            onClick={prevStep}
             className="bg-blue-500 text-white px-8 py-2 text-xl rounded-lg focus:outline-none focus:shadow-outline hover:-translate-y-1 transition-all duration-150 ease-in-out hover:shadow-lg"
           >
             Back
@@ -79,7 +100,7 @@ export const InputGroupContact = () => {
         </div>
 
         <div className="my-6 w-1/2 lg:w-1/3">
-          <button
+          <button onClick={handleSubmit}
             className="uppercase px-2 py-2 text-xl tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline hover:-translate-y-1 transition-all duration-150 ease-in-out hover:shadow-lg"
           >
             Send Message

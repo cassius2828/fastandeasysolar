@@ -5,15 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "netlify-dev": "netlify dev",
     "build": "vite build",
+    "netlify-serve": "netlify serve",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "tw": "npx tailwindcss -i ./src/index.css -o ./src/output.css --watch",
     "install:clean": "rm -rf node_modules package-lock.json && npm install"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.3.3",
     "@iconscout/react-unicons": "^2.0.2",
+    "axios": "^1.7.2",
     "mailtrap": "^3.3.0",
     "netlify-cli": "^17.33.0",
     "react": "^18.2.0",
