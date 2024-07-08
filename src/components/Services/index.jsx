@@ -29,7 +29,7 @@ export default Services;
 
 export const InfoCard = () => {
   return (
-    <div className=" bg-gray-200 flex flex-col justify-around card  w-full lg:h-[50rem] text-center rounded-lg ">
+    <div className=" bg-gray-100 flex flex-col justify-around card  w-full lg:h-[50rem] text-center rounded-lg ">
       <div className="flex justify-center w-full my-6">
         <UilSun className="text-center" size="100" color="#1e3a8a" />
       </div>
