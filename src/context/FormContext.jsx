@@ -11,7 +11,7 @@ import React, { createContext, useState } from "react";
 const initialFormData = {
   formStep: 1,
   //   qual section
-  bill: "$",
+  bill: "",
   location: "",
   program: "",
   //   contact section

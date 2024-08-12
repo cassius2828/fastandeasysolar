@@ -7,9 +7,6 @@ export default {
         'gradient-vertical': 'linear-gradient(var(--tw-gradient-stops))',
         'gradient-vertical-infocard': 'linear-gradient(var(--tw-gradient-stops-infocard))',
       },
-    width: {
-      '75%':'75%'
-    }
     },
   },
   plugins: [],
