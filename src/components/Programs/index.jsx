@@ -13,15 +13,15 @@ const Programs = () => {
     <>
       <h2
         id="scroll-to-programs"
-        className="text-5xl relative z-30 text-center -top-20 text-gray-200 font-bold mt-96"
+        className="text-5xl relative z-30 text-center -top-32 text-gray-200 font-bold mt-96"
       >
         Click Each Button to Learn More
       </h2>
       <section
         id="programs"
-        className="bg-gray-100 w-full lg:w-9/12 lg:h-[50rem] flex flex-col justify-center items-center mx-auto rounded-lg relative z-30 shadow-lg my-12"
+        className="bg-gray-100 w-full lg:w-9/12  flex flex-col justify-center items-center mx-auto rounded-lg relative z-30 shadow-lg my-20"
       >
-        <div className="flex justify-evenly w-full">
+        <div className="flex justify-around w-full">
           {/* Program Buttons */}
           <ProgramBtn
             selectedProgram={selectedProgram}
