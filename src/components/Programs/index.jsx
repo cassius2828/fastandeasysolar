@@ -27,7 +27,7 @@ const Programs = () => {
             selectedProgram={selectedProgram}
             setSelectedProgram={setSelectedProgram}
             programNum={1}
-            title={`Purchase`}
+            title={`Ownership`}
           />
           <ProgramBtn
             selectedProgram={selectedProgram}
@@ -39,7 +39,7 @@ const Programs = () => {
             selectedProgram={selectedProgram}
             setSelectedProgram={setSelectedProgram}
             programNum={3}
-            title={`PPA`}
+            title={`Hybrid Utility`}
           />
         </div>
 

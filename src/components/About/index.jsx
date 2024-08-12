@@ -37,16 +37,18 @@ const About = () => {
     >
       <div className="flex flex-col items-center justify-around lg:w-1/2 w-full py-12 lg:mr-12 rounded-lg bg-gradient-to-br">
         <h1 className="text-7xl text-gray-200 text-center p-4">
-          What is Fast and Easy Solar?
+         About Us: What is Fast and Easy Solar?
         </h1>
         <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-10">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum et
-          iusto magni suscipit molestiae labore perferendis. Quos, nobis,
-          commodi omnis aut eius beatae consectetur iure doloribus incidunt
-          dolorem esse ipsam? Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Incidunt hic assumenda in adipisci, reiciendis quia consequatur
-          dolores labore eum neque qui error molestiae commodi ullam pariatur!
-          Quisquam neque necessitatibus natus?
+         At Fast and Easy Solar, we specialize in making your switch
+          to solar energy quick and effortless. As a direct dealer with all the
+          major solar companies, we focus on securing the best savings for you.
+          Our streamlined process involves inputting your bill information into
+          our advanced portals, enabling us to identify the most competitive
+          rates and deals tailored for your home. With our expertise and
+          dedication to finding the best programs available, we ensure you save
+          money on your monthly bills while embracing sustainable energy
+          solutions.
         </p>
         <ContactBtn text=" learn more about us today" propColor={`white`} />
       </div>
