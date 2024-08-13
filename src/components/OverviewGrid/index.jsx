@@ -3,8 +3,6 @@ import {
   UilBolt,
   UilBuilding,
   UilEstate,
-  UilBatteryBolt,
-  UilPlug,
 } from "@iconscout/react-unicons";
 
 const OverviewGrid = () => {

@@ -1,7 +1,7 @@
-import React from "react";
+
 import { UilArrowUp } from "@iconscout/react-unicons";
 import { useProgramContext } from "../../context/useProgramContext";
-import SocialList from "../Reusables/SocialList";
+// import SocialList from "../Reusables/SocialList";
 
 //////////////////////
 // Footer Component

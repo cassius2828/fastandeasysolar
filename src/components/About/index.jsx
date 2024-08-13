@@ -1,5 +1,4 @@
-import { UilAngleLeft, UilAngleRight } from "@iconscout/react-unicons";
-import { useState } from "react";
+
 import { ContactBtnLight } from "../Reusables/Buttons";
 
 const About = () => {
