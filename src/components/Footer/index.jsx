@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  UilArrowUp,
-} from "@iconscout/react-unicons";
+import { UilArrowUp } from "@iconscout/react-unicons";
 import { useProgramContext } from "../../context/useProgramContext";
 import SocialList from "../Reusables/SocialList";
 
@@ -23,11 +21,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-blue-900 p-12 text-center text-white relative z-30">
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
         {/* programs col */}
         <div>
           <h4 className="text-3xl text-blue-400 mb-8">Programs</h4>
-          <ul className="text-xl flex flex-col justify-center items-center gap-4">
+          <ul className="text-2xl flex flex-col justify-center items-center gap-4">
             <li onClick={() => setSelectedProgram(1)}>
               <a href="#programs">Purchase</a>
             </li>
@@ -42,18 +40,32 @@ const Footer = () => {
         {/* services col */}
         <div>
           <h4 className="text-3xl text-blue-400 mb-8">Services</h4>
-          <ul className="text-xl flex flex-col justify-center items-center gap-4">
+          <ul className="text-2xl flex flex-col justify-center items-start gap-8 md:ml-52">
             <li>
-              <a href="#services">Service 1</a>
+              <a href="#services">Optimized Solar System Design</a>
             </li>
             <li>
-              <a href="#services">Service 2</a>
+              <a href="#services">Flexible Solar Financing Solutions</a>
             </li>
             <li>
-              <a href="#services">Service 3</a>
+              <a href="#services">Rooftop Solar for Sustainable Living</a>
             </li>
             <li>
-              <a href="#services">Service 4</a>
+              <a href="#services">Efficient Ground-Mounted Solar Systems</a>
+            </li>
+            <li>
+              <a href="#services">Reliable Solar Battery Storage</a>
+            </li>
+            <li>
+              <a href="#services">
+                Upgrading to a High-Capacity Main Electric Panel
+              </a>
+            </li>
+            <li>
+              <a href="#services">Professional Solar Installation Services</a>
+            </li>
+            <li>
+              <a href="#services">Comprehensive Solar System Warranty</a>
             </li>
           </ul>
         </div>
@@ -61,7 +73,7 @@ const Footer = () => {
         {/* contact col */}
         <div>
           <h4 className="text-3xl text-blue-400 mb-8">Contact</h4>
-          <ul className="text-xl flex flex-col justify-center items-center gap-4">
+          <ul className="text-2xl flex flex-col justify-center items-center gap-4">
             <li>Email: fastandeasysolar@gmail.com</li>
             <li>Office: (916) xxx-xxxx</li>
           </ul>
@@ -69,13 +81,13 @@ const Footer = () => {
         {/* location col */}
         <div>
           <h4 className="text-3xl text-blue-400 mb-8">Location</h4>
-          <ul className="text-xl flex flex-col justify-center items-center gap-4">
+          <ul className="text-2xl flex flex-col justify-center items-center gap-4">
             <li>123 Your Office Blvd</li>
             <li>Vacaville, CA 95687</li>
           </ul>
         </div>
         {/* social col */}
-        <SocialList />
+        {/* <SocialList /> */}
       </div>
       <div className="mt-8 flex justify-around items-end gap-4">
         <img width="300" src="/images/logo.svg" alt="" />
