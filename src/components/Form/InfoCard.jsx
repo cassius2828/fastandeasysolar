@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import SocialList from "../Reusables/SocialList";
-import { UilPhone } from "@iconscout/react-unicons";
+import { useState } from "react";
+
 const InfoCard = () => {
   const [date,setDate] = useState('')
   return (
