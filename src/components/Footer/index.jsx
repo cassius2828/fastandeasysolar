@@ -40,7 +40,7 @@ const Footer = () => {
         {/* services col */}
         <div>
           <h4 className="text-3xl text-blue-400 mb-8">Services</h4>
-          <ul className="text-2xl flex flex-col justify-center items-start gap-8 ml-52">
+          <ul className="text-2xl flex flex-col justify-center items-start gap-8 md:ml-52">
             <li>
               <a href="#services">Optimized Solar System Design</a>
             </li>

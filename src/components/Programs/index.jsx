@@ -2,20 +2,25 @@ import { useState } from "react";
 import { ProgramBtn } from "./ProgramBtn";
 import { ProgramContent } from "./ProgramContent";
 import { useProgramContext } from "../../context/useProgramContext";
+import useWindowWidth from "../../customHooks/useWindowWidth";
 
 const Programs = () => {
   //////////////////////
   // Context
   //////////////////////
   const { selectedProgram, setSelectedProgram } = useProgramContext();
-
+  //////////////////////
+  // Get Window Width
+  //////////////////////
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth < 768;
   return (
     <>
       <h2
         id="scroll-to-programs"
         className="text-5xl relative z-30 text-center -top-32 text-gray-200 font-bold mt-96"
       >
-        Click Each Button to Learn More
+        {isMobile && "Click Each Button to Learn More"}
       </h2>
       <section
         id="programs"
@@ -44,13 +49,8 @@ const Programs = () => {
         </div>
 
         {/* Program Content */}
-        {selectedProgram === 1 ? (
-          <ProgramContent title="title 1" />
-        ) : selectedProgram === 2 ? (
-          <ProgramContent title="title 2" />
-        ) : (
-          <ProgramContent title="title 3" />
-        )}
+
+        <ProgramContent isMobile={isMobile} />
       </section>
     </>
   );

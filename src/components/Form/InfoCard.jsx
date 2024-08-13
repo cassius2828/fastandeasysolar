@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import SocialList from "../Reusables/SocialList";
 import { UilPhone } from "@iconscout/react-unicons";
 const InfoCard = () => {
+  const [date,setDate] = useState('')
   return (
     <div
       style={{ maxWidth: "40rem" }}
@@ -61,6 +62,11 @@ text-gray-50 "
         </div>
 
         {/* Social Media Links */}
+        <div className="flex items-center gap-8 mt-12">
+          <h3 className="text-2xl">Book An Appointment Now</h3>
+               <input className="text-gray-900 p-3 text-2xl" value={date} onChange={(e) => setDate(e.target.value)} type="date" name="" id="" />
+        </div>
+   
         {/* <SocialList orientation="x" /> */}
       </div>
     </div>

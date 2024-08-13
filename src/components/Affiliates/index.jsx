@@ -15,7 +15,7 @@ const Affiliates = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center justify-center py-20 bg-gray-100 relative z-20">
+    <div className="w-full flex flex-col items-center justify-center py-20 px-3 bg-gray-100 relative z-20">
       <h2 className="text-5xl font-bold mb-8 text-blue-900">Partnered With</h2>
       <div className="grid grid-cols-2 md:grid-cols-5 grid-rows-3 md:grid-rows-1 w-full place-items-center">
         {affiliates.map((affiliate, index) => (
@@ -23,7 +23,7 @@ const Affiliates = () => {
             <img
               src={affiliate.logo}
               alt={`${affiliate.name} logo`}
-              className="w-80 mb-4"
+              className="w-60 md:w-80 mb-4"
             />
           </div>
         ))}

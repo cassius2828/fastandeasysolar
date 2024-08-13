@@ -3,7 +3,7 @@ import React from 'react';
 const FAQItem = ({ question, answer }) => {
   return (
     <div className="w-full px-4 py-2">
-      <h3 className="text-3xl font-semibold text-blue-800 mb-2">{question}</h3>
+      <h3 className="text-3xl font-semibold text-blue-800 mb-2 p-3">{question}</h3>
       <p className="text-2xl text-gray-700">{answer}</p>
     </div>
   );
@@ -39,7 +39,7 @@ export const FAQList = () => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center py-20 mt-20 relative z-20 bg-gray-100">
-      <h2 className="text-6xl font-bold mb-20 text-blue-900">Frequently Asked Questions</h2>
+      <h2 className="text-6xl font-bold p-3 mb-20 text-blue-900">Frequently Asked Questions</h2>
       <div className="w-full md:w-3/4 grid grid-cols-1 md:grid-cols-2 place-items-center ">
         {faqs.map((faq, index) => (
           <FAQItem key={index} question={faq.question} answer={faq.answer} />
