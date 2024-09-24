@@ -46,6 +46,9 @@ const Nav = () => {
           <a href="#scroll-to-programs">programs</a>
         </li>
         <li>
+          <a href="#careers">careers</a>
+        </li>
+        <li>
           <a href="#contact">contact</a>
         </li>
         <li>

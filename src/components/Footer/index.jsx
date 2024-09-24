@@ -1,4 +1,3 @@
-
 import { UilArrowUp } from "@iconscout/react-unicons";
 import { useProgramContext } from "../../context/useProgramContext";
 // import SocialList from "../Reusables/SocialList";
@@ -21,10 +20,10 @@ const Footer = () => {
 
   return (
     <footer className="bg-blue-900 p-12 text-center text-white relative z-30">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="flex flex-col md:flex-row justify-around gap-8">
         {/* programs col */}
         <div>
-          <h4 className="text-3xl text-blue-400 mb-8">Programs</h4>
+          <h4 className="text-3xl text-blue-400 mb-8 font-bold">Programs</h4>
           <ul className="text-2xl flex flex-col justify-center items-center gap-4">
             <li onClick={() => setSelectedProgram(1)}>
               <a href="#programs">Purchase</a>
@@ -37,10 +36,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+
         {/* services col */}
         <div>
-          <h4 className="text-3xl text-blue-400 mb-8">Services</h4>
-          <ul className="text-2xl flex flex-col justify-center items-start gap-8 md:ml-52">
+          <h4 className="text-3xl text-blue-400 mb-8 font-bold">Services</h4>
+          <ul className="text-2xl flex flex-col justify-center md:items-start md:text-start gap-8 md:ml-52">
             <li>
               <a href="#services">Optimized Solar System Design</a>
             </li>
@@ -72,24 +72,40 @@ const Footer = () => {
 
         {/* contact col */}
         <div>
-          <h4 className="text-3xl text-blue-400 mb-8">Contact</h4>
+          <h4 className="text-3xl text-blue-400 mb-8 font-bold ">Contact</h4>
           <ul className="text-2xl flex flex-col justify-center items-center gap-4">
             <li>Email: fastandeasysolar@gmail.com</li>
             <li>Office: (916) xxx-xxxx</li>
           </ul>
         </div>
+
         {/* location col */}
-        <div>
-          <h4 className="text-3xl text-blue-400 mb-8">Location</h4>
+        {/* <div>
+          <h4 className="text-3xl text-blue-400 mb-8 font-bold">Location</h4>
           <ul className="text-2xl flex flex-col justify-center items-center gap-4">
             <li>123 Your Office Blvd</li>
             <li>Vacaville, CA 95687</li>
           </ul>
+        </div> */}
+
+        {/* business hours col */}
+        <div className="lg:col-span-2">
+          <h4 className="text-3xl text-blue-400 mb-8 font-bold">
+            Business Hours
+          </h4>
+          <ul className="text-2xl flex flex-col justify-center items-center gap-4">
+            <li>Monday: 8am - 8pm</li>
+            <li>Tuesday: 8am - 8pm</li>
+            <li>Wednesday: 8am - 8pm</li>
+            <li>Thursday: 8am - 8pm</li>
+            <li>Friday: 8am - 8pm</li>
+            <li>Saturday: 10am - 4pm</li>
+            <li>Sunday: Closed</li>
+          </ul>
         </div>
-        {/* social col */}
-        {/* <SocialList /> */}
       </div>
-      <div className="mt-8 flex justify-around items-end gap-4">
+
+      <div className="mt-8 flex flex-col md:flex-row justify-between md:justify-center  items-center gap-4">
         <img width="300" src="/images/logo.svg" alt="" />
         <p>&copy; 2024 Our Company. All rights reserved.</p>
       </div>

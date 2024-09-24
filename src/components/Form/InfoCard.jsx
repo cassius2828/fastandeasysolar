@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 const InfoCard = () => {
-  const [date,setDate] = useState('')
+  const [date, setDate] = useState("");
+
   return (
     <div
       style={{ maxWidth: "40rem" }}
@@ -9,20 +10,15 @@ const InfoCard = () => {
     >
       <div className="flex flex-col text-white">
         {/* Header */}
-        <h1 className="font-bold uppercase text-4xl my-4">
-          Contact Us Directly
-        </h1>
+        <h1 className="font-bold uppercase text-4xl my-4">Contact Us Directly</h1>
 
         {/* Contact Information */}
-        <div className="flex my-4 w-2/3 lg:w-1/2 ">
+        <div className="flex my-4 w-2/3 lg:w-1/2">
           <div className="flex flex-col">
             <i className="fas fa-phone-alt pt-2 pr-2" />
           </div>
-          <div
-            className="flex flex-col text-3xl 
-text-gray-50 "
-          >
-            <p className="">
+          <div className="flex flex-col text-3xl text-gray-50">
+            <p>
               <span className="flex items-center mb-2">
                 Tel:{" "}
                 <svg
@@ -60,13 +56,32 @@ text-gray-50 "
           </div>
         </div>
 
+        {/* Business Hours */}
+        <div className="flex flex-col text-gray-100 mt-8">
+          <h3 className="font-bold uppercase text-3xl my-4">Business Hours</h3>
+          <ul className="space-y-2 text-xl md:text-2xl">
+            <li>Monday: 8am - 8pm</li>
+            <li>Tuesday: 8am - 8pm</li>
+            <li>Wednesday: 8am - 8pm</li>
+            <li>Thursday: 8am - 8pm</li>
+            <li>Friday: 8am - 8pm</li>
+            <li>Saturday: 10am - 4pm</li>
+            <li>Sunday: Closed</li>
+          </ul>
+        </div>
+
         {/* Social Media Links */}
         <div className="flex items-center gap-8 mt-12">
           <h3 className="text-2xl">Book An Appointment Now</h3>
-               <input className="text-gray-900 p-3 text-2xl" value={date} onChange={(e) => setDate(e.target.value)} type="date" name="" id="" />
+          <input
+            className="text-gray-900 p-3 text-2xl"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            type="date"
+            name=""
+            id=""
+          />
         </div>
-   
-        {/* <SocialList orientation="x" /> */}
       </div>
     </div>
   );

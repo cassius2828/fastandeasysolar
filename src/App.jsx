@@ -13,6 +13,7 @@ import { FAQList } from "./components/FAQ";
 import { WhatWeDo } from "./components/WhatWeDo";
 import Affiliates from "./components/Affiliates";
 import OverviewGrid from "./components/OverviewGrid";
+import Careers from "./components/Careers";
 
 const App = () => {
   return (
@@ -30,7 +31,9 @@ const App = () => {
         <Programs />
         <About />
         <WhatWeDo />
-        <FAQList /> <Affiliates />
+        <FAQList />
+        <Affiliates />
+        <Careers />
         <Footer />
       </ProgramProvider>
     </>

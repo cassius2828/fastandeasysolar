@@ -19,7 +19,10 @@ const initialFormData = {
   lastName: "",
   email: "",
   phone: "",
+  zipcode: "",
+  address: "",
   message: "",
+  contactTerms: false,
 };
 
 //////////////////////////////

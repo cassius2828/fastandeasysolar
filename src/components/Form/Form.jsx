@@ -8,10 +8,7 @@ const Form = () => {
 
   return (
     <div className="flex flex-col items-center relative mt-12 lg:mt-0">
-      {/* form step status */}
-      <span className=" absolute -top-10 shadow-lg w-20 h-20 text-gray-200 bg-blue-900 rounded-full flex justify-center items-center text-3xl font-bold">
-        {form.formStep === 1 ? "1/2" : "2/2"}
-      </span>
+   
       {/* form */}
       <form
         style={{ maxWidth: "80rem" }}
@@ -19,16 +16,14 @@ const Form = () => {
       >
         <div className="flex">
           {/* title */}
-          <h1 className="font-bold uppercase text-5xl">
-            find out how much you can save today
-          </h1>
+          <h3 className="font-bold text-4xl">
+           Ready to power your home with solar energy? Call now to get started or fill out the form
+          </h3>
         </div>
         <div className="mt-5 w-full min-h-[50rem]">
-          {form.formStep === 1 ? (
-            <InputGroupQualifications />
-          ) : (
+       
             <InputGroupContact />
-          )}
+       
         </div>
       </form>
     </div>
