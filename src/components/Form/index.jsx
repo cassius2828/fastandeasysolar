@@ -3,6 +3,7 @@ import React from "react";
 import InfoCard from "./InfoCard";
 import Form from "./Form";
 import { FormProvider } from "../../context/FormContext";
+import { InlineWidget } from "react-calendly";
 
 const Contact = () => {
   return (
@@ -18,6 +19,7 @@ const Contact = () => {
           <InfoCard />
         </div>
       </div>
+    
     </section>
   );
 };

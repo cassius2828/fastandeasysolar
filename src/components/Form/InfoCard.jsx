@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PopupWidget } from "react-calendly";
 
 const InfoCard = () => {
   const [date, setDate] = useState("");
@@ -10,7 +11,9 @@ const InfoCard = () => {
     >
       <div className="flex flex-col text-white">
         {/* Header */}
-        <h1 className="font-bold uppercase text-4xl my-4">Contact Us Directly</h1>
+        <h1 className="font-bold uppercase text-4xl my-4">
+          Contact Us Directly
+        </h1>
 
         {/* Contact Information */}
         <div className="flex my-4 w-2/3 lg:w-1/2">
@@ -73,14 +76,19 @@ const InfoCard = () => {
         {/* Social Media Links */}
         <div className="flex items-center gap-8 mt-12">
           <h3 className="text-2xl">Book An Appointment Now</h3>
-          <input
+          <a href="https://calendly.com/fastandeasysolar/free-assessment-for-program-eligibility">
+            <button className="flex items-center justify-center text-blue-900 bg-gray-200 hover:bg-gray-300 text-xl w-48 transition-all duration-200 ease-in-out cursor-pointer rounded-md p-2 mr-5 lg:mr-0">
+              book
+            </button>
+          </a>
+          {/* <input
             className="text-gray-900 p-3 text-2xl"
             value={date}
             onChange={(e) => setDate(e.target.value)}
             type="date"
             name=""
             id=""
-          />
+          /> */}
         </div>
       </div>
     </div>

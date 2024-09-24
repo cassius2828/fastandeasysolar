@@ -75,7 +75,7 @@ const Footer = () => {
           <h4 className="text-3xl text-blue-400 mb-8 font-bold ">Contact</h4>
           <ul className="text-2xl flex flex-col justify-center items-center gap-4">
             <li>Email: fastandeasysolar@gmail.com</li>
-            <li>Office: (916) xxx-xxxx</li>
+            <li>Office: (916) 320-7022</li>
           </ul>
         </div>
 
