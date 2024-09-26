@@ -1,9 +1,4 @@
-import { useState } from "react";
-import { PopupWidget } from "react-calendly";
-
 const InfoCard = () => {
-  const [date, setDate] = useState("");
-
   return (
     <div
       style={{ maxWidth: "40rem" }}
