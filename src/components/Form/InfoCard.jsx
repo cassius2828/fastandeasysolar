@@ -7,7 +7,7 @@ const InfoCard = () => {
   return (
     <div
       style={{ maxWidth: "40rem" }}
-      className="w-full px-8 py-12 mb-8 lg:mb-0 bg-blue-900 rounded-2xl"
+      className="w-full px-8 py-12 mb-8 lg:mb-0 mt-96 md:mt-0 bg-blue-900 rounded-2xl"
     >
       <div className="flex flex-col text-white">
         {/* Header */}
