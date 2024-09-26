@@ -8,7 +8,6 @@ const Form = () => {
 
   return (
     <div className="flex flex-col items-center relative mt-12 lg:mt-0">
-   
       {/* form */}
       <form
         style={{ maxWidth: "80rem" }}
@@ -17,13 +16,12 @@ const Form = () => {
         <div className="flex">
           {/* title */}
           <h3 className="font-bold text-4xl">
-           Ready to power your home with solar energy? Call now to get started or fill out the form
+            Ready to power your home with solar energy? Call now to get started
+            or fill out the form
           </h3>
         </div>
         <div className="mt-5 w-full min-h-[50rem]">
-       
-            <InputGroupContact />
-       
+          <InputGroupContact />
         </div>
       </form>
     </div>

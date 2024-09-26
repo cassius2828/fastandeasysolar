@@ -3,7 +3,7 @@ import JobDescription from "./JobDescription";
 
 const Careers = () => {
   return (
-    <div className="w-3/4 md:w-1/2 flex flex-col items-center justify-center py-20 my-96 mx-auto relative z-20 bg-gray-100 rounded-lg shadow-lg">
+    <section id="careers" className="w-4/5 md:w-1/2 flex flex-col items-center justify-center py-20 my-96 mx-auto relative z-20 bg-gray-100 rounded-lg shadow-lg">
       <h1 className="text-5xl font-bold mb-8">Careers</h1>
 
       {/* Introduction Text */}
@@ -21,7 +21,7 @@ const Careers = () => {
         {/* Job Application Form */}
         <ApplicationForm />
       </div>
-    </div>
+    </section>
   );
 };
 // lead setter | knocking doors to set appointments. commission based, avg 50 to 100k , as a lead setter you specialize in going door to door and setting appointments

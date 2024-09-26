@@ -1,39 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useFormContext } from "../../context/useFormContext";
+import { submitAssessmentForm } from "../../service/handleForms";
+import Alert from "../Reusables/Alert";
 
 //////////////////////
 // InputGroupContact Component
 ////////////////////
 export const InputGroupContact = () => {
-  //////////////////////
   // Context
-  //////////////////////
-  const { handleUpdateForm, prevStep, form, formErrors } = useFormContext();
-
+  const { handleUpdateForm, prevStep, form, formErrors, resetForm } =
+    useFormContext();
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
   //////////////////////
   // Handle Submit
   //////////////////////
-  const handleSubmit = async () => {
-    if (Object.values(form).some((value) => !value)) {
-      return alert("Please fill out all fields to submit the form");
-    }
+  // const handleSubmit = async () => {
+  //   if (Object.values(form).some((value) => !value)) {
+  //     return alert("Please fill out all fields to submit the form");
+  //   }
 
-    const url = "/.netlify/functions/sendForm";
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: JSON.stringify(form),
-    };
+  //   const url = "/.netlify/functions/sendForm";
+  //   const options = {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     data: JSON.stringify(form),
+  //   };
 
+  //   try {
+  //     const response = await axios(url, options);
+  //     const data = response.data;
+  //     console.log("Success:", data);
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     try {
-      const response = await axios(url, options);
-      const data = response.data;
-      console.log("Success:", data);
-    } catch (error) {
-      console.error("Error:", error);
+      submitAssessmentForm(form);
+      setSuccess("Assessment Inquiry Successfully Sent!");
+      resetForm();
+      setTimeout(() => {
+        setSuccess("");
+      }, 2000);
+    } catch (err) {
+      console.error(err);
+      setError(
+        "Form Submission Failed. Please reach out directly to either Fastandeasysolar@gmail.com or text (916) 320-7022 with the information requested in the form to request a free assessment if this form is not working"
+      );
+      console.log(`Unable to submit assesssment form`);
     }
   };
 
@@ -107,8 +127,8 @@ export const InputGroupContact = () => {
           onChange={handleUpdateForm}
         />
       </div>
-          {/* Address */}
-          <div className={`my-6`}>
+      {/* Address */}
+      <div className={`my-6`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>
           Street Address*
         </label>
@@ -178,9 +198,11 @@ export const InputGroupContact = () => {
           </button>
         </div>
       </div>
+      {success && <Alert message={success} success />}
+      {error && <Alert message={error} handleClose={() => setError("")} />}
     </div>
   );
 };
 // full address
 
-//office locaiton: 
+//office locaiton:

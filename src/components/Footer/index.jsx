@@ -42,30 +42,44 @@ const Footer = () => {
           <h4 className="text-3xl text-blue-400 mb-8 font-bold">Services</h4>
           <ul className="text-2xl flex flex-col justify-center md:items-start md:text-start gap-8 md:ml-52">
             <li>
-              <a href="#services">Optimized Solar System Design</a>
+              <a href="#optimizedsolarsystemdesign">
+                Optimized Solar System Design
+              </a>
             </li>
             <li>
-              <a href="#services">Flexible Solar Financing Solutions</a>
+              <a href="#flexiblesolarfinancingsolutions">
+                Flexible Solar Financing Solutions
+              </a>
             </li>
             <li>
-              <a href="#services">Rooftop Solar for Sustainable Living</a>
+              <a href="#rooftopsolarforsustainableliving">
+                Rooftop Solar for Sustainable Living
+              </a>
             </li>
             <li>
-              <a href="#services">Efficient Ground-Mounted Solar Systems</a>
+              <a href="#efficientground-mountedsolarsystems">
+                Efficient Ground-Mounted Solar Systems
+              </a>
             </li>
             <li>
-              <a href="#services">Reliable Solar Battery Storage</a>
+              <a href="#reliablesolarbatterystorage">
+                Reliable Solar Battery Storage
+              </a>
             </li>
             <li>
-              <a href="#services">
+              <a href="#upgradingtoahigh-capacitymainelectricpanel">
                 Upgrading to a High-Capacity Main Electric Panel
               </a>
             </li>
             <li>
-              <a href="#services">Professional Solar Installation Services</a>
+              <a href="#professionalsolarinstallationservices">
+                Professional Solar Installation Services
+              </a>
             </li>
             <li>
-              <a href="#services">Comprehensive Solar System Warranty</a>
+              <a href="#comprehensivesolarsystemwarranty">
+                Comprehensive Solar System Warranty
+              </a>
             </li>
           </ul>
         </div>
@@ -106,7 +120,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-8 flex flex-col md:flex-row justify-between md:justify-center  items-center gap-4">
-        <img width="300" src="/images/logo.svg" alt="" />
+        <img width="300" src="/images/Full_logo.svg" alt="" />
         <p>&copy; 2024 Our Company. All rights reserved.</p>
       </div>
 
