@@ -42,9 +42,9 @@ const OverviewGrid = () => {
 
         <div className="flex items-center text-blue-950">
           <div className="flex items-center gap-2 w-full">
-            <span>$0.18</span>
+            <span>$0.23</span>
             <div className="h-[1px] w-full bg-gray-950 flex-1"></div>
-            <span>$0.35</span>
+            <span>$0.36</span>
           </div>
         </div>
         <div className="flex items-center justify-end gap-12 mb-2 mt-16 md:mt-5 text-blue-950">

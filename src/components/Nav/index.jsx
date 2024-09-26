@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Hamburger } from "./Hamburger";
 import { MobileNav } from "./MobileNav";
 
@@ -23,12 +23,12 @@ const Nav = () => {
       {/* branding */}
       <div className="flex items-center lg:gap-12">
         <img
-          className="w-40 ml-10 lg:ml-40"
-          src="/images/logo-notext.svg"
+          className="w-40 ml-10 lg:ml-40 p-3"
+          src="/images/Icon_no-text.png"
           alt="logo"
         />
         <h2
-          className="text-3xl lg:text-6xl text-blue-900 uppercase"
+          className="text-3xl lg:text-6xl ml-4 text-blue-900 uppercase"
           style={{ textShadow: "2px 2px 0 #93C5FD" }}
         >
           Fast and easy solar
@@ -38,7 +38,10 @@ const Nav = () => {
       <ul className="space-x-4 text-blue-900 mr-48 text-2xl gap-12 capitalize hidden lg:flex">
         <li onClick={scrollToTop}>
           <a href="">home</a>
-        </li>
+        </li>{" "}
+        <li>
+          <a href="#book">book</a>
+        </li>{" "}
         <li>
           <a href="#scroll-to-services">services</a>
         </li>
@@ -46,10 +49,13 @@ const Nav = () => {
           <a href="#scroll-to-programs">programs</a>
         </li>
         <li>
-          <a href="#contact">contact</a>
+          <a href="#about">about</a>
+        </li>{" "}
+        <li>
+          <a href="#careers">careers</a>
         </li>
         <li>
-          <a href="#about">about</a>
+          <a href="#contact">contact</a>
         </li>
       </ul>
 

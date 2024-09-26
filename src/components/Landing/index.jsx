@@ -11,7 +11,7 @@ const Landing = () => {
         find out how much you can save today!
       </p>
       <a href="#contact">
-        <button className="text-xl lg:text-3xl font-bold text-gray-200 border p-4 fade-in-scale-down rounded-lg ">
+        <button className="text-xl lg:text-3xl font-bold text-gray-200 border p-4 fade-in-scale-down rounded-lg mb-24 md:mb-0">
           See Savings
         </button>
       </a>

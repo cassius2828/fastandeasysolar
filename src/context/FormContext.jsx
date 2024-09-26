@@ -19,7 +19,10 @@ const initialFormData = {
   lastName: "",
   email: "",
   phone: "",
+  zipcode: "",
+  address: "",
   message: "",
+  contactTerms: false,
 };
 
 //////////////////////////////
@@ -27,16 +30,14 @@ const initialFormData = {
 //////////////////////////////
 
 const initialFormErrorData = {
-  //   qual section
-  bill: false,
-  location: false,
-  program: false,
+
   //   contact section
   firstName: false,
   lastName: false,
   email: false,
   phone: false,
   message: false,
+  address:false
 };
 
 /////////////////////////
@@ -94,7 +95,9 @@ export const FormProvider = ({ children }) => {
       setFormErrors({ ...formErrors, [name]: false, message: false });
     }
   };
-
+const resetForm = () => {
+  setForm(initialFormData)
+}
   //////////////////////
   // Next Step Handler //
   //////////////////////
@@ -130,7 +133,7 @@ export const FormProvider = ({ children }) => {
 
   return (
     <FormContext.Provider
-      value={{ form, formErrors, handleUpdateForm, nextStep, prevStep }}
+      value={{ form, formErrors, handleUpdateForm, nextStep, prevStep,resetForm }}
     >
       {children}
     </FormContext.Provider>

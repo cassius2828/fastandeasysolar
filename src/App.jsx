@@ -13,6 +13,8 @@ import { FAQList } from "./components/FAQ";
 import { WhatWeDo } from "./components/WhatWeDo";
 import Affiliates from "./components/Affiliates";
 import OverviewGrid from "./components/OverviewGrid";
+import Careers from "./components/Careers";
+import Book from "./components/Book";
 
 const App = () => {
   return (
@@ -20,8 +22,12 @@ const App = () => {
       <Nav />
       <Landing />
       <Background />
+      {/* gap */}
       <div id="gap" className="h-screen w-screen "></div>
       <Form />
+      {/* gap */}
+      <div className="h-[30rem] w-screen"></div>
+      <Book />
       <OverviewGrid />
       <Services />
 
@@ -30,7 +36,9 @@ const App = () => {
         <Programs />
         <About />
         <WhatWeDo />
-        <FAQList /> <Affiliates />
+        <FAQList />
+        <Affiliates />
+        <Careers />
         <Footer />
       </ProgramProvider>
     </>
