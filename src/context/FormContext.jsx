@@ -15,7 +15,7 @@ const initialFormData = {
   location: "",
   program: "",
   //   contact section
- fullName:'',
+  fullName: "",
   email: "",
   phone: "",
   address: "",
@@ -28,13 +28,12 @@ const initialFormData = {
 //////////////////////////////
 
 const initialFormErrorData = {
-
   //   contact section
-fullName:false,
+  fullName: false,
   email: false,
   phone: false,
   message: false,
-  address:false
+  address: false,
 };
 
 /////////////////////////
@@ -92,9 +91,14 @@ export const FormProvider = ({ children }) => {
       setFormErrors({ ...formErrors, [name]: false, message: false });
     }
   };
-const resetForm = () => {
-  setForm(initialFormData)
-}
+
+  const handleToggleCheckbox = () => {
+    setForm((prev) => ({ ...prev, contactTerms: !prev.contactTerms }));
+  };
+
+  const resetForm = () => {
+    setForm(initialFormData);
+  };
   //////////////////////
   // Next Step Handler //
   //////////////////////
@@ -130,7 +134,15 @@ const resetForm = () => {
 
   return (
     <FormContext.Provider
-      value={{ form, formErrors, handleUpdateForm, nextStep, prevStep,resetForm }}
+      value={{
+        form,
+        formErrors,
+        handleUpdateForm,
+        handleToggleCheckbox,
+        nextStep,
+        prevStep,
+        resetForm,
+      }}
     >
       {children}
     </FormContext.Provider>

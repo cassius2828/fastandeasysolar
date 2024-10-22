@@ -6,15 +6,8 @@ const publicKey = import.meta.env.VITE_EMAILJS_PUB_KEY;
 ///////////////////////////
 // Client Assessment Form
 ///////////////////////////
-export const submitAssessmentForm = (formData) => {
-  const {
-    fullName,
-    email,
-    phone,
-    message,
-    address,
-    contactTerms,
-  } = formData;
+export const submitAssessmentForm = async (formData) => {
+  const { fullName, email, phone, message, address, contactTerms } = formData;
   let formattedPhoneNum = formatPhoneNum(phone);
   const params = {
     from_name: `${fullName}`,
@@ -29,6 +22,9 @@ export const submitAssessmentForm = (formData) => {
     }`,
     publicKey,
   };
+  if (!contactTerms) {
+    return { noContact: true };
+  }
   emailjs
     .send(serviceId, assessmentTemplateId, params, publicKey)
     .then((response) => {

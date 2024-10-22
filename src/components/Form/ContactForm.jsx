@@ -9,50 +9,42 @@ import Alert from "../Reusables/Alert";
 ////////////////////
 export const InputGroupContact = () => {
   // Context
-  const { handleUpdateForm, prevStep, form, formErrors, resetForm } =
-    useFormContext();
+  const {
+    handleUpdateForm,
+    handleToggleCheckbox,
+    form,
+    formErrors,
+    resetForm,
+  } = useFormContext();
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   //////////////////////
   // Handle Submit
   //////////////////////
-  // const handleSubmit = async () => {
-  //   if (Object.values(form).some((value) => !value)) {
-  //     return alert("Please fill out all fields to submit the form");
-  //   }
 
-  //   const url = "/.netlify/functions/sendForm";
-  //   const options = {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     data: JSON.stringify(form),
-  //   };
-
-  //   try {
-  //     const response = await axios(url, options);
-  //     const data = response.data;
-  //     console.log("Success:", data);
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      submitAssessmentForm(form);
-      setSuccess("Assessment Inquiry Successfully Sent!");
-      resetForm();
-      setTimeout(() => {
-        setSuccess("");
-      }, 2000);
+      const data = await submitAssessmentForm(form);
+      if (data?.noContact) {
+        setError(
+          "Please agree to be contacted by checking the box below to send the form. Otherwise, you should call us directly at (916) 320-7022 or email us at fastandeasysolar@gmail.com with your information. Thank you."
+        );
+
+        return;
+      } else {
+        setSuccess("Assessment Inquiry Successfully Sent!");
+        resetForm();
+        setTimeout(() => {
+          setSuccess("");
+        }, 2000);
+      }
     } catch (err) {
       console.error(err);
       setError(
         "Form Submission Failed. Please reach out directly to either Fastandeasysolar@gmail.com or text (916) 320-7022 with the information requested in the form to request a free assessment if this form is not working"
       );
+
       console.log(`Unable to submit assesssment form`);
     }
   };
@@ -76,7 +68,7 @@ export const InputGroupContact = () => {
           onChange={handleUpdateForm}
         />
       </div>
- 
+
       {/* Email */}
       <div className={`my-6`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>
@@ -119,7 +111,7 @@ export const InputGroupContact = () => {
         <input
           required
           className={`w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 ${
-            formErrors.phone && "border-red-500"
+            formErrors.address && "border-red-500"
           } text-xl lg:text-2xl`}
           type="text"
           name="address"
@@ -128,7 +120,7 @@ export const InputGroupContact = () => {
           onChange={handleUpdateForm}
         />
       </div>
-  
+
       {/* Message */}
       <div className={`my-4`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>
@@ -147,11 +139,17 @@ export const InputGroupContact = () => {
       {/* contact terms */}
       <div className={`my-4`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>
-          By checking this box you agree to receive a phone call from us at the
-          number you provided
+          By checking this box you agree to be contacted to get more information
+          about how our services can help you save today
         </label>
         <div className="flex items-center justify-start gap-4 mt-5">
-          <input type="checkbox" name="contactTerms" id="contactTerms" />{" "}
+          <input
+            onChange={handleToggleCheckbox}
+            checked={form.contactTerms}
+            type="checkbox"
+            name="contactTerms"
+            id="contactTerms"
+          />{" "}
           <span className="text-xl">I agree</span>
         </div>
       </div>
