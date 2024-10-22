@@ -2,7 +2,7 @@
 // Import and Initial State //
 //////////////////////////////
 
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
 ////////////////////////
 // Initial Form Data //
@@ -18,7 +18,6 @@ const initialFormData = {
  fullName:'',
   email: "",
   phone: "",
-  zipcode: "",
   address: "",
   message: "",
   contactTerms: false,

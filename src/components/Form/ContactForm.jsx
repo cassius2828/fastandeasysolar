@@ -128,23 +128,7 @@ export const InputGroupContact = () => {
           onChange={handleUpdateForm}
         />
       </div>
-      {/* Zip Code */}
-      <div className={`my-6`}>
-        <label className={`block text-gray-700 text-xl lg:text-2xl`}>
-          Zip Code*
-        </label>
-        <input
-          required
-          className={`w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 ${
-            formErrors.phone && "border-red-500"
-          } text-xl lg:text-2xl`}
-          type="text"
-          name="zipcode"
-          placeholder="Zip Code*"
-          value={form.zipcode}
-          onChange={handleUpdateForm}
-        />
-      </div>
+  
       {/* Message */}
       <div className={`my-4`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>

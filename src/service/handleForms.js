@@ -12,7 +12,6 @@ export const submitAssessmentForm = (formData) => {
     email,
     phone,
     message,
-    zipcode,
     address,
     contactTerms,
   } = formData;
@@ -21,7 +20,7 @@ export const submitAssessmentForm = (formData) => {
     from_name: `${fullName}`,
     cell: formattedPhoneNum,
     email,
-    address: `${address}, ${zipcode}`,
+    address: `${address}`,
     message,
     contactTerms: `${
       contactTerms
