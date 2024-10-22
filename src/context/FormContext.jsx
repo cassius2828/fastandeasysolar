@@ -139,6 +139,8 @@ export const FormProvider = ({ children }) => {
         formErrors,
         handleUpdateForm,
         handleToggleCheckbox,
+        validateEmail,
+        validatePhoneNumber,
         nextStep,
         prevStep,
         resetForm,

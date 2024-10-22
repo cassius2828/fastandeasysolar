@@ -13,13 +13,10 @@ const Contact = () => {
     >
       <div className="flex mx-auto  items-center w-screen h-screen">
         <div className=" flex flex-col-reverse justify-center items-center lg:flex-row mx-auto my-4 px-4 ">
-          <FormProvider>
-            <Form />
-          </FormProvider>
+          <Form />
           <InfoCard />
         </div>
       </div>
-    
     </section>
   );
 };

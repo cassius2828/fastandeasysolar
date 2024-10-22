@@ -37,16 +37,19 @@ export const submitAssessmentForm = async (formData) => {
 ///////////////////////////
 // Lead Setter Job Inquiry
 ///////////////////////////
-export const submitLeadSetterInquiry = (formData) => {
-  const { fullName, email, phone, message } = formData;
+export const submitLeadSetterInquiry = async (formData) => {
+  const { firstName, lastName, email, phone, message } = formData;
   let formattedPhoneNum = formatPhoneNum(phone);
   const params = {
-    from_name: `${fullName}`,
+    from_name: `${firstName} ${lastName}`,
     cell: formattedPhoneNum,
     email,
     message,
     publicKey,
   };
+  if (!firstName || !lastName || !email || !phone || !message) {
+    return { incomplete: true };
+  }
   emailjs
     .send(serviceId, leadSetterTemplateId, params, publicKey)
     .then((response) => {
