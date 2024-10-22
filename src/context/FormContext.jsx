@@ -2,7 +2,7 @@
 // Import and Initial State //
 //////////////////////////////
 
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
 ////////////////////////
 // Initial Form Data //
@@ -15,11 +15,9 @@ const initialFormData = {
   location: "",
   program: "",
   //   contact section
-  firstName: "",
-  lastName: "",
+  fullName: "",
   email: "",
   phone: "",
-  zipcode: "",
   address: "",
   message: "",
   contactTerms: false,
@@ -30,14 +28,12 @@ const initialFormData = {
 //////////////////////////////
 
 const initialFormErrorData = {
-
   //   contact section
-  firstName: false,
-  lastName: false,
+  fullName: false,
   email: false,
   phone: false,
   message: false,
-  address:false
+  address: false,
 };
 
 /////////////////////////
@@ -95,9 +91,14 @@ export const FormProvider = ({ children }) => {
       setFormErrors({ ...formErrors, [name]: false, message: false });
     }
   };
-const resetForm = () => {
-  setForm(initialFormData)
-}
+
+  const handleToggleCheckbox = () => {
+    setForm((prev) => ({ ...prev, contactTerms: !prev.contactTerms }));
+  };
+
+  const resetForm = () => {
+    setForm(initialFormData);
+  };
   //////////////////////
   // Next Step Handler //
   //////////////////////
@@ -133,7 +134,17 @@ const resetForm = () => {
 
   return (
     <FormContext.Provider
-      value={{ form, formErrors, handleUpdateForm, nextStep, prevStep,resetForm }}
+      value={{
+        form,
+        formErrors,
+        handleUpdateForm,
+        handleToggleCheckbox,
+        validateEmail,
+        validatePhoneNumber,
+        nextStep,
+        prevStep,
+        resetForm,
+      }}
     >
       {children}
     </FormContext.Provider>

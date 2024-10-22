@@ -6,23 +6,14 @@ const publicKey = import.meta.env.VITE_EMAILJS_PUB_KEY;
 ///////////////////////////
 // Client Assessment Form
 ///////////////////////////
-export const submitAssessmentForm = (formData) => {
-  const {
-    firstName,
-    lastName,
-    email,
-    phone,
-    message,
-    zipcode,
-    address,
-    contactTerms,
-  } = formData;
+export const submitAssessmentForm = async (formData) => {
+  const { fullName, email, phone, message, address, contactTerms } = formData;
   let formattedPhoneNum = formatPhoneNum(phone);
   const params = {
-    from_name: `${firstName} ${lastName}`,
+    from_name: `${fullName}`,
     cell: formattedPhoneNum,
     email,
-    address: `${address}, ${zipcode}`,
+    address: `${address}`,
     message,
     contactTerms: `${
       contactTerms
@@ -31,6 +22,9 @@ export const submitAssessmentForm = (formData) => {
     }`,
     publicKey,
   };
+  if (!contactTerms) {
+    return { noContact: true };
+  }
   emailjs
     .send(serviceId, assessmentTemplateId, params, publicKey)
     .then((response) => {
@@ -43,7 +37,7 @@ export const submitAssessmentForm = (formData) => {
 ///////////////////////////
 // Lead Setter Job Inquiry
 ///////////////////////////
-export const submitLeadSetterInquiry = (formData) => {
+export const submitLeadSetterInquiry = async (formData) => {
   const { firstName, lastName, email, phone, message } = formData;
   let formattedPhoneNum = formatPhoneNum(phone);
   const params = {
@@ -53,6 +47,9 @@ export const submitLeadSetterInquiry = (formData) => {
     message,
     publicKey,
   };
+  if (!firstName || !lastName || !email || !phone || !message) {
+    return { incomplete: true };
+  }
   emailjs
     .send(serviceId, leadSetterTemplateId, params, publicKey)
     .then((response) => {
