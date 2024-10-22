@@ -8,8 +8,7 @@ const publicKey = import.meta.env.VITE_EMAILJS_PUB_KEY;
 ///////////////////////////
 export const submitAssessmentForm = (formData) => {
   const {
-    firstName,
-    lastName,
+    fullName,
     email,
     phone,
     message,
@@ -19,7 +18,7 @@ export const submitAssessmentForm = (formData) => {
   } = formData;
   let formattedPhoneNum = formatPhoneNum(phone);
   const params = {
-    from_name: `${firstName} ${lastName}`,
+    from_name: `${fullName}`,
     cell: formattedPhoneNum,
     email,
     address: `${address}, ${zipcode}`,
@@ -44,10 +43,10 @@ export const submitAssessmentForm = (formData) => {
 // Lead Setter Job Inquiry
 ///////////////////////////
 export const submitLeadSetterInquiry = (formData) => {
-  const { firstName, lastName, email, phone, message } = formData;
+  const { fullName, email, phone, message } = formData;
   let formattedPhoneNum = formatPhoneNum(phone);
   const params = {
-    from_name: `${firstName} ${lastName}`,
+    from_name: `${fullName}`,
     cell: formattedPhoneNum,
     email,
     message,

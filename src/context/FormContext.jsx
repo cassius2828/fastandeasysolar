@@ -15,8 +15,7 @@ const initialFormData = {
   location: "",
   program: "",
   //   contact section
-  firstName: "",
-  lastName: "",
+ fullName:'',
   email: "",
   phone: "",
   zipcode: "",
@@ -32,8 +31,7 @@ const initialFormData = {
 const initialFormErrorData = {
 
   //   contact section
-  firstName: false,
-  lastName: false,
+fullName:false,
   email: false,
   phone: false,
   message: false,

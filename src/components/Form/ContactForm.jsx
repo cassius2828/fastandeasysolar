@@ -62,37 +62,21 @@ export const InputGroupContact = () => {
       {/* First Name */}
       <div className={`my-6`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>
-          First Name*
+          Full Name*
         </label>
         <input
           required
           className={`w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 ${
-            formErrors.firstName && "border-red-500"
+            formErrors.fullName && "border-red-500"
           } text-xl lg:text-2xl`}
           type="text"
-          name="firstName"
-          placeholder="First Name*"
-          value={form.firstName}
+          name="fullName"
+          placeholder="Full Name*"
+          value={form.fullName}
           onChange={handleUpdateForm}
         />
       </div>
-      {/* Last Name */}
-      <div className={`my-6`}>
-        <label className={`block text-gray-700 text-xl lg:text-2xl`}>
-          Last Name*
-        </label>
-        <input
-          required
-          className={`w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 ${
-            formErrors.lastName && "border-red-500"
-          } text-xl lg:text-2xl`}
-          type="text"
-          name="lastName"
-          placeholder="Last Name*"
-          value={form.lastName}
-          onChange={handleUpdateForm}
-        />
-      </div>
+ 
       {/* Email */}
       <div className={`my-6`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>
