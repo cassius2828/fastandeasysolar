@@ -2,10 +2,10 @@
 Updates
 ///////////////////////////
 
-- wait for DNS servers to update 
+
 - ensure google console has card on file so we can use google autocomplete 
 - update form after implementing autocomplete 
-- ensure error handling is clean 
+
 - make UI adjustments 
 - schedule a meeting to go over all features (emailjs, calendy, netlify, google console, etc)
 - start process of google ads 
