@@ -1,0 +1,22 @@
+# netlify.toml
+
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots-production.txt"
+  status = 200
+  force = true
+  conditions = { Context = "production" }
+
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots-development.txt"
+  status = 200
+  force = true
+  conditions = { Context = "deploy-preview" }
+
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots-development.txt"
+  status = 200
+  force = true
+  conditions = { Context = "branch-deploy" }
