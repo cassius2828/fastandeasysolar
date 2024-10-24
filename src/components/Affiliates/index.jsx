@@ -1,11 +1,22 @@
-// Assuming you have the logos saved in your project, you can import them like this:
-import TeslaLogo from "/images/logos/tesla-logo.svg"; // Replace with the actual path
-import SunrunLogo from "/images/logos/sunrun-logo.png"; // Replace with the actual path
-import EverbrightLogo from "/images/logos/everbright-logo.webp"; // Replace with the actual path
-import SunnovaLogo from "/images/logos/sunnova-logo-color-3.png"; // Replace with the actual path
-import SunPowerLogo from "/images/logos/SunPower.png"; // Replace with the actual path
-import GoodLeapLogo from "/images/logos/goodleap.png"; // Replace with the actual path
-import EnFinLogo from "/images/logos/enfin.png"; // Replace with the actual path
+import EverbrightLogo from "/images/logos/everbright-logo.webp";
+const TeslaLogo = `${
+  import.meta.env.VITE_S3_OBJECT_BASE_URL
+}faes/logos/tesla-logo-svg.webp`;
+const SunrunLogo = `${
+  import.meta.env.VITE_S3_OBJECT_BASE_URL
+}faes/logos/sunrun-logo.webp`;
+const SunnovaLogo = `${
+  import.meta.env.VITE_S3_OBJECT_BASE_URL
+}faes/logos/sunnova-logo-color-3.webp`;
+const SunPowerLogo = `${
+  import.meta.env.VITE_S3_OBJECT_BASE_URL
+}faes/logos/SunPower.webp`;
+const GoodLeapLogo = `${
+  import.meta.env.VITE_S3_OBJECT_BASE_URL
+}faes/logos/goodleap.webp`;
+const EnFinLogo = `${
+  import.meta.env.VITE_S3_OBJECT_BASE_URL
+}faes/logos/enfin.webp`;
 
 const Affiliates = () => {
   const affiliates = [
