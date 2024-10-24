@@ -36,6 +36,7 @@ const Affiliates = () => {
         {affiliates.map((affiliate, index) => (
           <div key={index} className="flex flex-col items-center">
             <img
+              loading="lazy"
               src={affiliate.logo}
               alt={`${affiliate.name} logo`}
               className="w-60 md:w-80 mb-4"

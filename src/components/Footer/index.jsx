@@ -120,7 +120,12 @@ const Footer = () => {
       </div>
 
       <div className="mt-8 flex flex-col md:flex-row justify-between md:justify-center  items-center gap-4">
-        <img width="300" src="/images/Full_logo.svg" alt="" />
+        <img
+          loading="lazy"
+          width="300"
+          src="/images/Full_logo.svg"
+          alt="company logo with slogan"
+        />
         <p>&copy; 2024 Our Company. All rights reserved.</p>
       </div>
 
