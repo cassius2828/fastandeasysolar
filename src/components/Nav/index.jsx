@@ -39,7 +39,7 @@ const Nav = () => {
       {/* desktop nav */}
       <ul className="space-x-4 text-blue-900 mr-48 text-2xl gap-12 capitalize hidden lg:flex">
         <li onClick={scrollToTop}>
-          <a href="">home</a>
+          <a href="#">home</a>
         </li>{" "}
         <li>
           <a href="#book">book</a>
