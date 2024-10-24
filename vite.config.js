@@ -1,19 +1,24 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { visualizer } from "rollup-plugin-visualizer";
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    visualizer({
+      filename: "./bundle-visualizer.html",
+      open: true,
+    }),
+  ],
+  build: {
+    rollupOptions: {},
+  },
   server: {
     hmr: {
-      // Set this to 'true' to ensure HMR is enabled
-      overlay: true, // This ensures the error overlay is displayed in the browser on build errors
-      // clientPort: 3000, // Optional: If running Vite behind a reverse proxy or on a different port
-      // protocol: 'ws', // Optional: Specify 'ws' (WebSocket) or 'wss' (WebSocket Secure) if needed
+      overlay: true,
     },
     watch: {
-      // Watch settings if you need to fine-tune file watching
-      usePolling: true, // This can help in environments where file changes are not detected
-      interval: 100, // Polling interval in milliseconds
+      usePolling: true,
+      interval: 100,
     },
   },
 });
