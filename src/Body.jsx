@@ -37,7 +37,7 @@ const Body = () => {
         <div id="gap" className="h-screen w-screen "></div>
         <Form />
         {/* gap */}
-        <div className="h-[30rem] w-screen"></div>
+        <div style={{ height: "30rem" }} className=" w-screen"></div>
         <Book />
         <OverviewGrid />
         <Services />
