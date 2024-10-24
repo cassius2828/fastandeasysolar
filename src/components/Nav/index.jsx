@@ -24,7 +24,9 @@ const Nav = () => {
       <div className="flex items-center lg:gap-12">
         <img
           className="w-40 ml-10 lg:ml-40 p-3"
-          src="/images/Icon_no-text.png"
+          src={`${
+            import.meta.env.VITE_S3_OBJECT_BASE_URL
+          }faes/logos/Icon_no-text-w320.webp`}
           alt="logo"
         />
         <h2
