@@ -9,6 +9,9 @@ export default {
         "gradient-vertical-infocard":
           "linear-gradient(var(--tw-gradient-stops-infocard))",
       },
+      translate: {
+        "-2.5": "-0.625rem",
+      },
     },
   },
   plugins: [],
