@@ -5,6 +5,7 @@ export const Hamburger = ({ isOpen, setIsOpen }) => {
 
   return (
     <button
+      aria-label="Toggle navigation menu"
       onClick={handleClick}
       className="flex flex-col justify-between items-center lg:hidden fixed z-50 top-10 right-5 h-6"
     >
@@ -27,7 +28,6 @@ export const Hamburger = ({ isOpen, setIsOpen }) => {
       <span
         style={{
           height: ".125rem",
-
         }}
         className={`block transition-all duration-300 ease-out 
              w-12 rounded-sm ${

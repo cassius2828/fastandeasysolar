@@ -11,7 +11,7 @@ export const MobileNav = ({ scrollToTop, setIsOpen }) => {
           scrollToTop();
         }}
       >
-        <a href="">home</a>
+        <a href="#">home</a>
       </li>{" "}
       <li onClick={() => setIsOpen(false)}>
         <a href="#book">book</a>

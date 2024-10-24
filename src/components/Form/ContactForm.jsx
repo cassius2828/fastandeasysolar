@@ -143,6 +143,7 @@ export const InputGroupContact = () => {
           about how our services can help you save today
         </label>
         <div className="flex items-center justify-start gap-4 mt-5">
+        <label htmlFor="contactTerms" className="sr-only">I agree to be contacted</label>
           <input
             onChange={handleToggleCheckbox}
             checked={form.contactTerms}
@@ -150,7 +151,7 @@ export const InputGroupContact = () => {
             name="contactTerms"
             id="contactTerms"
           />{" "}
-          <span className="text-xl">I agree</span>
+          <span className="text-xl">I agree to be contacted</span>
         </div>
       </div>
       <div className={`flex space-x-4`}>
