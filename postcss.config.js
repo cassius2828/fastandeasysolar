@@ -16,5 +16,5 @@ export default {
         defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
       }),
   ].filter(Boolean),
-  safelist: ["translate-y-0.5", "-translate-y-0.5"],
+  
 };

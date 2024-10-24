@@ -32,7 +32,7 @@ export const Hamburger = ({ isOpen, setIsOpen }) => {
         className={`block transition-all duration-300 ease-out 
              w-12 rounded-sm ${
                isOpen
-                 ? "-rotate-45 -translate-y-[.625rem] bg-gray-200 "
+                 ? "-rotate-45 -translate-y-2 bg-gray-200 "
                  : "translate-y-0.5 bg-blue-700 "
              }`}
       ></span>
