@@ -12,5 +12,4 @@ export default {
     },
   },
   plugins: [],
-  safelist: [{ pattern: /.*/ }],
 };
