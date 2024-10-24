@@ -1,11 +1,6 @@
-import { useEffect } from "react";
-import { useFormContext } from "../../context/useFormContext";
 import { InputGroupContact } from "./ContactForm";
-import { InputGroupQualifications } from "./QualForm";
 
 const Form = () => {
-  const { form } = useFormContext();
-
   return (
     <div className="flex flex-col items-center relative mt-12 lg:mt-0">
       {/* form */}

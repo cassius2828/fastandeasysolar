@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useState } from "react";
+
 import { useFormContext } from "../../context/useFormContext";
 import { submitAssessmentForm } from "../../service/handleForms";
 import Alert from "../Reusables/Alert";
@@ -143,7 +143,9 @@ export const InputGroupContact = () => {
           about how our services can help you save today
         </label>
         <div className="flex items-center justify-start gap-4 mt-5">
-        <label htmlFor="contactTerms" className="sr-only">I agree to be contacted</label>
+          <label htmlFor="contactTerms" className="sr-only">
+            I agree to be contacted
+          </label>
           <input
             onChange={handleToggleCheckbox}
             checked={form.contactTerms}
