@@ -2,13 +2,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap");
 
 /* /////////////////////////// */
 /* Font Family */
 /* /////////////////////////// */
 body {
-  font-family: 'Old Standard TT', serif;
+  font-family: "Old Standard TT", serif;
 }
 
 /* /////////////////////////// */
@@ -16,7 +16,8 @@ body {
 /* /////////////////////////// */
 :root {
   --tw-gradient-stops: #130a28 0%, #2f81d3 40%, #a8bcd5 80%;
-  --tw-gradient-stops-infocard: #241475 0%,  #5d6ad0 40%, #b4b8db 60%, #c6c9ce 100%;
+  --tw-gradient-stops-infocard: #241475 0%, #5d6ad0 40%, #b4b8db 60%,
+    #c6c9ce 100%;
 }
 
 /* /////////////////////////// */
@@ -106,7 +107,7 @@ body {
 }
 
 html {
-  font-size: 62.5%;  
+  font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
@@ -127,8 +128,6 @@ li {
   left: -55%;
 }
 
-
-
 /* Loader */
 
 .loader {
@@ -136,26 +135,26 @@ li {
   height: 48px;
   position: relative;
 }
-.loader::before , .loader::after{
-  content: '';
+.loader::before,
+.loader::after {
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50% , -50%);
+  transform: translate(-50%, -50%);
   width: 48em;
   height: 48em;
-  background-image:
-    radial-gradient(circle 10px, #FFF 100%, transparent 0),
-    radial-gradient(circle 10px, #FFF 100%, transparent 0),
-    radial-gradient(circle 10px, #FFF 100%, transparent 0),
-    radial-gradient(circle 10px, #FFF 100%, transparent 0),
-    radial-gradient(circle 10px, #FFF 100%, transparent 0),
-    radial-gradient(circle 10px, #FFF 100%, transparent 0),
-    radial-gradient(circle 10px, #FFF 100%, transparent 0),
-    radial-gradient(circle 10px, #FFF 100%, transparent 0);
-  background-position: 0em -18em, 0em 18em, 18em 0em, -18em 0em,
-                       13em -13em, -13em -13em, 13em 13em, -13em 13em;
-    background-repeat: no-repeat;
+  background-image: radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0);
+  background-position: 0em -18em, 0em 18em, 18em 0em, -18em 0em, 13em -13em,
+    -13em -13em, 13em 13em, -13em 13em;
+  background-repeat: no-repeat;
   font-size: 0.5px;
   border-radius: 50%;
   animation: blast 1s ease-in infinite;
@@ -167,19 +166,43 @@ li {
 }
 
 @keyframes bounce {
-  0% , 100%{ font-size: 0.75px }
-  50% { font-size: 1.5px }
+  0%,
+  100% {
+    font-size: 0.75px;
+  }
+  50% {
+    font-size: 1.5px;
+  }
 }
 @keyframes blast {
-  0% , 40% {
+  0%,
+  40% {
     font-size: 0.5px;
   }
   70% {
     opacity: 1;
     font-size: 4px;
   }
-   100% {
-     font-size: 6px;
+  100% {
+    font-size: 6px;
     opacity: 0;
+  }
+}
+
+/* autocomplete container */
+
+.autocomplete-container > div > div {
+  background-color: #f3f4f6 !important;
+  border: 2px solid #e5e7eb;
+  font-size: 1.25rem;
+}
+
+.autocomplete-container svg {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .autocomplete-container > div > div {
+    font-size: 1.5rem;
   }
 }

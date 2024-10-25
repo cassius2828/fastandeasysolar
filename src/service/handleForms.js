@@ -22,6 +22,10 @@ export const submitAssessmentForm = async (formData) => {
     }`,
     publicKey,
   };
+    // Check if any field is empty or undefined
+    if (!fullName || !email || !phone || !message || !address || !contactTerms) {
+      return { error: 'Please fill out all fields' };
+    }
   if (!contactTerms) {
     return { noContact: true };
   }

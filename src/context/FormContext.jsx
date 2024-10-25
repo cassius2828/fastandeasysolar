@@ -10,10 +10,6 @@ import { createContext, useState } from "react";
 
 const initialFormData = {
   formStep: 1,
-  //   qual section
-  bill: "",
-  location: "",
-  program: "",
   //   contact section
   fullName: "",
   email: "",
@@ -39,7 +35,6 @@ const initialFormErrorData = {
 /////////////////////////
 // Form Context Setup //
 /////////////////////////
-
 export const FormContext = createContext();
 
 /////////////////////////////
@@ -92,6 +87,15 @@ export const FormProvider = ({ children }) => {
     }
   };
 
+  const handleUpdateAddress = (value) => {
+    setForm({ ...form, address: value });
+    if (value < 1) {
+      setFormErrors({ ...formErrors, address: true });
+    } else {
+      setFormErrors({ ...formErrors, address: false });
+    }
+  };
+
   const handleToggleCheckbox = () => {
     setForm((prev) => ({ ...prev, contactTerms: !prev.contactTerms }));
   };
@@ -127,7 +131,34 @@ export const FormProvider = ({ children }) => {
       setForm({ ...form, formStep: 1 });
     }
   };
+  const addClearAutocompleteInputBtn = (setState) => {
+    const autocompleteLastDiv = document.querySelector(
+      ".autocomplete-container > div > div > div:last-child > div"
+    );
 
+    if (autocompleteLastDiv) {
+      autocompleteLastDiv.style.padding = "0";
+      autocompleteLastDiv.style.margin = "0";
+    }
+
+    // Check if the clear button already exists by class or ID
+    let clearBtn = document.querySelector(".clear-btn");
+
+    if (!clearBtn) {
+      clearBtn = document.createElement("button");
+      clearBtn.innerText = "Clear";
+      clearBtn.className = "clear-btn";
+      clearBtn.style.padding = "3px 6px";
+      clearBtn.style.color = "#9ca3af";
+      clearBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        setState("");
+      });
+      if (autocompleteLastDiv) {
+        autocompleteLastDiv.appendChild(clearBtn);
+      }
+    }
+  };
   ///////////////////////////
   // Context Provider Setup //
   ///////////////////////////
@@ -138,12 +169,14 @@ export const FormProvider = ({ children }) => {
         form,
         formErrors,
         handleUpdateForm,
+        handleUpdateAddress,
         handleToggleCheckbox,
         validateEmail,
         validatePhoneNumber,
         nextStep,
         prevStep,
         resetForm,
+        addClearAutocompleteInputBtn,
       }}
     >
       {children}
