@@ -35,7 +35,6 @@ const initialFormErrorData = {
 /////////////////////////
 // Form Context Setup //
 /////////////////////////
-
 export const FormContext = createContext();
 
 /////////////////////////////
@@ -89,14 +88,13 @@ export const FormProvider = ({ children }) => {
   };
 
   const handleUpdateAddress = (value) => {
-    setForm({...form, address: value})
-    if(value < 1){
-      setFormErrors({...formErrors, address:true})
+    setForm({ ...form, address: value });
+    if (value < 1) {
+      setFormErrors({ ...formErrors, address: true });
     } else {
-      setFormErrors({...formErrors, address:false})
-
+      setFormErrors({ ...formErrors, address: false });
     }
-  }
+  };
 
   const handleToggleCheckbox = () => {
     setForm((prev) => ({ ...prev, contactTerms: !prev.contactTerms }));
@@ -152,15 +150,13 @@ export const FormProvider = ({ children }) => {
       clearBtn.className = "clear-btn";
       clearBtn.style.padding = "3px 6px";
       clearBtn.style.color = "#9ca3af";
-
-      if (autocompleteLastDiv) {
-        autocompleteLastDiv.appendChild(clearBtn);
-      }
-
       clearBtn.addEventListener("click", (e) => {
         e.preventDefault();
         setState("");
       });
+      if (autocompleteLastDiv) {
+        autocompleteLastDiv.appendChild(clearBtn);
+      }
     }
   };
   ///////////////////////////
@@ -172,13 +168,15 @@ export const FormProvider = ({ children }) => {
       value={{
         form,
         formErrors,
-        handleUpdateForm,handleUpdateAddress,
+        handleUpdateForm,
+        handleUpdateAddress,
         handleToggleCheckbox,
         validateEmail,
         validatePhoneNumber,
         nextStep,
         prevStep,
-        resetForm,addClearAutocompleteInputBtn
+        resetForm,
+        addClearAutocompleteInputBtn,
       }}
     >
       {children}

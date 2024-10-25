@@ -20,12 +20,9 @@ class AutocompleteErrorBoundary extends Component {
   }
 
   clearAddress = () => {
-    const { handleUpdateForm, addClearAutocompleteInputBtn } = this.context; // Correctly accessing the context
+    const { handleUpdateForm } = this.context; // Correctly accessing the context
     handleUpdateForm({ target: { name: "address", value: "" } }); // Update the address field in the form context
-    this.setState({ hasError: false });
-    addClearAutocompleteInputBtn(() =>
-      handleUpdateForm({ target: { name: "address", value: "" } })
-    );
+    this.setState(() => ({ hasError: false }));
   };
 
   render() {
@@ -33,7 +30,7 @@ class AutocompleteErrorBoundary extends Component {
       // Customize error message for the input field
       return (
         <div className="text-red-500 flex justify-center items-center gap-12">
-          There was an error loading the address input. Please try again later.
+          There was an error loading the address input. This typically occurs with autofill features for the address. Please clear the address and begin typing the desired address in the input.
           {this.form}
           <button
             type="button"

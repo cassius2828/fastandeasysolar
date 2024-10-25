@@ -4,10 +4,11 @@ import { submitAssessmentForm } from "../../service/handleForms";
 import Alert from "../Reusables/Alert";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import AutocompleteErrorBoundary from "../../ErrorBoundaries/AutocompleteErrorBoundry";
+
+
 //////////////////////
 // InputGroupContact Component
 ////////////////////
-
 export const InputGroupContact = () => {
   // Context
   const {
@@ -17,7 +18,6 @@ export const InputGroupContact = () => {
     form,
     formErrors,
     resetForm,
-    addClearAutocompleteInputBtn,
   } = useFormContext();
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
@@ -122,13 +122,6 @@ export const InputGroupContact = () => {
       console.log(`Unable to submit assesssment form`);
     }
   };
-  ///////////////////////////
-  // Add Clear Autocomplete Input Btn
-  ///////////////////////////
-
-  useEffect(() => {
-    addClearAutocompleteInputBtn(setAddress);
-  }, []);
 
   ///////////////////////////
   // Sync local address state with context form state
@@ -175,37 +168,12 @@ export const InputGroupContact = () => {
       />
 
       {/* Address */}
-      {/* <div className={`my-6`}>
-        <label className={`block text-gray-700 text-xl lg:text-2xl`}>
-          Street Address*
-        </label>
-        <input
-          required
-          className={`w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-[#b3b3b3] ${
-            formErrors.address && "border-red-500"
-          } text-xl lg:text-2xl`}
-          type="text"
-          name="address"
-          placeholder="123 Main St, Stockton CA*"
-          value={form.address}
-          onChange={handleUpdateForm}
-        />
-      </div> */}
       {/* Autocomplete Input */}
-      <div className={`my-6 autocomplete-container`}>
-        <label className={`block text-gray-700 text-xl lg:text-2xl`}>
-          Street Address*
-        </label>
-        <AutocompleteErrorBoundary>
-          <GooglePlacesAutocomplete
-            selectProps={{
-              value: address ? { label: address } : null,
-              onChange: handleGetFullAddress,
-            }}
-            apiKey={import.meta.env.VITE_GOOGLE_PLACES_API_KEY}
-          />
-        </AutocompleteErrorBoundary>
-      </div>
+      <AutocompleteInput
+        handleGetFullAddress={handleGetFullAddress}
+        address={address}
+        setAddress={setAddress}
+        />
       {/* Message */}
       <div className={`my-4`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>
@@ -219,7 +187,7 @@ export const InputGroupContact = () => {
           name="message"
           value={form.message}
           onChange={handleUpdateForm}
-        ></textarea>
+          ></textarea>
       </div>
       {/* contact terms */}
       <div className={`my-4`}>
@@ -237,7 +205,7 @@ export const InputGroupContact = () => {
             type="checkbox"
             name="contactTerms"
             id="contactTerms"
-          />{" "}
+            />{" "}
           <span className="text-xl">I agree to be contacted</span>
         </div>
       </div>
@@ -247,7 +215,7 @@ export const InputGroupContact = () => {
           <button
             onClick={handleSubmit}
             className={`uppercase px-2 py-2 text-xl tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline hover:-translate-y-1 transition-all duration-150 ease-in-out hover:shadow-lg`}
-          >
+            >
             Send Message
           </button>
         </div>
@@ -257,9 +225,10 @@ export const InputGroupContact = () => {
     </div>
   );
 };
-// full address
 
-//office locaiton:
+///////////////////////////
+// Contact Form Input
+///////////////////////////
 export const ContactFormInput = ({
   title,
   name,
@@ -282,7 +251,56 @@ export const ContactFormInput = ({
         placeholder={`${title}*`}
         value={value}
         onChange={handleChange}
-      />
+        />
     </div>
   );
 };
+
+
+///////////////////////////
+// Autocomplete Input
+///////////////////////////
+export const AutocompleteInput = ({
+  address,
+  setAddress,
+  handleGetFullAddress,
+}) => {
+  const { addClearAutocompleteInputBtn } = useFormContext();
+  useEffect(() => {
+    // ensures the clear btn is always added to the DOM when the address changes
+    addClearAutocompleteInputBtn(setAddress);
+  }, [address]);
+  return (
+    <div className={`my-6 autocomplete-container`}>
+      <label className={`block text-gray-700 text-xl lg:text-2xl`}>
+        Street Address*
+      </label>
+      <AutocompleteErrorBoundary>
+        <GooglePlacesAutocomplete
+          selectProps={{
+            value: address ? { label: address } : null,
+            onChange: handleGetFullAddress,
+          }}
+          apiKey={import.meta.env.VITE_GOOGLE_PLACES_API_KEY}
+          />
+      </AutocompleteErrorBoundary>
+    </div>
+  );
+};
+
+{/* <div className={`my-6`}>
+  <label className={`block text-gray-700 text-xl lg:text-2xl`}>
+    Street Address*
+  </label>
+  <input
+    required
+    className={`w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-[#b3b3b3] ${
+      formErrors.address && "border-red-500"
+    } text-xl lg:text-2xl`}
+    type="text"
+    name="address"
+    placeholder="123 Main St, Stockton CA*"
+    value={form.address}
+    onChange={handleUpdateForm}
+  />
+</div> */}
