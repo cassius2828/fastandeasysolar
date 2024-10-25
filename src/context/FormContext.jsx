@@ -16,6 +16,8 @@ const initialFormData = {
   phone: "",
   address: "",
   message: "",
+  date: "",
+  time: "",
   contactTerms: false,
 };
 
@@ -85,8 +87,12 @@ export const FormProvider = ({ children }) => {
     } else {
       setFormErrors({ ...formErrors, [name]: false, message: false });
     }
+    console.log(form)
   };
 
+  ///////////////////////////
+  // Handle Update Address
+  ///////////////////////////
   const handleUpdateAddress = (value) => {
     setForm({ ...form, address: value });
     if (value < 1) {
@@ -131,6 +137,10 @@ export const FormProvider = ({ children }) => {
       setForm({ ...form, formStep: 1 });
     }
   };
+
+  ///////////////////////////
+  // Add Clear Address Btn
+  ///////////////////////////
   const addClearAutocompleteInputBtn = (setState) => {
     const autocompleteLastDiv = document.querySelector(
       ".autocomplete-container > div > div > div:last-child > div"

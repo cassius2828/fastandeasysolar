@@ -1,3 +1,18 @@
+import { format } from "date-fns";
+import { enUS } from "date-fns/locale";
+
+const formatDate = (dateString) => {
+  if (!dateString) return null;
+  const date = new Date(dateString);
+
+  return format(date, "EEEE, MMMM do, yyyy", { locale: enUS });
+};
+
+// Example usage
+console.log(formatDate("2024-10-31"));
+// Output: "Thursday, October 31st, 2024"
+
+
 import emailjs from "emailjs-com";
 const serviceId = import.meta.env.VITE_SERVICE_ID;
 const assessmentTemplateId = import.meta.env.VITE_ASSESSMENT_TEMPLATE_ID;
@@ -7,14 +22,20 @@ const publicKey = import.meta.env.VITE_EMAILJS_PUB_KEY;
 // Client Assessment Form
 ///////////////////////////
 export const submitAssessmentForm = async (formData) => {
-  const { fullName, email, phone, message, address, contactTerms } = formData;
+  const { fullName, email, phone, message, address, contactTerms, time, date } =
+    formData;
+
   let formattedPhoneNum = formatPhoneNum(phone);
+  let formattedDate = formatDate(date);
+
   const params = {
     from_name: `${fullName}`,
     cell: formattedPhoneNum,
     email,
     address: `${address}`,
     message,
+    date: formattedDate ? formattedDate : "No preferred date",
+    time: time ? time : "No preferred time of day",
     contactTerms: `${
       contactTerms
         ? "agreed to be contacted."
@@ -22,10 +43,11 @@ export const submitAssessmentForm = async (formData) => {
     }`,
     publicKey,
   };
-    // Check if any field is empty or undefined
-    if (!fullName || !email || !phone || !message || !address || !contactTerms) {
-      return { error: 'Please fill out all fields' };
-    }
+
+  // Check if any field is empty or undefined
+  if (!fullName || !email || !phone || !message || !address || !contactTerms) {
+    return { error: "Please fill out all fields" };
+  }
   if (!contactTerms) {
     return { noContact: true };
   }
