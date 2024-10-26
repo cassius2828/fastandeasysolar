@@ -1,5 +1,12 @@
 import { format } from "date-fns";
 import { enUS } from "date-fns/locale";
+import emailjs from "emailjs-com";
+// vars
+const serviceId = import.meta.env.VITE_SERVICE_ID;
+const assessmentTemplateId = import.meta.env.VITE_ASSESSMENT_TEMPLATE_ID;
+const leadSetterTemplateId = import.meta.env.VITE_LEAD_SETTER_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUB_KEY;
+
 
 const formatDate = (dateString) => {
   if (!dateString) return null;
@@ -8,16 +15,6 @@ const formatDate = (dateString) => {
   return format(date, "EEEE, MMMM do, yyyy", { locale: enUS });
 };
 
-// Example usage
-console.log(formatDate("2024-10-31"));
-// Output: "Thursday, October 31st, 2024"
-
-
-import emailjs from "emailjs-com";
-const serviceId = import.meta.env.VITE_SERVICE_ID;
-const assessmentTemplateId = import.meta.env.VITE_ASSESSMENT_TEMPLATE_ID;
-const leadSetterTemplateId = import.meta.env.VITE_LEAD_SETTER_TEMPLATE_ID;
-const publicKey = import.meta.env.VITE_EMAILJS_PUB_KEY;
 ///////////////////////////
 // Client Assessment Form
 ///////////////////////////
@@ -65,6 +62,10 @@ export const submitAssessmentForm = async (formData) => {
 ///////////////////////////
 export const submitLeadSetterInquiry = async (formData) => {
   const { firstName, lastName, email, phone, message } = formData;
+  if (!firstName || !lastName || !email || !phone || !message) {
+    return { incomplete: true };
+  }
+
   let formattedPhoneNum = formatPhoneNum(phone);
   const params = {
     from_name: `${firstName} ${lastName}`,
@@ -73,9 +74,6 @@ export const submitLeadSetterInquiry = async (formData) => {
     message,
     publicKey,
   };
-  if (!firstName || !lastName || !email || !phone || !message) {
-    return { incomplete: true };
-  }
   emailjs
     .send(serviceId, leadSetterTemplateId, params, publicKey)
     .then((response) => {
