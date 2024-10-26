@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useFormContext } from "../../context/useFormContext";
 import { submitLeadSetterInquiry } from "../../service/handleForms";
 import Alert from "../Reusables/Alert";
-import { useFormContext } from "../../context/useFormContext";
+
 const initialFormData = {
   firstName: "",
   lastName: "",
@@ -10,6 +11,7 @@ const initialFormData = {
   position: "",
   message: "",
 };
+
 const initalFormErrors = {
   firstName: false,
   lastName: false,
@@ -17,12 +19,14 @@ const initalFormErrors = {
   phone: false,
   message: false,
 };
+
 const ApplicationForm = () => {
   const [formData, setFormData] = useState(initialFormData);
   const [formErrors, setFormErrors] = useState(initalFormErrors);
-  const { validateEmail, validatePhoneNumber } = useFormContext();
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const { validateEmail, validatePhoneNumber, containsLetters } =
+    useFormContext();
 
   ///////////////////////////
   // Handle Change
@@ -44,19 +48,34 @@ const ApplicationForm = () => {
       setFormErrors({ ...formErrors, [name]: true });
     } else if (name === "email" && !validateEmail(value)) {
       setFormErrors({ ...formErrors, email: true });
-    } else if (name === "phone" && !validatePhoneNumber(value)) {
+    } else if (
+      (name === "phone" && !validatePhoneNumber(value)) ||
+      containsLetters(value)
+    ) {
       setFormErrors({ ...formErrors, phone: true });
     } else {
       setFormErrors({ ...formErrors, [name]: false });
     }
   };
 
+  const allFieldsValidated = (fields) => {
+    const hasErrors = Object.values(fields).some(
+      (inputError) => inputError === true
+    );
+    return hasErrors;
+  };
   ///////////////////////////
   // Handle Submit
   ///////////////////////////
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // if errors exist setError and return
+      if (allFieldsValidated(formErrors)) {
+        setError("Please ensure all fields meet the required input criteria.");
+        return;
+      }
+
       const data = await submitLeadSetterInquiry(formData);
       if (data?.incomplete) {
         setError(
@@ -89,50 +108,43 @@ const ApplicationForm = () => {
           Interested in a becoming a top lead setter?
         </h2>
         <div className="flex flex-col space-y-4">
-          <input
+          {/* First Name */}
+          <Input
             type="text"
             name="firstName"
             value={formData.firstName}
-            onChange={handleChange}
+            handleChange={handleChange}
+            errorKey={formErrors.firstName}
             placeholder="First Name"
-            className={`p-3 text-xl border rounded-md ${
-              formErrors.firstName ? "border-red-500" : "border-gray-300"
-            }`}
-            required
-          />
-          <input
+          />{" "}
+          {/* Last Name */}
+          <Input
             type="text"
             name="lastName"
             value={formData.lastName}
-            onChange={handleChange}
+            handleChange={handleChange}
+            errorKey={formErrors.lastName}
             placeholder="Last Name"
-            className={`p-3 text-xl border rounded-md ${
-              formErrors.lastName ? "border-red-500" : "border-gray-300"
-            }`}
-            required
           />
-          <input
+          {/* Email */}
+          <Input
             type="email"
             name="email"
             value={formData.email}
-            onChange={handleChange}
-            placeholder="Email Address"
-            className={`p-3 text-xl border rounded-md ${
-              formErrors.email ? "border-red-500" : "border-gray-300"
-            }`}
-            required
+            handleChange={handleChange}
+            errorKey={formErrors.email}
+            placeholder="Email"
           />
-          <input
+          {/* Phone */}
+          <Input
             type="tel"
             name="phone"
             value={formData.phone}
-            onChange={handleChange}
+            handleChange={handleChange}
+            errorKey={formErrors.phone}
             placeholder="Phone Number"
-            className={`p-3 text-xl border rounded-md ${
-              formErrors.phone ? "border-red-500" : "border-gray-300"
-            }`}
-            required
           />
+          {/* Message */}
           <textarea
             name="message"
             value={formData.message}
@@ -143,6 +155,7 @@ const ApplicationForm = () => {
             }`}
             required
           />
+          {/* Submit */}
           <button
             type="submit"
             className="bg-blue-600 text-white p-3 rounded-md text-xl hover:bg-blue-500 transition"
@@ -158,3 +171,26 @@ const ApplicationForm = () => {
   );
 };
 export default ApplicationForm;
+
+export const Input = ({
+  value,
+  handleChange,
+  errorKey,
+  name,
+  type,
+  placeholder,
+}) => {
+  return (
+    <input
+      type={type}
+      name={name}
+      value={value}
+      onChange={handleChange}
+      placeholder={placeholder}
+      className={`p-3 text-xl border rounded-md ${
+        errorKey ? "border-red-500" : "border-gray-300"
+      }`}
+      required
+    />
+  );
+};
