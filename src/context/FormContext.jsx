@@ -16,6 +16,8 @@ const initialFormData = {
   phone: "",
   address: "",
   message: "",
+  date: "",
+  time: "",
   contactTerms: false,
 };
 
@@ -80,13 +82,27 @@ export const FormProvider = ({ children }) => {
       setFormErrors({ ...formErrors, [name]: true });
     } else if (name === "email" && !validateEmail(value)) {
       setFormErrors({ ...formErrors, email: true });
-    } else if (name === "phone" && !validatePhoneNumber(value)) {
+    } else if (
+      (name === "phone" && !validatePhoneNumber(value)) ||
+      containsLetters(value)
+    ) {
       setFormErrors({ ...formErrors, phone: true });
     } else {
       setFormErrors({ ...formErrors, [name]: false, message: false });
     }
+    console.log(form);
   };
 
+  ///////////////////////////
+  // Contains Letters Regex
+  ///////////////////////////
+  function containsLetters(input) {
+    const letterRegex = /[a-zA-Z]/;
+    return letterRegex.test(input);
+  }
+  ///////////////////////////
+  // Handle Update Address
+  ///////////////////////////
   const handleUpdateAddress = (value) => {
     setForm({ ...form, address: value });
     if (value < 1) {
@@ -103,34 +119,10 @@ export const FormProvider = ({ children }) => {
   const resetForm = () => {
     setForm(initialFormData);
   };
-  //////////////////////
-  // Next Step Handler //
-  //////////////////////
 
-  const nextStep = (e) => {
-    e.preventDefault();
-
-    if (form.formStep === 1) {
-      // Check if there are any errors in the formErrors object
-      if (formErrors.bill || formErrors.location || formErrors.program) {
-        alert("Please correct the errors before proceeding.");
-        return;
-      }
-
-      setForm({ ...form, formStep: 2 });
-    }
-  };
-
-  //////////////////////
-  // Previous Step Handler //
-  //////////////////////
-
-  const prevStep = (e) => {
-    e.preventDefault();
-    if (form.formStep === 2) {
-      setForm({ ...form, formStep: 1 });
-    }
-  };
+  ///////////////////////////
+  // Add Clear Address Btn
+  ///////////////////////////
   const addClearAutocompleteInputBtn = (setState) => {
     const autocompleteLastDiv = document.querySelector(
       ".autocomplete-container > div > div > div:last-child > div"
@@ -159,22 +151,18 @@ export const FormProvider = ({ children }) => {
       }
     }
   };
-  ///////////////////////////
-  // Context Provider Setup //
-  ///////////////////////////
 
   return (
     <FormContext.Provider
       value={{
         form,
         formErrors,
+        containsLetters,
         handleUpdateForm,
         handleUpdateAddress,
         handleToggleCheckbox,
         validateEmail,
         validatePhoneNumber,
-        nextStep,
-        prevStep,
         resetForm,
         addClearAutocompleteInputBtn,
       }}

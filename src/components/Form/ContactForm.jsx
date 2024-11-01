@@ -1,28 +1,33 @@
+// Library Imports
 import { useEffect, useState } from "react";
-import { useFormContext } from "../../context/useFormContext";
-import { submitAssessmentForm } from "../../service/handleForms";
-import Alert from "../Reusables/Alert";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
+// Context Imports
+import { useFormContext } from "../../context/useFormContext";
+// Component Imports
+import Alert from "../Reusables/Alert";
 import AutocompleteErrorBoundary from "../../ErrorBoundaries/AutocompleteErrorBoundry";
-
+// Service Imports
+import { submitAssessmentForm } from "../../service/handleForms";
 
 //////////////////////
 // InputGroupContact Component
 ////////////////////
 export const InputGroupContact = () => {
-  // Context
-  const {
-    handleUpdateForm,
-    handleUpdateAddress,
-    handleToggleCheckbox,
-    form,
-    formErrors,
-    resetForm,
-  } = useFormContext();
-  const [success, setSuccess] = useState("");
+  // Local State
+  const [address, setAddress] = useState("");
   const [error, setError] = useState("");
   const [hasSomeErrors, setHasSomeErrors] = useState(false);
-  const [address, setAddress] = useState("");
+  const [success, setSuccess] = useState("");
+
+  // Context Destructuring
+  const {
+    form,
+    formErrors,
+    handleToggleCheckbox,
+    handleUpdateAddress,
+    handleUpdateForm,
+    resetForm,
+  } = useFormContext();
 
   ///////////////////////////
   // Get Place Details | Full Address saved to state
@@ -90,7 +95,7 @@ export const InputGroupContact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // ! this does not work as expected
+      // if form errors exist, setError then return
       if (hasSomeErrors) {
         setError("Please ensure all fields meet the required input criteria.");
         return;
@@ -126,15 +131,17 @@ export const InputGroupContact = () => {
   ///////////////////////////
   // Sync local address state with context form state
   ///////////////////////////
+  // * local
   useEffect(() => {
     handleUpdateAddress(address);
   }, [address]);
 
+  // * context
   useEffect(() => {
     if (!form.address) setAddress("");
-    console.log("resetting local address");
-    console.log(form.address);
   }, [form.address]);
+
+  // validate form errors on every form change
   useEffect(() => {
     setHasSomeErrors(validateFormErrors(formErrors));
   }, [form]);
@@ -149,7 +156,6 @@ export const InputGroupContact = () => {
         errorState={formErrors.fullName}
         handleChange={handleUpdateForm}
       />
-
       {/* Email */}
       <ContactFormInput
         title="Email"
@@ -168,27 +174,37 @@ export const InputGroupContact = () => {
       />
 
       {/* Address */}
-      {/* Autocomplete Input */}
       <AutocompleteInput
         handleGetFullAddress={handleGetFullAddress}
         address={address}
         setAddress={setAddress}
-        />
-      {/* Message */}
-      <div className={`my-4`}>
-        <label className={`block text-gray-700 text-xl lg:text-2xl`}>
-          Message
+      />
+      {/* Date */}
+      <div className="my-6">
+        <label className="block text-gray-700 text-xl lg:text-2xl">
+          Preferred Date*
         </label>
-        <textarea
-          placeholder="Message"
-          className={`w-full h-32 bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-[#b3b3b3] ${
-            formErrors.message && "border-red-500"
-          } text-xl lg:text-2xl`}
-          name="message"
-          value={form.message}
+        <input
+          required
+          className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-[#b3b3b3] text-xl lg:text-2xl"
+          type="date"
+          name="date"
+          id="date"
+          placeholder="Select Date"
           onChange={handleUpdateForm}
-          ></textarea>
+          value={form.date}
+        />
       </div>
+      {/* Time */}
+      <TimeInput handleUpdateForm={handleUpdateForm} time={form.time} />
+
+      {/* Message */}
+      <TextareaInput
+        errorMessage={formErrors.message}
+        value={form.message}
+        handleChange={handleUpdateForm}
+      />
+
       {/* contact terms */}
       <div className={`my-4`}>
         <label className={`block text-gray-700 text-xl lg:text-2xl`}>
@@ -205,21 +221,23 @@ export const InputGroupContact = () => {
             type="checkbox"
             name="contactTerms"
             id="contactTerms"
-            />{" "}
+          />{" "}
           <span className="text-xl">I agree to be contacted</span>
         </div>
       </div>
+
+      {/* Submit Button */}
       <div className={`flex space-x-4`}>
-        {/* Submit Button */}
         <div className={`my-6 w-1/2 lg:w-1/3`}>
           <button
             onClick={handleSubmit}
             className={`uppercase px-2 py-2 text-xl tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline hover:-translate-y-1 transition-all duration-150 ease-in-out hover:shadow-lg`}
-            >
+          >
             Send Message
           </button>
         </div>
       </div>
+      {/* Alerts */}
       {success && <Alert message={success} success />}
       {error && <Alert message={error} handleClose={() => setError("")} />}
     </div>
@@ -251,11 +269,10 @@ export const ContactFormInput = ({
         placeholder={`${title}*`}
         value={value}
         onChange={handleChange}
-        />
+      />
     </div>
   );
 };
-
 
 ///////////////////////////
 // Autocomplete Input
@@ -282,25 +299,62 @@ export const AutocompleteInput = ({
             onChange: handleGetFullAddress,
           }}
           apiKey={import.meta.env.VITE_GOOGLE_PLACES_API_KEY}
-          />
+        />
       </AutocompleteErrorBoundary>
     </div>
   );
 };
 
-{/* <div className={`my-6`}>
-  <label className={`block text-gray-700 text-xl lg:text-2xl`}>
-    Street Address*
-  </label>
-  <input
-    required
-    className={`w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-[#b3b3b3] ${
-      formErrors.address && "border-red-500"
-    } text-xl lg:text-2xl`}
-    type="text"
-    name="address"
-    placeholder="123 Main St, Stockton CA*"
-    value={form.address}
-    onChange={handleUpdateForm}
-  />
-</div> */}
+///////////////////////////
+// Time Input
+///////////////////////////
+export const TimeInput = ({ handleUpdateForm, time }) => {
+  return (
+    <div className="my-6">
+      <label className="block text-gray-700 text-xl lg:text-2xl">
+        Preferred Time
+        <span className="block text-sm text-gray-500">
+          For guaranteed availability, please book through the "Book" button or
+          Calendly widget below.
+        </span>
+      </label>
+      <select
+        required
+        className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-[#b3b3b3] text-xl lg:text-2xl"
+        name="time"
+        id="time"
+        onChange={handleUpdateForm}
+        value={time}
+      >
+        <option value="" disabled selected>
+          Select Time of Day
+        </option>
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Evening">Evening</option>
+      </select>
+    </div>
+  );
+};
+
+///////////////////////////
+// Text Area Input
+///////////////////////////
+export const TextareaInput = ({ errorMessage, value, handleChange }) => {
+  return (
+    <div className={`my-4`}>
+      <label className={`block text-gray-700 text-xl lg:text-2xl`}>
+        Message
+      </label>
+      <textarea
+        placeholder="Message"
+        className={`w-full h-32 bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-[#b3b3b3] ${
+          errorMessage && "border-red-500"
+        } text-xl lg:text-2xl`}
+        name="message"
+        value={value}
+        onChange={handleChange}
+      ></textarea>
+    </div>
+  );
+};

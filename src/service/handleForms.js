@@ -1,20 +1,38 @@
+import { format } from "date-fns";
+import { enUS } from "date-fns/locale";
 import emailjs from "emailjs-com";
+// vars
 const serviceId = import.meta.env.VITE_SERVICE_ID;
 const assessmentTemplateId = import.meta.env.VITE_ASSESSMENT_TEMPLATE_ID;
 const leadSetterTemplateId = import.meta.env.VITE_LEAD_SETTER_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUB_KEY;
+
+
+const formatDate = (dateString) => {
+  if (!dateString) return null;
+  const date = new Date(dateString);
+
+  return format(date, "EEEE, MMMM do, yyyy", { locale: enUS });
+};
+
 ///////////////////////////
 // Client Assessment Form
 ///////////////////////////
 export const submitAssessmentForm = async (formData) => {
-  const { fullName, email, phone, message, address, contactTerms } = formData;
+  const { fullName, email, phone, message, address, contactTerms, time, date } =
+    formData;
+
   let formattedPhoneNum = formatPhoneNum(phone);
+  let formattedDate = formatDate(date);
+
   const params = {
     from_name: `${fullName}`,
     cell: formattedPhoneNum,
     email,
     address: `${address}`,
     message,
+    date: formattedDate ? formattedDate : "No preferred date",
+    time: time ? time : "No preferred time of day",
     contactTerms: `${
       contactTerms
         ? "agreed to be contacted."
@@ -22,10 +40,11 @@ export const submitAssessmentForm = async (formData) => {
     }`,
     publicKey,
   };
-    // Check if any field is empty or undefined
-    if (!fullName || !email || !phone || !message || !address || !contactTerms) {
-      return { error: 'Please fill out all fields' };
-    }
+
+  // Check if any field is empty or undefined
+  if (!fullName || !email || !phone || !message || !address || !contactTerms) {
+    return { error: "Please fill out all fields" };
+  }
   if (!contactTerms) {
     return { noContact: true };
   }
@@ -43,6 +62,10 @@ export const submitAssessmentForm = async (formData) => {
 ///////////////////////////
 export const submitLeadSetterInquiry = async (formData) => {
   const { firstName, lastName, email, phone, message } = formData;
+  if (!firstName || !lastName || !email || !phone || !message) {
+    return { incomplete: true };
+  }
+
   let formattedPhoneNum = formatPhoneNum(phone);
   const params = {
     from_name: `${firstName} ${lastName}`,
@@ -51,9 +74,6 @@ export const submitLeadSetterInquiry = async (formData) => {
     message,
     publicKey,
   };
-  if (!firstName || !lastName || !email || !phone || !message) {
-    return { incomplete: true };
-  }
   emailjs
     .send(serviceId, leadSetterTemplateId, params, publicKey)
     .then((response) => {
