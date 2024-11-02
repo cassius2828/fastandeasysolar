@@ -9,7 +9,6 @@ import { createContext, useState } from "react";
 ////////////////////////
 
 const initialFormData = {
-  formStep: 1,
   //   contact section
   fullName: "",
   email: "",
@@ -63,14 +62,13 @@ export const FormProvider = ({ children }) => {
   const validatePhoneNumber = (phoneNumber) => {
     // Remove all non-digit characters
     const digits = phoneNumber.replace(/\D/g, "");
-    // Check if there are at least 10 digits
-    return digits.length === 10;
+    // Check if there are at least 10 digits and no letters
+    return digits.length === 10 && !containsLetters(phoneNumber);
   };
 
   /////////////////////////////////////////
   // Form Validation and State Handling //
   /////////////////////////////////////////
-
   const handleUpdateForm = (e) => {
     const { name, value } = e.target;
 
@@ -78,19 +76,15 @@ export const FormProvider = ({ children }) => {
 
     if (name === "message") {
       setFormErrors({ ...formErrors, message: false });
-    } else if (value.length < 1) {
-      setFormErrors({ ...formErrors, [name]: true });
     } else if (name === "email" && !validateEmail(value)) {
       setFormErrors({ ...formErrors, email: true });
-    } else if (
-      (name === "phone" && !validatePhoneNumber(value)) ||
-      containsLetters(value)
-    ) {
+    } else if (name === "phone" && !validatePhoneNumber(value)) {
       setFormErrors({ ...formErrors, phone: true });
+    } else if (value.length < 1) {
+      setFormErrors({ ...formErrors, [name]: true });
     } else {
       setFormErrors({ ...formErrors, [name]: false, message: false });
     }
-    console.log(form);
   };
 
   ///////////////////////////

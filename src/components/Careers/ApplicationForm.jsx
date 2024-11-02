@@ -25,7 +25,7 @@ const ApplicationForm = () => {
   const [formErrors, setFormErrors] = useState(initalFormErrors);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
-  const { validateEmail, validatePhoneNumber, containsLetters } =
+  const { validateEmail, validatePhoneNumber } =
     useFormContext();
 
   ///////////////////////////
@@ -49,8 +49,7 @@ const ApplicationForm = () => {
     } else if (name === "email" && !validateEmail(value)) {
       setFormErrors({ ...formErrors, email: true });
     } else if (
-      (name === "phone" && !validatePhoneNumber(value)) ||
-      containsLetters(value)
+      (name === "phone" && !validatePhoneNumber(value))
     ) {
       setFormErrors({ ...formErrors, phone: true });
     } else {
