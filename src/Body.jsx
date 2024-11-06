@@ -7,7 +7,7 @@ import Loader from "./components/Reusables/Loader";
 const About = lazy(() => import("./components/About"));
 const Affiliates = lazy(() => import("./components/Affiliates"));
 const Book = lazy(() => import("./components/Book"));
-const Careers = lazy(() => import("./components/Careers"));
+// const Careers = lazy(() => import("./components/Careers"));
 const FAQList = lazy(() =>
   import("./components/FAQ").then((module) => ({ default: module.FAQList }))
 ); // Named export handling
@@ -46,7 +46,7 @@ const Body = () => {
         <WhatWeDo />
         <FAQList />
         <Affiliates />
-        <Careers />
+        {/* <Careers /> */}
       </Suspense>
     </>
   );
