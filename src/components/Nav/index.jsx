@@ -53,9 +53,9 @@ const Nav = () => {
         <li>
           <a href="#about">about</a>
         </li>{" "}
-        <li>
+        {/* <li>
           <a href="#careers">careers</a>
-        </li>
+        </li> */}
         <li>
           <a href="#contact">contact</a>
         </li>

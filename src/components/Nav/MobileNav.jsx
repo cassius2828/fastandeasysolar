@@ -25,9 +25,9 @@ export const MobileNav = ({ scrollToTop, setIsOpen }) => {
       <li onClick={() => setIsOpen(false)}>
         <a href="#about">about</a>
       </li>
-      <li onClick={() => setIsOpen(false)}>
+      {/* <li onClick={() => setIsOpen(false)}>
         <a href="#careers">careers</a>
-      </li>
+      </li> */}
       <li onClick={() => setIsOpen(false)}>
         <a href="#contact">contact</a>
       </li>{" "}
