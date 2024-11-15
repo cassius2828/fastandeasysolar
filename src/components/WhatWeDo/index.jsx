@@ -66,7 +66,7 @@ export const WhatWeDo = () => {
   ];
 
   return (
-    <div className="w-full md:w-1/2 mx-auto flex flex-col items-center justify-center py-10 relative z-20 bg-gray-100 mb-96">
+    <div className="w-full md:w-1/2 mx-auto flex flex-col items-center justify-center py-10 mt-96 relative z-20 bg-gray-100 mb-96">
       <h2 className="text-6xl font-bold mb-8 text-blue-900">What We Do</h2>
       <div className="w-full md:w-3/4">
         {services.map((service, index) => (

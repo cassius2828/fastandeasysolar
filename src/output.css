@@ -1404,6 +1404,14 @@ video {
   line-height: 2.5rem;
 }
 
+.leading-\[4rem\] {
+  line-height: 4rem;
+}
+
+.leading-\[3rem\] {
+  line-height: 3rem;
+}
+
 .tracking-wide {
   letter-spacing: 0.025em;
 }
@@ -1976,6 +1984,18 @@ li {
 
   .lg\:mt-48 {
     margin-top: 12rem;
+  }
+
+  .lg\:mt-12 {
+    margin-top: 3rem;
+  }
+
+  .lg\:mt-24 {
+    margin-top: 6rem;
+  }
+
+  .lg\:mt-96 {
+    margin-top: 24rem;
   }
 
   .lg\:flex {

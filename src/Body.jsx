@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import Background from "./components/Background";
 import Landing from "./components/Landing";
 import Loader from "./components/Reusables/Loader";
+import { OverviewPhoto } from "./components/OverviewGrid";
 
 // Lazy loading all components
 const About = lazy(() => import("./components/About"));
@@ -35,17 +36,18 @@ const Body = () => {
       >
         {/* gap */}
         <div id="gap" className="h-screen w-screen "></div>
+        <About />
+        {/* <OverviewGrid /> */}
+        <OverviewPhoto/>
+        <Services />
+        <Programs />
+        <WhatWeDo />
+        <FAQList />
+        <Affiliates />
         <Form />
         {/* gap */}
         <div style={{ height: "30rem" }} className=" w-screen"></div>
         <Book />
-        <OverviewGrid />
-        <Services />
-        <Programs />
-        <About />
-        <WhatWeDo />
-        <FAQList />
-        <Affiliates />
         {/* <Careers /> */}
       </Suspense>
     </>

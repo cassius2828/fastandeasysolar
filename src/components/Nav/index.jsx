@@ -42,7 +42,7 @@ const Nav = () => {
           <a href="#">home</a>
         </li>{" "}
         <li>
-          <a href="#book">book</a>
+          <a href="#about">about</a>
         </li>{" "}
         <li>
           <a href="#scroll-to-services">services</a>
@@ -50,12 +50,12 @@ const Nav = () => {
         <li>
           <a href="#scroll-to-programs">programs</a>
         </li>
-        <li>
-          <a href="#about">about</a>
-        </li>{" "}
         {/* <li>
           <a href="#careers">careers</a>
-        </li> */}
+          </li> */}
+        <li>
+          <a href="#book">book</a>
+        </li>{" "}
         <li>
           <a href="#contact">contact</a>
         </li>
