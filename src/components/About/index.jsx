@@ -1,4 +1,3 @@
-
 import { ContactBtnLight } from "../Reusables/Buttons";
 
 const About = () => {
@@ -38,17 +37,35 @@ const About = () => {
         <h1 className="text-7xl text-gray-200 text-center p-4">
           About Us: What is Fast and Easy Solar?
         </h1>
-        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-10">
-          At Fast and Easy Solar, we specialize in making your switch to solar
-          energy quick and effortless. As a direct dealer with all the major
-          solar companies, we focus on securing the best savings for you. Our
-          streamlined process involves inputting your bill information into our
-          advanced portals, enabling us to identify the most competitive rates
-          and deals tailored for your home. With our expertise and dedication to
-          finding the best programs available, we ensure you save money on your
-          monthly bills while embracing sustainable energy solutions.
+        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-[3rem]">
+          Welcome to Fast and Easy Solar, where we believe that harnessing the
+          power of the sun should be simple, affordable, and accessible to
+          everyone. Our mission is to make solar energy a seamless experience
+          for homeowners and businesses alike, helping you save on energy costs
+          while reducing your carbon footprint.
         </p>
-        <ContactBtnLight text=" learn more about us today"  />
+
+        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-[3rem]">
+          At Fast and Easy Solar, we pride ourselves on delivering reliable
+          solar solutions with speed and precision. From consultation to
+          installation, we handle every step with a commitment to quality and
+          transparency. Our team of experts brings years of experience in the
+          solar industry and works closely with you to tailor a solution that
+          fits your energy needs and budget.
+        </p>
+
+        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-[3rem]">
+          Why choose us? Because we combine cutting-edge technology with
+          unmatched service, ensuring a hassle-free transition to clean energy.
+          With Fast and Easy Solar, you’re not just investing in solar
+          power—you’re investing in a brighter, sustainable future.
+        </p>
+
+        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-[3rem]">
+          Let us show you how easy going solar can be. Join us on the journey to
+          a cleaner, more energy-efficient tomorrow!
+        </p>
+        <ContactBtnLight text=" learn more about us today" />
       </div>
       {/* carousel was here */}
     </section>

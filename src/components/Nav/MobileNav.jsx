@@ -14,8 +14,8 @@ export const MobileNav = ({ scrollToTop, setIsOpen }) => {
         <a href="#">home</a>
       </li>{" "}
       <li onClick={() => setIsOpen(false)}>
-        <a href="#book">book</a>
-      </li>{" "}
+        <a href="#about">about</a>
+      </li>
       <li onClick={() => setIsOpen(false)}>
         <a href="#scroll-to-services">services</a>
       </li>
@@ -23,8 +23,8 @@ export const MobileNav = ({ scrollToTop, setIsOpen }) => {
         <a href="#scroll-to-programs">programs</a>
       </li>
       <li onClick={() => setIsOpen(false)}>
-        <a href="#about">about</a>
-      </li>
+        <a href="#book">book</a>
+      </li>{" "}
       {/* <li onClick={() => setIsOpen(false)}>
         <a href="#careers">careers</a>
       </li> */}

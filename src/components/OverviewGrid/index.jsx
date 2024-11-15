@@ -109,3 +109,29 @@ const OverviewGrid = () => {
 };
 
 export default OverviewGrid;
+
+export const OverviewPhoto = () => {
+  return (
+    <section className="min-h-96 flex flex-col justify-center items-center my-96">
+      <h1 className="relative z-20 mb-12 text-gray-100 text-5xl md:text-8xl text-center">
+        Overview
+      </h1>
+      <picture className=" rounded-md overflow-hidden">
+        <source
+          media="(max-width: 425px)"
+          srcSet={`${
+            import.meta.env.VITE_S3_OBJECT_BASE_URL
+          }faes/program-overview/program-overview-w425.png`}
+        />
+        <img
+          className="relative z-20"
+          src={`${
+            import.meta.env.VITE_S3_OBJECT_BASE_URL
+          }faes/program-overview/program-overview-w1440.png`}
+          alt="Grid of program overviews with qualifying rates"
+          width="1440"
+        />
+      </picture>
+    </section>
+  );
+};
