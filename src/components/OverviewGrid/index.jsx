@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { useGlobalContext } from "../../context/useGlobalContext";
 import Loader from "../Reusables/Loader";
 
-const OverviewGrid = () => {
+export const OverviewGrid = () => {
   const [sectionLoaded, setSectionLoaded] = useState(false);
   const sectionRef = useRef(null);
   const { attachObserverToRef } = useGlobalContext();
@@ -109,9 +109,9 @@ const OverviewGrid = () => {
   );
 };
 
-export default OverviewGrid;
 
-export const OverviewPhoto = () => {
+
+ const OverviewPhoto = () => {
   return (
     <section className="min-h-96 flex flex-col justify-center items-center my-96">
       <h1 className="relative z-20 mb-12 text-gray-100 text-5xl md:text-8xl text-center">
@@ -136,3 +136,4 @@ export const OverviewPhoto = () => {
     </section>
   );
 };
+export default OverviewPhoto
