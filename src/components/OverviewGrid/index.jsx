@@ -15,6 +15,7 @@ const OverviewGrid = () => {
   // Use Intersection Observer to load Calendly widget when section is in view
   useEffect(() => {
     attachObserverToRef(sectionRef, setSectionLoaded);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <section className="min-h-96" ref={sectionRef}>

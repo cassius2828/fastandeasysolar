@@ -130,11 +130,15 @@ const Footer = () => {
       </div>
 
       {/* Scroll to Top Button */}
+      <div className="flex items-center justify-center gap-4 fixed bottom-2 md:bottom-12 right-2 md:right-6 z-50">
+
+      <a href="https://calendly.com/fastandeasysolar/free-assessment-for-program-eligibility" className="bg-gray-500 hover:bg-blue-500 rounded-full p-3 w-24 transition-colors duration-200 md:text-xl">book</a>
       <div
         onClick={scrollToTop}
-        className="flex items-center justify-center fixed bottom-12 right-6 z-50 bg-gray-500 hover:bg-blue-500 transition-all duration-200 ease-in-out cursor-pointer rounded-full p-2"
+        className="flex items-center justify-center  bg-gray-600 hover:bg-blue-500 transition-all duration-200 ease-in-out cursor-pointer rounded-full p-2"
       >
         <UilArrowUp size="24" />
+      </div>
       </div>
     </footer>
   );
