@@ -8,13 +8,14 @@ import { useEffect, useRef, useState } from "react";
 import { useGlobalContext } from "../../context/useGlobalContext";
 import Loader from "../Reusables/Loader";
 
-const OverviewGrid = () => {
+export const OverviewGrid = () => {
   const [sectionLoaded, setSectionLoaded] = useState(false);
   const sectionRef = useRef(null);
   const { attachObserverToRef } = useGlobalContext();
   // Use Intersection Observer to load Calendly widget when section is in view
   useEffect(() => {
     attachObserverToRef(sectionRef, setSectionLoaded);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <section className="min-h-96" ref={sectionRef}>
@@ -108,9 +109,9 @@ const OverviewGrid = () => {
   );
 };
 
-export default OverviewGrid;
 
-export const OverviewPhoto = () => {
+
+ const OverviewPhoto = () => {
   return (
     <section className="min-h-96 flex flex-col justify-center items-center my-96">
       <h1 className="relative z-20 mb-12 text-gray-100 text-5xl md:text-8xl text-center">
@@ -135,3 +136,4 @@ export const OverviewPhoto = () => {
     </section>
   );
 };
+export default OverviewPhoto

@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import Background from "./components/Background";
 import Landing from "./components/Landing";
 import Loader from "./components/Reusables/Loader";
-import { OverviewPhoto } from "./components/OverviewGrid";
 
 // Lazy loading all components
 const About = lazy(() => import("./components/About"));
@@ -13,7 +12,7 @@ const FAQList = lazy(() =>
   import("./components/FAQ").then((module) => ({ default: module.FAQList }))
 ); // Named export handling
 const Form = lazy(() => import("./components/Form"));
-const OverviewGrid = lazy(() => import("./components/OverviewGrid"));
+const OverviewPhoto = lazy(() => import("./components/OverviewGrid"));
 const Programs = lazy(() => import("./components/Programs"));
 const Services = lazy(() => import("./components/Services"));
 const WhatWeDo = lazy(() =>
@@ -37,8 +36,7 @@ const Body = () => {
         {/* gap */}
         <div id="gap" className="h-screen w-screen "></div>
         <About />
-        {/* <OverviewGrid /> */}
-        <OverviewPhoto/>
+        <OverviewPhoto />
         <Services />
         <Programs />
         <WhatWeDo />
