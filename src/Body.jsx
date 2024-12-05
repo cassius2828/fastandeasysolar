@@ -36,7 +36,7 @@ const Body = () => {
         {/* gap */}
         <div id="gap" className="h-screen w-screen "></div>
         <About />
-        <OverviewPhoto />
+        {/* <OverviewPhoto /> */}
         <Services />
         <Programs />
         <WhatWeDo />
