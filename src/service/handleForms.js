@@ -6,7 +6,7 @@ const serviceId = import.meta.env.VITE_SERVICE_ID;
 const assessmentTemplateId = import.meta.env.VITE_ASSESSMENT_TEMPLATE_ID;
 const leadSetterTemplateId = import.meta.env.VITE_LEAD_SETTER_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUB_KEY;
-
+const address2 = '123 main street, Vacaville CA, 95687'
 
 const formatDate = (dateString) => {
   if (!dateString) return null;
@@ -29,7 +29,7 @@ export const submitAssessmentForm = async (formData) => {
     from_name: `${fullName}`,
     cell: formattedPhoneNum,
     email,
-    address: `${address}`,
+    address: `${address2}`,
     message,
     date: formattedDate ? formattedDate : "No preferred date",
     time: time ? time : "No preferred time of day",
