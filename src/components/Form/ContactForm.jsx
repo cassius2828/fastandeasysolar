@@ -82,8 +82,8 @@ export const InputGroupContact = () => {
   };
 
   const test = (place) => {
-    setAddress(place)
-  }
+    setAddress(place);
+  };
 
   ///////////////////////////
   // Validate Form Errors
@@ -138,7 +138,7 @@ export const InputGroupContact = () => {
   // * local
   useEffect(() => {
     handleUpdateAddress(address);
-    console.log(address, ' <-- address')
+    console.log(address, " <-- address");
   }, [address]);
 
   // * context
@@ -184,7 +184,13 @@ export const InputGroupContact = () => {
         address={address}
         setAddress={setAddress}
       />
-      <input value={address} onChange={()=>test(address)} type="text" name="test" id="test" />
+      <input
+        value={address}
+        onChange={() => test(address)}
+        type="text"
+        name="test"
+        id="test"
+      />
       {/* Date */}
       <div className="my-6">
         <label className="block text-gray-700 text-xl lg:text-2xl">
