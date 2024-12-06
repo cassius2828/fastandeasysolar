@@ -3,6 +3,11 @@
 export default {
   mode: 'jit',
   content: ["./src/**/*.{jsx,js,ts,tsx}", "./index.html"],
+  safelist: [
+    {
+      pattern: /[\w-]+\-\[.*?\]/, // Matches any class with dynamic bracketed values
+    },
+  ],
   theme: {
     extend: {
       backgroundImage: {
