@@ -11,9 +11,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <GlobalProvider>
       {/* form provider */}
       <FormProvider>
-          {/*  */}
-          <App />
-          {/*  */}
+        {/*  */}
+        <App />
         {/*  */}
       </FormProvider>
       {/*  */}
