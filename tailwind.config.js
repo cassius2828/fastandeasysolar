@@ -15,6 +15,10 @@ export default {
         "gradient-vertical-infocard":
           "linear-gradient(var(--tw-gradient-stops-infocard))",
       },
+      animation:{
+        'slow-spin':'spin 30s linear infinite'
+      }
+    
     },
   },
   plugins: [],

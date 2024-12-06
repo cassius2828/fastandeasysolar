@@ -70,7 +70,7 @@ export default function Programs() {
         </div>
       </div>
       <svg
-        className=" opacity-50 absolute top-0 md:-top-[110rem] md:-right-[140rem] scale-150 md:scale-125  h-full md:h-auto animate-[spin_30s_linear_infinite]"
+        className=" opacity-50 absolute top-0 md:-top-[110rem] md:-right-[140rem] scale-150 md:scale-125  h-full md:h-auto  animate-slow-spin"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 2000 1500"
       >
