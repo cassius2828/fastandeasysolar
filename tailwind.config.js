@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 
 export default {
-  mode: 'jit',
+  mode: "jit",
   content: ["./src/**/*.{jsx,js,ts,tsx}", "./index.html"],
   safelist: [
-    {
-      pattern: /[\w-]+\-\[.*?\]/, // Matches any class with dynamic bracketed values
-    },
+    "-right-[140rem]",
+    "-top-[110rem]",
+    "animate-[spin_30s_linear_infinite]", // Matches any class with dynamic bracketed values
   ],
   theme: {
     extend: {
