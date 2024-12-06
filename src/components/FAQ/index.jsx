@@ -45,7 +45,7 @@ export const FAQList = () => {
       background: "linear-gradient(180deg, #0b4bb3, #051c42)",
     }}
     className="w-full flex flex-col items-center justify-center py-20  relative z-20">
-      <h2 className="text-6xl font-bold p-3 pb-0 text-gray-100">Frequently Asked Questions</h2>
+      <h2 className="text-6xl font-bold p-3 pb-0 text-gray-100 text-center">Frequently Asked Questions</h2>
       <CustomHR bgColor="white"/>
       <div className="w-full md:w-3/4 grid grid-cols-1 md:grid-cols-2 place-items-center gap-12 mt-5">
         {faqs.map((faq, index) => (

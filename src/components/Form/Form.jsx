@@ -6,7 +6,7 @@ const Form = () => {
       {/* form */}
       <form
         style={{ maxWidth: "80rem" }}
-        className="w-9/12  p-8 my-4 md:px-12  lg:pl-20 lg:pr-40  rounded-2xl shadow-2xl bg-white flex flex-col items-center"
+        className="w-full  p-8 my-4 md:px-12  lg:pl-20 lg:pr-40  rounded-2xl shadow-2xl bg-white flex flex-col items-center"
       >
         <div className="flex">
           {/* title */}
