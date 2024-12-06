@@ -98,7 +98,7 @@ const AboutV2 = () => {
       <div className="w-full flex justify-center mt-16">
         <button
           type="button"
-          className="rounded-md bg-blue-600 h-16 max-w-64 px-2.5 py-1.5 text-xl font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+          className="rounded-md bg-blue-600 h-16 max-w-64 px-3 py-2 text-xl font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
         >
           Contact Us Today!
         </button>
