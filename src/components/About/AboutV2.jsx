@@ -24,13 +24,11 @@ const aboutDetails = [
 ];
 
 const AboutV2 = () => {
-  const aboutDetailsRef = useRef();
   useGSAP(() => {
     fadeInFromSide(".about-details-item", { side: -50 });
   }, {});
   return (
     <section
-      ref={aboutDetailsRef}
       id="about"
       className="relative z-30 bg-white pb-32 pt-20"
     >

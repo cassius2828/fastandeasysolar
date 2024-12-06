@@ -5,9 +5,6 @@ const Careers = () => {
   return (
     <section id="careers" className="w-4/5 md:w-1/2 flex flex-col items-center justify-center py-20 my-96 mx-auto relative z-20 bg-gray-100 rounded-lg shadow-lg">
       <h1 className="text-5xl font-bold mb-8">Careers</h1>
-
-      {/* Introduction Text */}
-
       {/* Open Positions */}
       <div className="text-left w-full px-6 mb-10">
         <p className="text-2xl w-full md:w-3/4 mx-auto my-6 text-gray-700 text-center px-4">

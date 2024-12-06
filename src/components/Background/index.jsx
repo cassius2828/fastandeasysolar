@@ -1,6 +1,4 @@
-//////////////////////
-// Background Component
-////////////////////
+
 const Background = () => {
   return (
     <section

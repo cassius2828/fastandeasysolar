@@ -2,6 +2,38 @@ import { useGSAP } from "@gsap/react";
 import CustomHR from "../Reusables/CustomHR";
 import { fadeInFromBottom, fadeInFromSide } from "../../gsap/useGsapAnimations";
 
+const faqs = [
+  {
+    question: "What happens if I move?",
+    answer:
+      "Simply put us in touch with the new homeowner and we will facilitate the transfer of service.",
+  },
+  {
+    question: "What is the catch?",
+    answer:
+      "The catch is, not every home qualifies. Every home must meet the minimum criteria to be eligible for this program.",
+  },
+  {
+    question: "How much will this cost?",
+    answer:
+      "There are generally no upfront costs to homeowners. You are simply paying for power at a rate that is lower than what your local electric utility can offer.",
+  },
+  {
+    question: "What if something happens to my system?",
+    answer:
+      "We maintain and insure the entire system. If there is a problem with the system, we will fix it at no cost to you.",
+  },
+  {
+    question: "How much will I save?",
+    answer:
+      "Once we verify usage information, shading, and space availability, we can provide estimates on savings.",
+  },
+  {
+    question: "What if I want to own my solar?",
+    answer:
+      "If you have your heart set on ownership, we have purchase options with all of the major finance companies. We can absolutely find the right solution for you.",
+  },
+];
 const FAQItem = ({ question, answer, idx }) => {
   return (
     <div
@@ -17,38 +49,6 @@ const FAQItem = ({ question, answer, idx }) => {
 };
 
 export const FAQList = () => {
-  const faqs = [
-    {
-      question: "What happens if I move?",
-      answer:
-        "Simply put us in touch with the new homeowner and we will facilitate the transfer of service.",
-    },
-    {
-      question: "What is the catch?",
-      answer:
-        "The catch is, not every home qualifies. Every home must meet the minimum criteria to be eligible for this program.",
-    },
-    {
-      question: "How much will this cost?",
-      answer:
-        "There are generally no upfront costs to homeowners. You are simply paying for power at a rate that is lower than what your local electric utility can offer.",
-    },
-    {
-      question: "What if something happens to my system?",
-      answer:
-        "We maintain and insure the entire system. If there is a problem with the system, we will fix it at no cost to you.",
-    },
-    {
-      question: "How much will I save?",
-      answer:
-        "Once we verify usage information, shading, and space availability, we can provide estimates on savings.",
-    },
-    {
-      question: "What if I want to own my solar?",
-      answer:
-        "If you have your heart set on ownership, we have purchase options with all of the major finance companies. We can absolutely find the right solution for you.",
-    },
-  ];
   useGSAP(() => {
     fadeInFromSide(".faqleft", { side: -50 });
     fadeInFromSide(".faqright", { side: 50 });

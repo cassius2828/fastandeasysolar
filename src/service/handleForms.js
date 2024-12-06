@@ -6,7 +6,7 @@ const serviceId = import.meta.env.VITE_SERVICE_ID;
 const assessmentTemplateId = import.meta.env.VITE_ASSESSMENT_TEMPLATE_ID;
 const leadSetterTemplateId = import.meta.env.VITE_LEAD_SETTER_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUB_KEY;
-const address2 = '123 main street, Vacaville CA, 95687'
+const address2 = "123 main street, Vacaville CA, 95687";
 
 const formatDate = (dateString) => {
   if (!dateString) return null;
@@ -91,8 +91,6 @@ const formatPhoneNum = (number) => {
   let part1 = number.slice(0, 3);
   let part2 = number.slice(3, 6);
   let part3 = number.slice(6);
-  console.log(part1, part2, part3);
+
   return `(${part1}) ${part2}-${part3}`;
 };
-
-console.log(formatPhoneNum("7075674000"));

@@ -76,14 +76,6 @@ const InfoCard = () => {
               book
             </button>
           </a>
-          {/* <input
-            className="text-gray-900 p-3 text-2xl"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            type="date"
-            name=""
-            id=""
-          /> */}
         </div>
       </div>
     </div>

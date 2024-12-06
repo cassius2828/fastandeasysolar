@@ -7,7 +7,7 @@ import { fadeInFromBottom } from "../../gsap/useGsapAnimations";
 
 const Contact = () => {
   useGSAP(() => {
-fadeInFromBottom('form-animation')
+fadeInFromBottom('.form-animation')
   },{})
   return (
     <section

@@ -1,20 +1,34 @@
-const Alert = ({ message, success, handleClose }) => {
+import { useEffect } from "react";
+
+
+export function TwUIAlert({ message, success, handleClose }) {
+  useEffect(() => {
+    setTimeout(() => {
+      handleClose();
+    }, 3000);
+  }, []);
   return (
-    <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md bg-gray-50 w-1/2 min-h-96 p-8 flex justify-center items-center fadeIn">
-      <span
-        onClick={handleClose}
-        className="absolute top-0 right-2 text-2xl cursor-pointer"
-      >
-        x
-      </span>
-      <span
-        className={`${
-          success ? "text-green-500" : "text-red-500"
-        } text-xl md:text-2xl text-center`}
-      >
-        {message}
-      </span>
+    <div className="rounded-md bg-gray-50 p-5 absolute left-1/2 bottom-0 -translate-x-1/2  z-50 alert-bounce">
+      <div className="flex">
+        <div className="shrink-0">
+        </div>
+        <div className="ml-3">
+          <h3
+            className={`text-xl font-medium ${
+              success ? "text-green-500" : "text-red-500"
+            }`}
+          >
+            {success ? "Success!" : "Attention Needed!"}
+          </h3>
+          <div
+            className={`mt-2 text-xl ${
+              success ? "text-green-500" : "text-red-500"
+            }`}
+          >
+            <p>{message}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
-export default Alert;
+}

@@ -9,10 +9,52 @@ import {
 import CustomHR from "../Reusables/CustomHR";
 import { useGSAP } from "@gsap/react";
 import { fadeInFromBottom } from "../../gsap/useGsapAnimations";
+const services = [
+  {
+    title: "Design",
+    description:
+      "Every home is unique so we provide a custom system design to fit your roof.",
+    icon: (
+      <UilRulerCombined className="text-center" size="50" color="#172554" />
+    ),
+  },
+  {
+    title: "Installation",
+    description:
+      "We install the solar energy system to ensure maximum energy production.",
+    icon: <UilProcess className="text-center" size="50" color="#172554" />,
+  },
+  {
+    title: "Inspections",
+    description:
+      "We take care of all the paperwork and schedule necessary inspections.",
+    icon: <UilClipboardAlt className="text-center" size="50" color="#172554" />,
+  },
+  {
+    title: "Activation",
+    description:
+      "We work with you, your city, and your local utility provider to get the system up and running.",
+    icon: <UilBolt className="text-center" size="50" color="#172554" />,
+  },
+  {
+    title: "Maintenance",
+    description:
+      "We maintain the solar energy system on your roof with our professionally trained support staff and technicians.",
+    icon: <UilWrench className="text-center" size="50" color="#172554" />,
+  },
+  {
+    title: "Monitoring",
+    description:
+      "We make it easy for you to monitor the system’s performance with our online Account Center and Home energy App.",
+    icon: <UilMonitor className="text-center" size="50" color="#172554" />,
+  },
+];
+
+// item
 const WhatWeDoItem = ({ title, description, icon }) => {
   useGSAP(() => {
-fadeInFromBottom('.wwditem')
-  },{})
+    fadeInFromBottom(".wwditem");
+  }, {});
   return (
     <div className="wwditem w-full px-4 py-2 my-12">
       <div>
@@ -24,56 +66,17 @@ fadeInFromBottom('.wwditem')
   );
 };
 
+// main component
 export const WhatWeDo = () => {
-  const services = [
-    {
-      title: "Design",
-      description:
-        "Every home is unique so we provide a custom system design to fit your roof.",
-      icon: (
-        <UilRulerCombined className="text-center" size="50" color="#172554" />
-      ),
-    },
-    {
-      title: "Installation",
-      description:
-        "We install the solar energy system to ensure maximum energy production.",
-      icon: <UilProcess className="text-center" size="50" color="#172554" />,
-    },
-    {
-      title: "Inspections",
-      description:
-        "We take care of all the paperwork and schedule necessary inspections.",
-      icon: (
-        <UilClipboardAlt className="text-center" size="50" color="#172554" />
-      ),
-    },
-    {
-      title: "Activation",
-      description:
-        "We work with you, your city, and your local utility provider to get the system up and running.",
-      icon: <UilBolt className="text-center" size="50" color="#172554" />,
-    },
-    {
-      title: "Maintenance",
-      description:
-        "We maintain the solar energy system on your roof with our professionally trained support staff and technicians.",
-      icon: <UilWrench className="text-center" size="50" color="#172554" />,
-    },
-    {
-      title: "Monitoring",
-      description:
-        "We make it easy for you to monitor the system’s performance with our online Account Center and Home energy App.",
-      icon: <UilMonitor className="text-center" size="50" color="#172554" />,
-    },
-  ];
   useGSAP(() => {
-    fadeInFromBottom('.wwdtext')
-      },{})
+    fadeInFromBottom(".wwdtext");
+  }, {});
   return (
     <div className=" w-full mx-auto flex flex-col items-center justify-center pb-10 pt-32  relative z-20 bg-gray-100 ">
-      <h2 className="wwdtext text-6xl font-bold mb-4 text-blue-900">What We Do</h2>
-      <CustomHR gsapSelector={'wwdtext'} bgColor="#1e3a8a" />
+      <h2 className="wwdtext text-6xl font-bold mb-4 text-blue-900">
+        What We Do
+      </h2>
+      <CustomHR gsapSelector={"wwdtext"} bgColor="#1e3a8a" />
       <div className="w-full grid grid-cols-1 md:grid-cols-4 md:w-3/4">
         {services.map((service, index) => (
           <WhatWeDoItem
