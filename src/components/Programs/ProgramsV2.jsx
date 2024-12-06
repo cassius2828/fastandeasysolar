@@ -40,8 +40,9 @@ export default function Programs() {
 
   return (
     <section
+      style={{ backgroundColor: "#0b4bb3" }}
       id="scroll-to-programs"
-      className="bg-[#0b4bb3] py-24 sm:py-32 relative z-20"
+      className=" py-24 sm:py-32 relative z-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-30">
         <div className="mx-auto max-w-6xl lg:mx-0">
@@ -68,9 +69,11 @@ export default function Programs() {
           ))}
         </div>
       </div>
-      <svg 
-       className=" opacity-50 absolute top-0 md:-top-[110rem] md:-right-[140rem] scale-150 md:scale-125  h-full md:h-auto animate-[spin_30s_linear_infinite]"
-      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1500">
+      <svg
+        className=" opacity-50 absolute top-0 md:-top-[110rem] md:-right-[140rem] scale-150 md:scale-125  h-full md:h-auto animate-[spin_30s_linear_infinite]"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 2000 1500"
+      >
         <rect fill="#1F33EE" width="2000" height="1500" />
         <defs>
           <radialGradient id="a" gradientUnits="objectBoundingBox">
