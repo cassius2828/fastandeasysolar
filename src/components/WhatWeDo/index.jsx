@@ -1,4 +1,3 @@
-
 import {
   UilRulerCombined,
   UilProcess,
@@ -7,6 +6,7 @@ import {
   UilWrench,
   UilMonitor,
 } from "@iconscout/react-unicons";
+import CustomHR from "../Reusables/CustomHR";
 const WhatWeDoItem = ({ title, description, icon }) => {
   return (
     <div className="w-full px-4 py-2 my-12">
@@ -33,9 +33,7 @@ export const WhatWeDo = () => {
       title: "Installation",
       description:
         "We install the solar energy system to ensure maximum energy production.",
-      icon: (
-        <UilProcess className="text-center" size="50" color="#172554" />
-      ),
+      icon: <UilProcess className="text-center" size="50" color="#172554" />,
     },
     {
       title: "Inspections",
@@ -66,9 +64,10 @@ export const WhatWeDo = () => {
   ];
 
   return (
-    <div className="w-full md:w-1/2 mx-auto flex flex-col items-center justify-center py-10 mt-96 relative z-20 bg-gray-100 mb-96">
-      <h2 className="text-6xl font-bold mb-8 text-blue-900">What We Do</h2>
-      <div className="w-full md:w-3/4">
+    <div className="w-full mx-auto flex flex-col items-center justify-center pb-10 pt-32  relative z-20 bg-gray-100 ">
+      <h2 className="text-6xl font-bold mb-4 text-blue-900">What We Do</h2>
+      <CustomHR bgColor="#1e3a8a" />
+      <div className="w-full grid grid-cols-1 md:grid-cols-4 md:w-3/4">
         {services.map((service, index) => (
           <WhatWeDoItem
             key={index}
@@ -78,6 +77,17 @@ export const WhatWeDo = () => {
           />
         ))}
       </div>
+      <svg
+        className="relative top-12"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#0b4bb3"
+          fillOpacity="1"
+          d="M0,224L60,192C120,160,240,96,360,80C480,64,600,96,720,128C840,160,960,192,1080,202.7C1200,213,1320,203,1380,197.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
     </div>
   );
 };

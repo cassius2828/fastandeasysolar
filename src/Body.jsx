@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import Background from "./components/Background";
 import Landing from "./components/Landing";
 import Loader from "./components/Reusables/Loader";
-
+import AboutV2 from "./components/About/AboutV2";
 // Lazy loading all components
 const About = lazy(() => import("./components/About"));
 const Affiliates = lazy(() => import("./components/Affiliates"));
@@ -14,7 +14,11 @@ const FAQList = lazy(() =>
 const Form = lazy(() => import("./components/Form"));
 const OverviewPhoto = lazy(() => import("./components/OverviewGrid"));
 const Programs = lazy(() => import("./components/Programs"));
+const ProgramsV2 = lazy(() => import("./components/Programs/ProgramsV2"));
 const Services = lazy(() => import("./components/Services"));
+const ServicesFullPage = lazy(() =>
+  import("./components/Services/ServicesFullPage")
+);
 const WhatWeDo = lazy(() =>
   import("./components/WhatWeDo").then((module) => ({
     default: module.WhatWeDo,
@@ -24,7 +28,7 @@ const WhatWeDo = lazy(() =>
 const Body = () => {
   return (
     <>
-      <Landing />
+      {/* <Landing /> */}
       <Background />
       <Suspense
         fallback={
@@ -34,11 +38,14 @@ const Body = () => {
         }
       >
         {/* gap */}
-        <div id="gap" className="h-screen w-screen "></div>
-        <About />
+        {/* <div id="gap" className="h-screen w-screen "></div> */}
+        <AboutV2/>
+        {/* <About /> */}
         {/* <OverviewPhoto /> */}
-        <Services />
-        <Programs />
+        <ServicesFullPage />
+        {/* <Services /> */}
+        <ProgramsV2 />
+        {/* <Programs /> */}
         <WhatWeDo />
         <FAQList />
         <Affiliates />

@@ -7,7 +7,7 @@ const Landing = () => {
       <h1 className="text-6xl lg:text-8xl  w-screen text-center font-bold text-gray-200 my-12 fade-in-scale-down ">
         Fast and Easy Solar
       </h1>
-      <p className=" text-2xl lg:text-4xl font-bold text-gray-200 my-12 fade-in-scale-down ">
+      <p className="capitalize text-2xl lg:text-4xl font-bold text-gray-200 my-12 fade-in-scale-down ">
         find out how much you can save today!
       </p>
       <a href="#contact">
