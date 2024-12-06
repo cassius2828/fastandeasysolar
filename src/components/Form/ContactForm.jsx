@@ -4,10 +4,10 @@ import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 // Context Imports
 import { useFormContext } from "../../context/useFormContext";
 // Component Imports
-import Alert from "../Reusables/Alert";
 import AutocompleteErrorBoundary from "../../ErrorBoundaries/AutocompleteErrorBoundry";
 // Service Imports
 import { submitAssessmentForm } from "../../service/handleForms";
+import { TwUIAlert } from "../Reusables/Alert";
 
 //////////////////////
 // InputGroupContact Component
@@ -152,7 +152,7 @@ export const InputGroupContact = () => {
   }, [form]);
 
   return (
-    <div className={`input-group`}>
+    <div className={`input-group relative`}>
       {/* Full Name */}
       <ContactFormInput
         title="Full Name"
@@ -250,8 +250,14 @@ export const InputGroupContact = () => {
         </div>
       </div>
       {/* Alerts */}
-      {success && <Alert message={success} success />}
-      {error && <Alert message={error} handleClose={() => setError("")} />}
+      {success && (
+        <TwUIAlert
+          message={success}
+          success
+          handleClose={() => setSuccess("")}
+        />
+      )}
+      {error && <TwUIAlert message={error} handleClose={() => setError("")} />}
     </div>
   );
 };
