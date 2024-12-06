@@ -7,9 +7,14 @@ import {
   UilMonitor,
 } from "@iconscout/react-unicons";
 import CustomHR from "../Reusables/CustomHR";
+import { useGSAP } from "@gsap/react";
+import { fadeInFromBottom } from "../../gsap/useGsapAnimations";
 const WhatWeDoItem = ({ title, description, icon }) => {
+  useGSAP(() => {
+fadeInFromBottom('.wwditem')
+  },{})
   return (
-    <div className="w-full px-4 py-2 my-12">
+    <div className="wwditem w-full px-4 py-2 my-12">
       <div>
         {icon}
         <h3 className="text-4xl font-semibold text-blue-900 mb-2">{title}</h3>
@@ -62,11 +67,13 @@ export const WhatWeDo = () => {
       icon: <UilMonitor className="text-center" size="50" color="#172554" />,
     },
   ];
-
+  useGSAP(() => {
+    fadeInFromBottom('.wwdtext')
+      },{})
   return (
-    <div className="w-full mx-auto flex flex-col items-center justify-center pb-10 pt-32  relative z-20 bg-gray-100 ">
-      <h2 className="text-6xl font-bold mb-4 text-blue-900">What We Do</h2>
-      <CustomHR bgColor="#1e3a8a" />
+    <div className=" w-full mx-auto flex flex-col items-center justify-center pb-10 pt-32  relative z-20 bg-gray-100 ">
+      <h2 className="wwdtext text-6xl font-bold mb-4 text-blue-900">What We Do</h2>
+      <CustomHR gsapSelector={'wwdtext'} bgColor="#1e3a8a" />
       <div className="w-full grid grid-cols-1 md:grid-cols-4 md:w-3/4">
         {services.map((service, index) => (
           <WhatWeDoItem
