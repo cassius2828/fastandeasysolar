@@ -1,3 +1,7 @@
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { fadeInFromSide } from "../../gsap/useGsapAnimations";
+
 const aboutDetails = [
   {
     title: "What We Do",
@@ -20,11 +24,20 @@ const aboutDetails = [
 ];
 
 const AboutV2 = () => {
+  const aboutDetailsRef = useRef();
+  useGSAP(() => {
+    fadeInFromSide(".about-details-item", { side: -50 });
+  }, {});
   return (
-    <section id="about" className="relative z-30 bg-white pb-32 pt-20">
+    <section
+      ref={aboutDetailsRef}
+      id="about"
+      className="relative z-30 bg-white pb-32 pt-20"
+    >
       {/* Hero section */}
       <div className="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-blue-100/20 pt-14">
-        <div id="skewHero"
+        <div
+          id="skewHero"
           aria-hidden="true"
           className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-full origin-top-right  bg-white shadow-xl shadow-blue-600/10 ring-1 ring-blue-50 sm:-mr-80 lg:-mr-96"
         />
@@ -45,7 +58,7 @@ const AboutV2 = () => {
               </p>
             </div>
             <img
-            style={{aspectRatio:'6/5'}}
+              style={{ aspectRatio: "6/5" }}
               alt="Sun appearing over solar panels"
               srcSet={`
     ${
@@ -70,7 +83,7 @@ const AboutV2 = () => {
       <div className="mx-auto -mt-8 max-w-1200px px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {aboutDetails.map((item) => (
-            <div key={item.title}>
+            <div className="about-details-item" key={item.title}>
               <span className="flex items-center text-xl md:text-2xl font-semibold text-blue-600">
                 <svg
                   viewBox="0 0 4 4"
@@ -98,7 +111,7 @@ const AboutV2 = () => {
       <div className="w-full flex justify-center mt-16">
         <button
           type="button"
-          className="rounded-md bg-blue-600 h-16 max-w-64 px-3 py-2 text-xl font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+          className=" fade-in-and-up rounded-md bg-blue-600 h-16 max-w-64 px-3 py-2 text-xl font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
         >
           Contact Us Today!
         </button>

@@ -1,6 +1,6 @@
-const CustomHR = ({ bgColor = "#374151" }) => {
+const CustomHR = ({ bgColor = "#374151",gsapSelector }) => {
   return (
-    <div className="inline-flex items-center justify-center w-full relative">
+    <div className={` ${gsapSelector} inline-flex items-center justify-center w-full relative`}>
       <hr
         style={{ backgroundColor: bgColor }}
         className="w-64 h-1 my-8 border-0 rounded "
