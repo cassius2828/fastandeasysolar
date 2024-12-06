@@ -92,8 +92,6 @@ const ApplicationForm = () => {
       setError(
         "Form Submission Failed. Please reach out directly to either Fastandeasysolar@gmail.com or text (916) 320-7022 with the information requested in the form to submit your application if this form is not working"
       );
-
-      console.log(`Unable to send job applicaiton form data`);
     }
 
     // Reset the form

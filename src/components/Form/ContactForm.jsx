@@ -46,9 +46,7 @@ export const InputGroupContact = () => {
         },
         (place, status) => {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
-            console.log("Place details:", place);
             if (place.formatted_address) {
-              console.log(place.formatted_address, " formatted addy");
               resolve({ formatted_address: place.formatted_address });
             }
           } else {
@@ -67,8 +65,6 @@ export const InputGroupContact = () => {
     try {
       if (!place || !place?.value?.place_id) return;
       const data = await getPlaceDetails(place?.value?.place_id);
-      console.log(data, " <-- data");
-      console.log(place?.value?.place_id, " <-- placeid");
 
       if (data.formatted_address) {
         setAddress(data.formatted_address);
@@ -128,7 +124,6 @@ export const InputGroupContact = () => {
         "Form Submission Failed. Please reach out directly to either Fastandeasysolar@gmail.com or text (916) 320-7022 with the information requested in the form to request a free assessment if this form is not working"
       );
 
-      console.log(`Unable to submit assesssment form`);
     }
   };
 
@@ -138,7 +133,6 @@ export const InputGroupContact = () => {
   // * local
   useEffect(() => {
     handleUpdateAddress(address);
-    console.log(address, " <-- address");
   }, [address]);
 
   // * context

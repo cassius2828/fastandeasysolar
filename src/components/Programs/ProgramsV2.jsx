@@ -1,4 +1,3 @@
-
 import {
   UilEstate,
   UilFileContract,
@@ -6,7 +5,10 @@ import {
 } from "@iconscout/react-unicons";
 import useWindowWidth from "../../customHooks/useWindowWidth";
 import { useGSAP } from "@gsap/react";
-import { fadeInFromBottom, fadeInFromBottomStagger, fadeInFromSide } from "../../gsap/useGsapAnimations";
+import {
+  fadeInFromBottomStagger,
+  fadeInFromSide,
+} from "../../gsap/useGsapAnimations";
 const colData = [
   {
     title: "Ownership",
@@ -56,7 +58,10 @@ export default function Programs() {
           <h2 className=" program-text text-pretty text-5xl font-semibold tracking-wide text-gray-100 sm:text-7xl pb-5">
             Solar Options at a Glance: Ownership, Lease, or Hybrid?
           </h2>
-          <hr style={{ height: "2px" }} className="program-text w-full bg-deepblue" />
+          <hr
+            style={{ height: "2px" }}
+            className="program-text w-full bg-deepblue"
+          />
           {/* paragraph */}
           <p className=" program-text mt-6 text-xl md:text-2xl text-gray-100">
             In the following section, you’ll find an easy-to-read breakdown of
@@ -150,14 +155,15 @@ export default function Programs() {
           </g>
         </g>
       </svg>
-      
     </section>
   );
 }
 
 export const ProsAndConsComponent = ({ type, list }) => {
   return (
-    <div className={`${type} flex flex-col justify-start gap-x-16 gap-y-2 rounded-2xl bg-gray-100 shadow-lg p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none h-80 lg:flex-auto lg:flex-col lg:items-start lg:gap-y-2`}>
+    <div
+      className={`${type} flex flex-col justify-start gap-x-16 gap-y-2 rounded-2xl bg-gray-100 shadow-lg p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none h-80 lg:flex-auto lg:flex-col lg:items-start lg:gap-y-2`}
+    >
       <p className="flex-none text-3xl font-bold tracking-tight text-gray-800">
         {type}
       </p>
