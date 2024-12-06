@@ -32,7 +32,7 @@ const Affiliates = () => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center py-20 px-3 bg-gray-100 relative z-20">
-      <h2 className="text-5xl font-bold mb-0 text-blue-900">Certified Partners and Installers</h2>
+      <h2 className="text-5xl font-bold mb-0 text-blue-900 text-center">Certified Partners and Installers</h2>
       <CustomHR bgColor="#1e3a8a"/>
       <div className="grid grid-cols-2 md:grid-cols-5 grid-rows-3 md:grid-rows-1 w-full place-items-center mt-12">
         {affiliates.map((affiliate, index) => (

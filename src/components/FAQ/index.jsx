@@ -3,7 +3,7 @@ import CustomHR from "../Reusables/CustomHR";
 
 const FAQItem = ({ question, answer }) => {
   return (
-    <div className="w-full px-4 py-2 my-4 bg-gray-100 rounded-md h-40">
+    <div className="w-full px-4 py-2 my-4 bg-gray-100 rounded-md min-h-40">
       <h3 className="text-3xl font-bold text-blue-900 p-3">{question}</h3>
    
       <p className="text-2xl text-gray-600">{answer}</p>
