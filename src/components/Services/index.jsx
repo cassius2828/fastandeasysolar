@@ -95,7 +95,7 @@ export default Services;
 export const InfoCard = ({ text, icon, title }) => {
   const formattedTitle = title.split(' ').join('').toLowerCase();
   return (
-    <div id={formattedTitle} className="bg-gray-100 flex flex-col justify-around card w-full lg:h-[50rem] text-center rounded-lg p-4">
+    <div id={formattedTitle} className="bg-gray-100 flex flex-col justify-around card w-full lg:h-500px text-center rounded-lg p-4">
       {/* Icon */}
       <div className="flex justify-center w-full my-6">{icon}</div>
 

@@ -4,8 +4,9 @@
 const Background = () => {
   return (
     <section
+    style={{backgroundColor:'#130a28'}}
       id="Background"
-      className="h-screen w-screen flex items-center justify-center fixed top-0 z-20 bg-[#130a28]"
+      className="h-screen w-screen flex items-center justify-center fixed top-0 z-20 bg-"
     >
       {/* Gradient Background */}
       <div className="absolute z-0 h-full w-full inset-0 bg-gradient-vertical fade-in-and-up-sky"></div>

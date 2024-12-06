@@ -60,7 +60,16 @@ body {
     transform: translateY(-200px);
   }
 }
-
+@keyframes fadeInAndUp {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes fadeInScaleDown {
   from {
     opacity: 0;
@@ -94,7 +103,9 @@ body {
 .fade-in-and-down {
   animation: fadeInAndDown 2s ease-in-out forwards;
 }
-
+.fade-in-and-up {
+  animation: fadeInAndUp 2s ease-in-out forwards;
+}
 /* /////////////////////////// */
 /* General Resets */
 /* /////////////////////////// */
@@ -205,4 +216,12 @@ li {
   .autocomplete-container > div > div {
     font-size: 1.5rem;
   }
+}
+
+#skewHero {
+  --tw-skew-x: -30deg;
+  transform: translate(var(--tw-translate-x, 0), var(--tw-translate-y, 0))
+    rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x))
+    skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1))
+    scaleY(var(--tw-scale-y, 1));
 }
