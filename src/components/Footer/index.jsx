@@ -1,6 +1,4 @@
 import { UilArrowUp } from "@iconscout/react-unicons";
-import { useProgramContext } from "../../context/useProgramContext";
-// import SocialList from "../Reusables/SocialList";
 
 //////////////////////
 // Footer Component
@@ -13,10 +11,6 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  //////////////////////
-  // Set Selected Program
-  //////////////////////
-  const { setSelectedProgram } = useProgramContext();
 
   return (
     <footer className="bg-blue-900 p-12 text-center text-white relative z-30">
@@ -25,13 +19,13 @@ const Footer = () => {
         <div>
           <h4 className="text-3xl text-blue-400 mb-8 font-bold">Programs</h4>
           <ul className="text-2xl flex flex-col justify-center items-center gap-4">
-            <li onClick={() => setSelectedProgram(1)}>
+            <li >
               <a href="#programs">Purchase</a>
             </li>
-            <li onClick={() => setSelectedProgram(2)}>
+            <li >
               <a href="#programs">Lease</a>
             </li>
-            <li onClick={() => setSelectedProgram(3)}>
+            <li >
               <a href="#programs">PPA</a>
             </li>
           </ul>

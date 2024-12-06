@@ -1,4 +1,4 @@
-import { useProgramContext } from "../../context/useProgramContext";
+
 import {
   UilEstate,
   UilFileContract,
@@ -37,7 +37,6 @@ const colData = [
   },
 ];
 export default function Programs() {
-  const { selectedProgram, setSelectedProgram } = useProgramContext();
   const windowWidth = useWindowWidth();
   const isMobile = windowWidth < 768;
   return (
