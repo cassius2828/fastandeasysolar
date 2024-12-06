@@ -15,7 +15,7 @@ const Form = () => {
             or fill out the form
           </h2>
         </div>
-        <div className="mt-5 w-full min-h-[50rem]">
+        <div className="mt-5 w-full min-h-500px ">
           <InputGroupContact />
         </div>
       </form>

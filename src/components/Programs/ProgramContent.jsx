@@ -103,7 +103,7 @@ export const ColCard = ({ icon, pros, cons }) => {
     <div className="text-4xl flex flex-col items-center justify-center h-full w-full border-r-2">
       {icon}
       {/* Pros */}
-      <div className="flex-col flex items-center justify-start w-full md:h-[30rem] px-4">
+      <div className="flex-col flex items-center justify-start w-full md:h-300px px-4">
         <h2 className="mt-8 mb-20 text-5xl">Pros</h2>
         <ul>
           {pros.map((pro, index) => (
@@ -114,7 +114,7 @@ export const ColCard = ({ icon, pros, cons }) => {
         </ul>
       </div>
       {/* Cons */}
-      <div className="flex-col flex items-center justify-start border-t-2 w-full md:h-[30rem] px-4 mt-12">
+      <div className="flex-col flex items-center justify-start border-t-2 w-full md:h-300px px-4 mt-12">
         <h2 className="mt-8 mb-20 text-5xl">Cons</h2>
         <ul className="mb-20 md:mb-0">
           {cons.map((con, index) => (

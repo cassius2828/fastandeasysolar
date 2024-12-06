@@ -4,6 +4,7 @@ import {
   UilFileContract,
   UilBoltAlt,
 } from "@iconscout/react-unicons";
+import useWindowWidth from "../../customHooks/useWindowWidth";
 const colData = [
   {
     title: "Ownership",
@@ -37,7 +38,8 @@ const colData = [
 ];
 export default function Programs() {
   const { selectedProgram, setSelectedProgram } = useProgramContext();
-
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth < 768;
   return (
     <section
       style={{ backgroundColor: "#0b4bb3" }}
@@ -50,7 +52,7 @@ export default function Programs() {
           <h2 className="text-pretty text-5xl font-semibold tracking-wide text-gray-100 sm:text-7xl pb-5">
             Solar Options at a Glance: Ownership, Lease, or Hybrid?
           </h2>
-          <hr className="h-[2px] w-full bg-[#0b4bb3]" />
+          <hr style={{ height: "2px" }} className=" w-full bg-deepblue" />
           {/* paragraph */}
           <p className="mt-6 text-xl md:text-2xl text-gray-100">
             In the following section, you’ll find an easy-to-read breakdown of
@@ -70,6 +72,10 @@ export default function Programs() {
         </div>
       </div>
       <svg
+        style={{
+          top: isMobile ? "0" : "-110rem",
+          right: isMobile ? "" : "-140rem",
+        }}
         className=" opacity-50 absolute top-0 md:-top-[110rem] md:-right-[140rem] scale-150 md:scale-125  h-full md:h-auto  animate-slow-spin"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 2000 1500"
@@ -259,7 +265,7 @@ export const ProsAndConsComponent = ({ type, list }) => {
       <p className="flex-none text-3xl font-bold tracking-tight text-gray-800">
         {type}
       </p>
-      <hr className="h-[2px] w-full bg-[#0b4bb3]" />
+      <hr style={{ height: "2px" }} className=" w-full bg-deepblue" />
       <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
         <ul className="text-gray-800 text-xl md:text-2xl mt-3">
           {list.map((item) => (

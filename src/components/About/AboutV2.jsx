@@ -24,9 +24,9 @@ const AboutV2 = () => {
     <section id="about" className="relative z-30 bg-white pb-32 pt-20">
       {/* Hero section */}
       <div className="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-blue-100/20 pt-14">
-        <div
+        <div id="skewHero"
           aria-hidden="true"
-          className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-blue-600/10 ring-1 ring-blue-50 sm:-mr-80 lg:-mr-96"
+          className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-200% origin-top-right  bg-white shadow-xl shadow-blue-600/10 ring-1 ring-blue-50 sm:-mr-80 lg:-mr-96"
         />
         <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
@@ -45,6 +45,7 @@ const AboutV2 = () => {
               </p>
             </div>
             <img
+            style={{aspectRatio:'6/5'}}
               alt="Sun appearing over solar panels"
               srcSet={`
     ${
@@ -58,7 +59,7 @@ const AboutV2 = () => {
               src={`${
                 import.meta.env.VITE_S3_OBJECT_BASE_URL
               }faes/logos/Icon_no-text-w320.webp`}
-              className=" fade-in-and-up mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+              className=" fade-in-and-up mt-10  w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
             />
           </div>
         </div>
@@ -66,7 +67,7 @@ const AboutV2 = () => {
       </div>
 
       {/* Timeline section */}
-      <div className="mx-auto -mt-8 max-w-[120rem] px-6 lg:px-8">
+      <div className="mx-auto -mt-8 max-w-1200px px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {aboutDetails.map((item) => (
             <div key={item.title}>

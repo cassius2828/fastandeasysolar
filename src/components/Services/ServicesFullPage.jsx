@@ -58,9 +58,9 @@ export default function Services() {
       <div id="scroll-to-services" className="relative -top-56"></div>
     
     <section id="services" className="bg-gray-100 py-24 sm:py-32 relative z-30">
-      <div className="mx-auto max-w-[140rem] px-6 lg:px-8">
+      <div className="mx-auto max-w-1400px px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-7xl font-semibold text-[#0b4bb3]">Services</h2>
+          <h2 className="text-7xl font-semibold text-deepblue">Services</h2>
           <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
             What we can provide to you
           </p>
@@ -91,7 +91,7 @@ export default function Services() {
 
 export const ServiceCard = ({ feature }) => {
   return (
-    <div className="bg-white flex flex-col rounded-md p-5 shadow-md hover:shadow-[#0b4bb3] transition-shadow duration-200">
+    <div className="bg-white flex flex-col rounded-md p-5 shadow-md hover:shadow-deepblue transition-shadow duration-200">
       <dt className="flex items-center gap-x-2 font-semibold text-gray-900 text-3xl">
         <div className="flex justify-center w-full my-6">{feature.icon}</div>
         <span className="w-full">{feature.title}</span>
@@ -99,7 +99,7 @@ export const ServiceCard = ({ feature }) => {
       <dd className="mt-4 flex flex-auto flex-col text-2xl text-gray-600">
         <p className="flex-auto">{feature.text}</p>
         <p className="mt-6">
-          <a href={"#contact"} className="text-xl font-semibold text-[#0b4bb3]">
+          <a href={"#contact"} className="text-xl font-semibold text-deepblue">
             Learn more <span aria-hidden="true">→</span>
           </a>
         </p>

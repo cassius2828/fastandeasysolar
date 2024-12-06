@@ -15,7 +15,7 @@ export const OverviewGrid = () => {
   // Use Intersection Observer to load Calendly widget when section is in view
   useEffect(() => {
     attachObserverToRef(sectionRef, setSectionLoaded);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <section className="min-h-96" ref={sectionRef}>
@@ -24,7 +24,7 @@ export const OverviewGrid = () => {
           <h1 className="relative z-20 mb-12 text-gray-100 text-5xl md:text-8xl text-center">
             Overview
           </h1>
-          <div className="grid grid-cols-2 grid-rows-2 rounded-md overflow-hidden relative z-20 w-full md:w-1/2 max-w-[70rem] mx-auto mb-64 bg-gray-100 text-4xl">
+          <div className="grid grid-cols-2 grid-rows-2 rounded-md overflow-hidden relative z-20 w-full md:w-1/2 max-w-700px mx-auto mb-64 bg-gray-100 text-4xl">
             {/* sqr 1-1 */}
             <div className="border p-8 col-span-1 col-start-1 row-span-1">
               <h3 className=" text-blue-950 mb-16">Now</h3>
@@ -60,7 +60,10 @@ export const OverviewGrid = () => {
               <div className="flex items-center text-blue-950">
                 <div className="flex items-center gap-2 w-full">
                   <span>$0.23</span>
-                  <div className="h-[1px] w-full bg-gray-950 flex-1"></div>
+                  <div
+                    style={{ height: "1px" }}
+                    className=" w-full bg-gray-950 flex-1"
+                  ></div>
                   <span>$0.36</span>
                 </div>
               </div>
@@ -109,9 +112,7 @@ export const OverviewGrid = () => {
   );
 };
 
-
-
- const OverviewPhoto = () => {
+const OverviewPhoto = () => {
   return (
     <section className="min-h-96 flex flex-col justify-center items-center my-96">
       <h1 className="relative z-20 mb-12 text-gray-100 text-5xl md:text-8xl text-center">
@@ -136,4 +137,4 @@ export const OverviewGrid = () => {
     </section>
   );
 };
-export default OverviewPhoto
+export default OverviewPhoto;

@@ -198,7 +198,7 @@ export const InputGroupContact = () => {
         </label>
         <input
           required
-          className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-[#b3b3b3] text-xl lg:text-2xl"
+          className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-zinc-400 text-xl lg:text-2xl"
           type="date"
           name="date"
           id="date"
@@ -273,7 +273,7 @@ export const ContactFormInput = ({
       </label>
       <input
         required
-        className={`w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-[#b3b3b3]  ${
+        className={`w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-zinc-400  ${
           errorState && "border-red-500"
         } text-xl lg:text-2xl`}
         type={name}
@@ -332,7 +332,7 @@ export const TimeInput = ({ handleUpdateForm, time }) => {
       </label>
       <select
         required
-        className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-[#b3b3b3] text-xl lg:text-2xl"
+        className="w-full bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-zinc-400 text-xl lg:text-2xl"
         name="time"
         id="time"
         onChange={handleUpdateForm}
@@ -360,7 +360,7 @@ export const TextareaInput = ({ errorMessage, value, handleChange }) => {
       </label>
       <textarea
         placeholder="Message"
-        className={`w-full h-32 bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-[#b3b3b3] ${
+        className={`w-full h-32 bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 hover:border-zinc-400  ${
           errorMessage && "border-red-500"
         } text-xl lg:text-2xl`}
         name="message"

@@ -37,7 +37,7 @@ const About = () => {
         <h1 className="text-7xl text-gray-200 text-center p-4">
           About Us: What is Fast and Easy Solar?
         </h1>
-        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-[3rem]">
+        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-3rem">
           Welcome to Fast and Easy Solar, where we believe that harnessing the
           power of the sun should be simple, affordable, and accessible to
           everyone. Our mission is to make solar energy a seamless experience
@@ -45,7 +45,7 @@ const About = () => {
           while reducing your carbon footprint.
         </p>
 
-        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-[3rem]">
+        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-3rem">
           At Fast and Easy Solar, we pride ourselves on delivering reliable
           solar solutions with speed and precision. From consultation to
           installation, we handle every step with a commitment to quality and
@@ -54,14 +54,14 @@ const About = () => {
           fits your energy needs and budget.
         </p>
 
-        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-[3rem]">
+        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-3rem">
           Why choose us? Because we combine cutting-edge technology with
           unmatched service, ensuring a hassle-free transition to clean energy.
           With Fast and Easy Solar, you’re not just investing in solar
           power—you’re investing in a brighter, sustainable future.
         </p>
 
-        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-[3rem]">
+        <p className="text-3xl text-gray-200 p-12 lg:mr-8 leading-3rem">
           Let us show you how easy going solar can be. Join us on the journey to
           a cleaner, more energy-efficient tomorrow!
         </p>
