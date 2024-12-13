@@ -1,17 +1,20 @@
 import { useEffect } from "react";
-
+import { useGlobalContext } from "../../context/useGlobalContext";
 
 export function TwUIAlert({ message, success, handleClose }) {
+  const { handleConversion } = useGlobalContext();
   useEffect(() => {
     setTimeout(() => {
       handleClose();
     }, 3000);
+    if (success) {
+      handleConversion();
+    }
   }, []);
   return (
     <div className="rounded-md bg-gray-50 p-5 absolute left-1/2 bottom-0 -translate-x-1/2  z-50 alert-bounce">
       <div className="flex">
-        <div className="shrink-0">
-        </div>
+        <div className="shrink-0"></div>
         <div className="ml-3">
           <h3
             className={`text-xl font-medium ${

@@ -1,4 +1,8 @@
+import { useGlobalContext } from "../../context/useGlobalContext";
+
 const InfoCard = () => {
+  const { handleConversion, freeAssessmentCalendlyUrl } = useGlobalContext();
+
   return (
     <div
       style={{ maxWidth: "40rem" }}
@@ -49,7 +53,7 @@ const InfoCard = () => {
                   </g>
                 </svg>
               </span>
-              fastandeasysolar@gmail.com
+              contact@fastandeasysolar.com
             </p>
           </div>
         </div>
@@ -71,7 +75,10 @@ const InfoCard = () => {
         {/* Social Media Links */}
         <div className="flex items-center gap-8 mt-12">
           <h3 className="text-2xl">Book An Appointment Now</h3>
-          <a href="https://calendly.com/fastandeasysolar/free-assessment-for-program-eligibility">
+          <a
+            onClick={() => handleConversion()}
+            href={freeAssessmentCalendlyUrl}
+          >
             <button className="flex items-center justify-center text-blue-900 bg-gray-200 hover:bg-gray-300 text-xl w-48 transition-all duration-200 ease-in-out cursor-pointer rounded-md p-2 mr-5 lg:mr-0">
               book
             </button>

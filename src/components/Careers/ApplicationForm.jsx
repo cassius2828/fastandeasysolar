@@ -25,8 +25,7 @@ const ApplicationForm = () => {
   const [formErrors, setFormErrors] = useState(initalFormErrors);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
-  const { validateEmail, validatePhoneNumber } =
-    useFormContext();
+  const { validateEmail, validatePhoneNumber } = useFormContext();
 
   ///////////////////////////
   // Handle Change
@@ -48,9 +47,7 @@ const ApplicationForm = () => {
       setFormErrors({ ...formErrors, [name]: true });
     } else if (name === "email" && !validateEmail(value)) {
       setFormErrors({ ...formErrors, email: true });
-    } else if (
-      (name === "phone" && !validatePhoneNumber(value))
-    ) {
+    } else if (name === "phone" && !validatePhoneNumber(value)) {
       setFormErrors({ ...formErrors, phone: true });
     } else {
       setFormErrors({ ...formErrors, [name]: false });
@@ -90,7 +87,7 @@ const ApplicationForm = () => {
     } catch (err) {
       console.error(err);
       setError(
-        "Form Submission Failed. Please reach out directly to either Fastandeasysolar@gmail.com or text (916) 320-7022 with the information requested in the form to submit your application if this form is not working"
+        "Form Submission Failed. Please reach out directly to either contact@fastandeasysolar.com or text (916) 320-7022 with the information requested in the form to submit your application if this form is not working"
       );
     }
 
