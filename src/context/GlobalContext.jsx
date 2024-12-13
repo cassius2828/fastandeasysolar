@@ -13,19 +13,31 @@ export const GlobalProvider = ({ children }) => {
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
+    if (ref?.current) {
       observer.observe(ref.current);
     }
+
     return () => {
-      if (ref.current) {
+      if (ref?.current) {
         observer.unobserve(ref.current);
       }
     };
   };
+  const freeAssessmentCalendlyUrl =
+    "https://calendly.com/fastandeasysolar/free-assessment-for-program-eligibility";
+  const handleConversion = (url) => {
+    if (window.gtag_report_conversion) {
+      window.gtag_report_conversion(url);
+    } else {
+      console.error("gtag_report_conversion function is not available.");
+    }
+  };
+
   return (
     <GlobalContext.Provider
       value={{
         attachObserverToRef,
+        handleConversion,freeAssessmentCalendlyUrl
       }}
     >
       {children}

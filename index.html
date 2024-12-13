@@ -26,15 +26,35 @@
     <meta name="twitter:description"
           content="Fast and Easy Solar offers various solar programs in Northern California, excluding Sacramento. Contact us for solar panel installations, leases, and more." />
     <meta name="twitter:image" content="/images/twitter-image.jpg" />
+
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11491678429"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11493399887"></script>
     <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'AW-11491678429');
+  gtag('config', 'AW-11493399887');
     </script>
+
+    <!-- Event snippet for Book appointment conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+  window.gtag_report_conversion = function (url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-11493399887/2Hg-CPi24vYZEM-6vegq',
+        'value': 1.0,
+        'currency': 'USD',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
@@ -52,7 +72,7 @@
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-916-320-7022",
-          "email": "Fastandeasysolar@gmail.com",
+          "email": "contact@fastandeasysolar.com",
           "contactType": "Customer Service",
           "areaServed": "US",
           "availableLanguage": "English"

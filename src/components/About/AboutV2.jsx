@@ -28,10 +28,7 @@ const AboutV2 = () => {
     fadeInFromSide(".about-details-item", { side: -50 });
   }, {});
   return (
-    <section
-      id="about"
-      className="relative z-30 bg-white pb-32 pt-20"
-    >
+    <section id="about" className="relative z-30 bg-white pb-32 pt-20">
       {/* Hero section */}
       <div className="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-blue-100/20 pt-14">
         <div
@@ -107,12 +104,13 @@ const AboutV2 = () => {
         </div>
       </div>
       <div className="w-full flex justify-center mt-16">
-        <button
+        <a
+          href="#contact"
           type="button"
-          className=" fade-in-and-up rounded-md bg-blue-600 h-16 max-w-64 px-3 py-2 text-xl font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+          className=" fade-in-and-up rounded-md bg-blue-600 max-w-64 px-3 py-2 text-xl font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
         >
           Contact Us Today!
-        </button>
+        </a>
       </div>
     </section>
   );
