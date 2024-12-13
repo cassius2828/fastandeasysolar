@@ -30,10 +30,10 @@ const Background = () => {
           }faes/city-bg-no-sky-w1440.webp`}
         />
         <img
+        loading="lazy"
           className="absolute top-0 left-0"
           src={`${import.meta.env.VITE_S3_OBJECT_BASE_URL}faes/city-bg-no-sky-w2400.webp`}
           alt="City Background"
-          width="2400"
         />
       </picture>
 

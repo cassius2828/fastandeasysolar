@@ -77,10 +77,6 @@ export const InputGroupContact = () => {
     }
   };
 
-  const test = (place) => {
-    setAddress(place);
-  };
-
   ///////////////////////////
   // Validate Form Errors
   ///////////////////////////
@@ -123,7 +119,6 @@ export const InputGroupContact = () => {
       setError(
         "Form Submission Failed. Please reach out directly to either Fastandeasysolar@gmail.com or text (916) 320-7022 with the information requested in the form to request a free assessment if this form is not working"
       );
-
     }
   };
 
@@ -177,13 +172,6 @@ export const InputGroupContact = () => {
         handleGetFullAddress={handleGetFullAddress}
         address={address}
         setAddress={setAddress}
-      />
-      <input
-        value={address}
-        onChange={() => test(address)}
-        type="text"
-        name="test"
-        id="test"
       />
       {/* Date */}
       <div className="my-6">
