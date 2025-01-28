@@ -120,7 +120,7 @@ const Footer = () => {
           src="/images/Full_logo.svg"
           alt="company logo with slogan"
         />
-        <p>&copy; 2024 Fast and Easy Solar. All rights reserved.</p>
+        <p>&copy; 2024 Fast & Easy Solar. All rights reserved.</p>
       </div>
 
       {/* Scroll to Top Button */}

@@ -33,7 +33,7 @@ const Nav = () => {
           className="text-3xl lg:text-6xl ml-4 text-blue-900 uppercase"
           style={{ textShadow: "2px 2px 0 #93C5FD" }}
         >
-          Fast and easy solar
+          Fast & easy solar
         </h2>
       </div>
       {/* desktop nav */}
