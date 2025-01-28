@@ -87,7 +87,7 @@ export default function Services() {
               Switch to Solar the Fast & Easy Way
             </p>
             <p className=" service-text mt-6 text-xl text-gray-600 text-left">
-              At Fast and Easy Solar, we make going solar simple, quick, and
+              At Fast & Easy Solar, we make going solar simple, quick, and
               hassle-free for homeowners. Our team specializes in helping you
               save money on energy bills while protecting your home from rising
               utility costs. Here’s why we’re the best choice for your solar
