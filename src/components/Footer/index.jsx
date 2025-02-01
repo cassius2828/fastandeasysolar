@@ -1,6 +1,8 @@
 import { UilArrowUp } from "@iconscout/react-unicons";
 import { useGlobalContext } from "../../context/useGlobalContext";
-
+import {
+  UilInstagram,
+} from "@iconscout/react-unicons";
 //////////////////////
 // Footer Component
 ////////////////////
@@ -112,15 +114,37 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-
-      <div className="mt-8 flex flex-col md:flex-row justify-between md:justify-center  items-center gap-4">
-        <img
-          loading="lazy"
-          width="300"
-          src="/images/Full_logo.svg"
-          alt="company logo with slogan"
-        />
-        <p>&copy; 2024 Fast & Easy Solar. All rights reserved.</p>
+      <hr className="mt-12 mx-auto" />
+      <div
+        style={{ maxWidth: "150rem" }}
+        className="flex flex-col md:flex-row justify-between items-center gap-4 mx-auto"
+      >
+        <div className="flex flex-col items-center">
+          <img
+            loading="lazy"
+            width="300"
+            src="/images/Full_logo.svg"
+            alt="company logo with slogan"
+          />{" "}
+          <p className="relative -top-12">
+            &copy; 2024 Fast & Easy Solar. All rights reserved.
+          </p>
+        </div>{" "}
+        <div className="flex flex-col items-center justify-center  w-1/2">
+          {" "}
+          <h4 className="font-medium text-2xl text-start mb-3">Social Media</h4>
+          <li>
+            <a
+              href="https://www.instagram.com/solarsolutionnv?igsh=NTc4MTIwNjQ2YQ%3D%3D"
+              rel="noreferrer"
+              target="_blank"
+              className="flex items-center"
+            >
+              <UilInstagram size={"20px"} className="mr-2" />
+              <span className="text-lg">@solarsolutionnv</span>
+            </a>
+          </li>
+        </div>
       </div>
 
       {/* Scroll to Top Button */}
