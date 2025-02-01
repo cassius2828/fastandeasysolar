@@ -16,7 +16,7 @@ const SocialList = ({ size = "24" }) => {
             Instagram:
           </div>
           <span className="hover:text-blue-300 transition-all duration-200 ease-in-out cursor-pointer ml-1">
-            @fastandeasysolar
+            @solarsolutionnv
           </span>
         </li>
         <li className="flex items-center justify-between  w-1/2">
