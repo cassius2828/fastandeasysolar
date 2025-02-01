@@ -19,10 +19,3 @@
   status = 200
   force = true
   conditions = { Context = "branch-deploy" }
-
-# Redirect the old domain to the new domain
-[[redirects]]
-  from = "https://fastandeasysolar.com/*"
-  to = "https://fastandeasysolar.netlify.app/:splat"
-  status = 301
-  force = true
