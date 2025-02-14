@@ -168,10 +168,18 @@ export const InputGroupContact = () => {
       />
 
       {/* Address */}
-      <AutocompleteInput
+      {/* <AutocompleteInput
         handleGetFullAddress={handleGetFullAddress}
         address={address}
         setAddress={setAddress}
+      /> */}
+      {/* manual address input */}
+      <ContactFormInput
+        title="Address"
+        name="address"
+        value={form.address}
+        errorState={address}
+        handleChange={handleUpdateForm}
       />
       {/* Date */}
       <div className="my-6">
