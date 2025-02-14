@@ -15,7 +15,7 @@ const features = [
   // New features from the site owner's request
   {
     icon: <UilSun className="text-center" size="40" color="#0b4bb3" />,
-    title: "Fast & Easy Process",
+    title: "The Apex Process",
     text: "We streamline every step of the solar journey, from your free consultation to the final installation. Our team handles the paperwork, permits, and logistics, ensuring you can start enjoying the benefits of solar energy without any hassle or stress.",
   },
   {
@@ -84,10 +84,10 @@ export default function Services() {
               Services
             </h2>
             <p className="service-text mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
-              Switch to Solar the Fast & Easy Way
+              Switch to Solar the Apex Way
             </p>
             <p className=" service-text mt-6 text-xl text-gray-600 text-left">
-              At Fast & Easy Solar, we make going solar simple, quick, and
+              At Apex Solar Solutions, we make going solar simple, quick, and
               hassle-free for homeowners. Our team specializes in helping you
               save money on energy bills while protecting your home from rising
               utility costs. Here’s why we’re the best choice for your solar

@@ -3,7 +3,7 @@
 
 **Website**: [fastandeasysolar.com](https://www.fastandeasysolar.com)
 
-Fast & Easy Solar is a responsive and modern web application designed to streamline the process of exploring and adopting solar energy solutions. Built to provide a smooth and intuitive user experience, the site integrates advanced tools and APIs to handle key functionalities like appointment booking, location-based services, and marketing performance tracking.
+Apex Solar Solutions is a responsive and modern web application designed to streamline the process of exploring and adopting solar energy solutions. Built to provide a smooth and intuitive user experience, the site integrates advanced tools and APIs to handle key functionalities like appointment booking, location-based services, and marketing performance tracking.
 
 ## About the Project
 

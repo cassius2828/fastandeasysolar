@@ -596,10 +596,6 @@ video {
   bottom: 0px;
 }
 
-.-top-12 {
-  top: -3rem;
-}
-
 .-top-56 {
   top: -14rem;
 }
@@ -810,10 +806,6 @@ video {
 
 .mt-1 {
   margin-top: 0.25rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .mt-12 {
@@ -1749,7 +1741,7 @@ video {
 /* /////////////////////////// */
 
 body {
-  font-family: "Old Standard TT", serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 /* /////////////////////////// */
@@ -2470,10 +2462,6 @@ li {
 
   .xl\:row-end-2 {
     grid-row-end: 2;
-  }
-
-  .xl\:mt-36 {
-    margin-top: 9rem;
   }
 
   .xl\:grid-cols-1 {

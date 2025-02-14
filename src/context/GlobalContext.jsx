@@ -24,7 +24,7 @@ export const GlobalProvider = ({ children }) => {
     };
   };
   const freeAssessmentCalendlyUrl =
-    "https://calendly.com/fastandeasysolar/free-assessment-for-program-eligibility";
+    "https://calendly.com/apexsolarsolutionsca/free-assessment-for-program-eligibility";
   const handleConversion = (url) => {
     if (window.gtag_report_conversion) {
       window.gtag_report_conversion(url);
