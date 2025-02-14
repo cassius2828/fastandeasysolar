@@ -73,7 +73,6 @@ export const FormProvider = ({ children }) => {
     const { name, value } = e.target;
 
     setForm({ ...form, [name]: value });
-
     if (name === "message") {
       setFormErrors({ ...formErrors, message: false });
     } else if (name === "email" && !validateEmail(value)) {
