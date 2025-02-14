@@ -19,3 +19,11 @@
   status = 200
   force = true
   conditions = { Context = "branch-deploy" }
+
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/checkBilling"
+  to = "/.netlify/functions/checkBilling"
+  status = 200
