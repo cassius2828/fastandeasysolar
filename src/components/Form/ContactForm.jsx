@@ -8,7 +8,6 @@ import AutocompleteErrorBoundary from "../../ErrorBoundaries/AutocompleteErrorBo
 // Service Imports
 import { submitAssessmentForm } from "../../service/handleForms";
 import { TwUIAlert } from "../Reusables/Alert";
-import { checkBillingStatus } from "../../service/googleConsole";
 
 //////////////////////
 // InputGroupContact Component
@@ -140,10 +139,7 @@ export const InputGroupContact = () => {
   useEffect(() => {
     setHasSomeErrors(validateFormErrors(formErrors));
   }, [form]);
-useEffect(() => {
-checkBillingStatus()
-},[]
-)
+
   return (
     <div className={`input-group relative`}>
       {/* Full Name */}
