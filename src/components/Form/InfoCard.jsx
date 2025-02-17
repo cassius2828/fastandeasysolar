@@ -62,12 +62,12 @@ const InfoCard = () => {
         <div className="flex flex-col text-gray-100 mt-8">
           <h3 className="font-bold uppercase text-3xl my-4">Business Hours</h3>
           <ul className="space-y-2 text-xl md:text-2xl">
-            <li>Monday: 8am - 8pm</li>
-            <li>Tuesday: 8am - 8pm</li>
-            <li>Wednesday: 8am - 8pm</li>
-            <li>Thursday: 8am - 8pm</li>
-            <li>Friday: 8am - 8pm</li>
-            <li>Saturday: 10am - 4pm</li>
+            <li>Monday: 8am - 5pm</li>
+            <li>Tuesday: 8am - 5pm</li>
+            <li>Wednesday: 8am - 5pm</li>
+            <li>Thursday: 8am - 5pm</li>
+            <li>Friday: 8am - 5pm</li>
+            <li>Saturday: 8am - 2pm</li>
             <li>Sunday: Closed</li>
           </ul>
         </div>
