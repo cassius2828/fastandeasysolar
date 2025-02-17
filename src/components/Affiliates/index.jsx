@@ -8,9 +8,9 @@ const SunrunLogo = `${
 const SunnovaLogo = `${
   import.meta.env.VITE_S3_OBJECT_BASE_URL
 }faes/logos/sunnova-logo-color-3.webp`;
-const SunPowerLogo = `${
-  import.meta.env.VITE_S3_OBJECT_BASE_URL
-}faes/logos/SunPower.webp`;
+// const SunPowerLogo = `${
+//   import.meta.env.VITE_S3_OBJECT_BASE_URL
+// }faes/logos/SunPower.webp`;
 const GoodLeapLogo = `${
   import.meta.env.VITE_S3_OBJECT_BASE_URL
 }faes/logos/goodleap.webp`;
@@ -24,7 +24,7 @@ const affiliates = [
   { name: "Sunrun", logo: SunrunLogo },
   { name: "Everbright", logo: EverbrightLogo },
   { name: "Sunnova", logo: SunnovaLogo },
-  { name: "SunPower", logo: SunPowerLogo },
+  // { name: "SunPower", logo: SunPowerLogo },
   { name: "good leap", logo: GoodLeapLogo },
   { name: "En Fin", logo: EnFinLogo },
 ];
