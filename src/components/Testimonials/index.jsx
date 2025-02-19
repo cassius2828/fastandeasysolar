@@ -86,7 +86,7 @@ export default TestimonialCarousel;
 function Testimonial({ text }) {
   const [isMobile, setIsMobile] = useState(true);
   useEffect(() => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1200) {
       setIsMobile(true);
     } else setIsMobile(false);
   }, [window.innerWidth]);
@@ -98,7 +98,10 @@ function Testimonial({ text }) {
       >
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-x-8 gap-y-10 px-6 sm:gap-y-8 lg:px-8 xl:flex-row xl:items-stretch">
           <div className="relative h-full hidden xl:block  -mt-8 w-full max-w-2xl xl:-mb-8 xl:w-96 xl:flex-none">
-            <div className="absolute translate-y-1/3  aspect-[2/1] h-auto lg:-mx-8 xl:mx-0 xl:aspect-auto">
+            <div
+              style={{ aspectRatio: "2 / 1" }}
+              className="absolute translate-y-1/3  h-auto lg:-mx-8 xl:mx-0 xl:aspect-auto"
+            >
               <img
                 alt="Apex Solar Logo"
                 src="/images/ApexSolarLogoW350NoBuff.webp"
