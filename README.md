@@ -1,5 +1,5 @@
 # Apex Solar Soltuion (Formerly Fast and Easy Solar)
-![Alt text describing the image](https://www.apexsolarsolution.com/images/ApexSolarLogoW768NoBuff.webp)
+![Alt text describing the image](https://www.apexsolarsolution.net/images/ApexSolarLogoW768NoBuff.webp)
 
 **Website**: [apexsolarsolution.com](https://www.apexsolarsolution.com)
 
