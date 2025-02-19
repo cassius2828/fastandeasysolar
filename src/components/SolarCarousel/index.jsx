@@ -7,6 +7,11 @@ const baseURL = `${import.meta.env.VITE_S3_OBJECT_BASE_URL}faes/stock-photos/`;
 
 const stockPhotos = [
   {
+    mobile: `${baseURL}img1-W350.webp`,
+    tablet: `${baseURL}img1-W768.webp`,
+    desktop: `${baseURL}img1-W1440.webp`,
+  },
+  {
     mobile: `${baseURL}img2-W350.webp`,
     tablet: `${baseURL}img2-W768.webp`,
     desktop: `${baseURL}img2-W1440.webp`,
@@ -84,9 +89,10 @@ const SolarCarousel = () => {
               ▶
             </button>
           </div>
-      <span className="absolute bottom-8 text-blue-950 z-30 text-4xl">{currentIndex + 1} / {stockPhotos.length}</span>
+          <span className="absolute bottom-8 text-blue-950 z-30 text-4xl">
+            {currentIndex + 1} / {stockPhotos.length}
+          </span>
         </div>
-
       </div>
     </div>
   );

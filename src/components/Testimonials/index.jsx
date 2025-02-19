@@ -1,5 +1,7 @@
 import { useState } from "react";
 import CustomHR from "../Reusables/CustomHR";
+import { useGSAP } from "@gsap/react";
+import { fadeInFromBottom } from "../../gsap/useGsapAnimations";
 
 const testimonials = [
   {
@@ -40,10 +42,12 @@ const TestimonialCarousel = () => {
       prev === 0 ? testimonials.length - 1 : prev - 1
     );
   };
-
+  useGSAP(() => {
+    fadeInFromBottom(".testimonial");
+  }, {});
   return (
     <div className="mx-auto max-w-5xl px-6 lg:px-8 md:pb-20 lg:pb-0 lg:pt-20">
-      <div className="relative flex flex-col items-center w-full  mx-auto p-6 text-white rounded-lg shadow-md  z-30">
+      <div className="relative testimonial flex flex-col items-center w-full  mx-auto p-6 text-white rounded-lg z-30">
         <h2 className="wwdtext text-6xl font-bold text-gray-100">
           Testimonials
         </h2>
@@ -94,7 +98,7 @@ function Testimonial({ text }) {
     /images/ApexSolarLogoW768NoBuff.webp 768w
   "
                 sizes="(max-width: 767px) 350px, 768px"
-                className=" inset-0  rounded-2xl bg-gray-200 object-contain shadow-2xl"
+                className=" inset-0  rounded-2xl bg-gray-200 object-contain"
               />
             </div>
           </div>
