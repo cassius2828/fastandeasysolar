@@ -104,7 +104,7 @@ function ImgContainer({ img }) {
   return (
     <div className="pb-20">
       <div
-        style={{ maxWidth: "80rem", height: "30rem" }}
+        style={{ width: "80rem", height: "30rem" }}
         className="bg-blue-950  rounded-md p-3  "
       >
         <picture>
