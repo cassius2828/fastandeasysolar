@@ -79,7 +79,7 @@ export default TestimonialCarousel;
 function Testimonial({ text }) {
   return (
     <div className="pb-16 pt-24 sm:pb-24 sm:pt-32 xl:pb-32">
-      <div className="bg-blue-950 rounded-md p-3 pb-20 sm:pb-24 xl:pb-0 xl:h-[38rem]">
+      <div className="bg-blue-950 rounded-md p-3 pb-20 sm:pb-24 xl:pb-0 xl:h-[45rem]">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-x-8 gap-y-10 px-6 sm:gap-y-8 lg:px-8 xl:flex-row xl:items-stretch">
           <div className="relative h-full hidden xl:block  -mt-8 w-full max-w-2xl xl:-mb-8 xl:w-96 xl:flex-none">
             <div className="absolute translate-y-1/3  aspect-[2/1] h-auto lg:-mx-8 xl:mx-0 xl:aspect-auto">
@@ -109,7 +109,7 @@ function Testimonial({ text }) {
                 />
                 <use x={86} href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" />
               </svg>
-              <blockquote className="xl:h-[38rem] text-2xl leading-8  text-white ">
+              <blockquote className="xl:h-[45rem] text-2xl leading-8  text-white ">
                 <p>{text}</p>
               </blockquote>
             </figure>

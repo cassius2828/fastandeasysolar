@@ -3,6 +3,7 @@ import Background from "./components/Background";
 import Loader from "./components/Reusables/Loader";
 import AboutV2 from "./components/About/AboutV2";
 import TestimonialCarousel from "./components/Testimonials";
+import SolarCarousel from "./components/SolarCarousel";
 // Lazy loading all components
 const Affiliates = lazy(() => import("./components/Affiliates"));
 const Book = lazy(() => import("./components/Book"));
@@ -32,6 +33,7 @@ const Body = () => {
         }
       >
         <AboutV2 />
+        <SolarCarousel/>
         <ServicesFullPage />
         <ProgramsV2 />
         <WhatWeDo />
