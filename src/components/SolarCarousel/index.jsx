@@ -103,7 +103,10 @@ export default SolarCarousel;
 function ImgContainer({ img }) {
   return (
     <div className="pb-20">
-      <div className="bg-blue-950 max-w-[80rem] h-[30rem] rounded-md p-3  ">
+      <div
+        style={{ maxWidth: "80rem", height: "30rem" }}
+        className="bg-blue-950  rounded-md p-3  "
+      >
         <picture>
           {/* Desktop */}
           <source media="(min-width: 1025px)" srcSet={img.desktop} />

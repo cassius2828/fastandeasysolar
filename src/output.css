@@ -672,6 +672,14 @@ video {
   bottom: 2rem;
 }
 
+.bottom-16 {
+  bottom: 4rem;
+}
+
+.bottom-24 {
+  bottom: 6rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -2347,6 +2355,10 @@ li {
 
   .md\:-top-\[110rem\] {
     top: -110rem;
+  }
+
+  .md\:bottom-20 {
+    bottom: 5rem;
   }
 
   .md\:ml-52 {
