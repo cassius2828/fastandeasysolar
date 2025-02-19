@@ -1675,6 +1675,14 @@ video {
   text-transform: capitalize;
 }
 
+.leading-10 {
+  line-height: 2.5rem;
+}
+
+.leading-8 {
+  line-height: 2rem;
+}
+
 .tracking-tight {
   letter-spacing: -0.025em;
 }
@@ -2656,6 +2664,14 @@ li {
     padding-bottom: 0px;
   }
 
+  .lg\:pt-12 {
+    padding-top: 3rem;
+  }
+
+  .lg\:pt-20 {
+    padding-top: 5rem;
+  }
+
   .lg\:text-center {
     text-align: center;
   }
@@ -2716,6 +2732,10 @@ li {
 
   .xl\:h-\[37rem\] {
     height: 37rem;
+  }
+
+  .xl\:h-\[38rem\] {
+    height: 38rem;
   }
 
   .xl\:w-96 {
