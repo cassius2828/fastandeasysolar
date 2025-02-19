@@ -84,7 +84,9 @@ const SolarCarousel = () => {
               ▶
             </button>
           </div>
+      <span className="absolute bottom-8 text-blue-950 z-30 text-4xl">{currentIndex + 1} / {stockPhotos.length}</span>
         </div>
+
       </div>
     </div>
   );

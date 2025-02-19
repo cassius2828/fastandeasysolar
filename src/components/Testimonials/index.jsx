@@ -44,10 +44,10 @@ const TestimonialCarousel = () => {
   return (
     <div className="mx-auto max-w-5xl px-6 lg:px-8 md:pb-20 lg:pb-0 lg:pt-20">
       <div className="relative flex flex-col items-center w-full  mx-auto p-6 text-white rounded-lg shadow-md  z-30">
-      <h2 className="wwdtext text-6xl font-bold text-gray-100">
-       Testimonials
-      </h2>
-      <CustomHR gsapSelector={"wwdtext"} bgColor="#fff" />
+        <h2 className="wwdtext text-6xl font-bold text-gray-100">
+          Testimonials
+        </h2>
+        <CustomHR gsapSelector={"wwdtext"} bgColor="#fff" />
 
         <Testimonial
           img={testimonials[currentIndex].img}
@@ -69,6 +69,9 @@ const TestimonialCarousel = () => {
             ▶
           </button>
         </div>
+        <span className="absolute bottom-20 text-white z-30 text-4xl">
+          {currentIndex + 1} / {testimonials.length}
+        </span>
       </div>
     </div>
   );
