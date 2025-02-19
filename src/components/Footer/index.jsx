@@ -1,8 +1,6 @@
 import { UilArrowUp } from "@iconscout/react-unicons";
 import { useGlobalContext } from "../../context/useGlobalContext";
-import {
-  UilInstagram,
-} from "@iconscout/react-unicons";
+import { UilInstagram } from "@iconscout/react-unicons";
 //////////////////////
 // Footer Component
 ////////////////////
@@ -122,13 +120,11 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           <img
             loading="lazy"
-            width="300"
-            src="/images/Full_logo.svg"
+            width="200"
+            src="/images/ApexSolarLogoW768NoBuff.webp"
             alt="company logo with slogan"
           />{" "}
-          <p className="relative -top-12">
-            &copy; 2024 Fast & Easy Solar. All rights reserved.
-          </p>
+          <p>&copy; 2024 Apex Solar Solutions California. All rights reserved.</p>
         </div>{" "}
         <div className="flex flex-col items-center justify-center  w-1/2">
           {" "}

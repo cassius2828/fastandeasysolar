@@ -1,5 +1,4 @@
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
 import { fadeInFromSide } from "../../gsap/useGsapAnimations";
 
 const aboutDetails = [
@@ -7,13 +6,13 @@ const aboutDetails = [
     title: "What We Do",
     subtitle: "Seamless Solutions",
     description:
-      "At Fast & Easy Solar, we provide a streamlined process for transitioning to solar energy. From consultation to installation, we handle every step with precision and transparency. Our team works closely with you to create a tailored solar solution that fits your energy needs and budget, ensuring a smooth and efficient journey to clean energy.",
+      "At Apex Solar Solutions, we provide a streamlined process for transitioning to solar energy. From consultation to installation, we handle every step with precision and transparency. Our team works closely with you to create a tailored solar solution that fits your energy needs and budget, ensuring a smooth and efficient journey to clean energy.",
   },
   {
     title: "Why Choose Us",
     subtitle: "Unmatched Value",
     description:
-      "We stand out by offering innovative technology, exceptional service, and personalized solutions. Our commitment to quality and transparency ensures you receive the best possible solar experience. With Fast & Easy Solar, you're not just investing in energy savings—you're partnering with a team dedicated to your success and sustainability.",
+      "We stand out by offering innovative technology, exceptional service, and personalized solutions. Our commitment to quality and transparency ensures you receive the best possible solar experience. With Apex Solar Solutions, you're not just investing in energy savings—you're partnering with a team dedicated to your success and sustainability.",
   },
   {
     title: "Let Us Show You",
@@ -39,11 +38,11 @@ const AboutV2 = () => {
         <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
             <h1 className="max-w-2xl text-balance text-6xl font-semibold tracking-tight text-blue-950 sm:text-8xl lg:col-span-2 xl:col-auto fade-in-and-up">
-              Welcome to Fast & Easy Solar
+              Welcome to Apex Solar Solutions
             </h1>
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
               <p className="text-pretty text-xl md:text-2xl font-medium text-gray-600 fade-in-and-up">
-                Fast & Easy Solar is committed to simplifying the journey to
+                Apex Solar Solutions is committed to simplifying the journey to
                 clean energy for homeowners and businesses in Northern and Central California. We believe solar
                 power should be accessible, affordable, and hassle-free. By
                 combining cutting-edge technology, industry expertise, and
@@ -53,21 +52,21 @@ const AboutV2 = () => {
               </p>
             </div>
             <img
-              style={{ aspectRatio: "6/5" }}
+              style={{ aspectRatio: "6/6" }}
               alt="Sun appearing over solar panels"
               srcSet={`
     ${
       import.meta.env.VITE_S3_OBJECT_BASE_URL
-    }faes/logos/Icon_no-text-w150.webp 150w,
+    }faes/logos/ApexSolarLogoW350NoBuff.webp 150w,
     ${
       import.meta.env.VITE_S3_OBJECT_BASE_URL
-    }faes/logos/Icon_no-text-w320.webp 320w
+    }faes/logos/ApexSolarLogoW768NoBuff.webp 320w
   `}
               sizes="(max-width: 500px) 150px, 320px"
               src={`${
                 import.meta.env.VITE_S3_OBJECT_BASE_URL
-              }faes/logos/Icon_no-text-w320.webp`}
-              className=" fade-in-and-up mt-10  w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+              }faes/logos/faes/logos/ApexSolarLogoW768NoBuff.webp`}
+              className=" fade-in-and-up w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 "
             />
           </div>
         </div>

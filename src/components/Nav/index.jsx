@@ -26,14 +26,14 @@ const Nav = () => {
           className="w-40 ml-10 lg:ml-40 p-3"
           src={`${
             import.meta.env.VITE_S3_OBJECT_BASE_URL
-          }faes/logos/Icon_no-text-w320.webp`}
+          }faes/logos/ApexSolarLogoW768NoBuff.webp`}
           alt="logo"
         />
         <h2
           className="text-3xl lg:text-6xl ml-4 text-blue-900 uppercase"
           style={{ textShadow: "2px 2px 0 #93C5FD" }}
         >
-          Fast & easy solar
+          Apex Solar
         </h2>
       </div>
       {/* desktop nav */}

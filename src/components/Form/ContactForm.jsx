@@ -8,7 +8,6 @@ import AutocompleteErrorBoundary from "../../ErrorBoundaries/AutocompleteErrorBo
 // Service Imports
 import { submitAssessmentForm } from "../../service/handleForms";
 import { TwUIAlert } from "../Reusables/Alert";
-import { checkBillingStatus } from "../../service/googleConsole";
 
 //////////////////////
 // InputGroupContact Component
@@ -140,10 +139,7 @@ export const InputGroupContact = () => {
   useEffect(() => {
     setHasSomeErrors(validateFormErrors(formErrors));
   }, [form]);
-useEffect(() => {
-checkBillingStatus()
-},[]
-)
+
   return (
     <div className={`input-group relative`}>
       {/* Full Name */}
@@ -177,6 +173,19 @@ checkBillingStatus()
         address={address}
         setAddress={setAddress}
       />
+      {/* //TODO: create logic to have manual address input incase of error in autocomplete input
+      // 
+      // METHOD 1: Connect to google cloud to check if billing account is set, if not render manual input
+      // METHOD 2: Use error handling logic to render manual input if autocomplete fails to find resources
+      //  */}
+      {/* manual address input */}
+      {/* <ContactFormInput
+        title="Address"
+        name="address"
+        value={form.address}
+        errorState={address}
+        handleChange={handleUpdateForm}
+      /> */}
       {/* Date */}
       <div className="my-6">
         <label className="block text-gray-700 text-xl lg:text-2xl">

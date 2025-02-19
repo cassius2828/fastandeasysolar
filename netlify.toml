@@ -27,3 +27,10 @@
   from = "/api/checkBilling"
   to = "/.netlify/functions/checkBilling"
   status = 200
+
+# Redirect from old domain to new domain while old domain is being taken down
+[[redirects]]
+  from = "https://fastandeasysolar.com/*"
+  to = "https://apexsolarsolution.net/:splat"
+  status = 301
+  force = true

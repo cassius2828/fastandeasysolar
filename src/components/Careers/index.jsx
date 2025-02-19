@@ -8,7 +8,7 @@ const Careers = () => {
       {/* Open Positions */}
       <div className="text-left w-full px-6 mb-10">
         <p className="text-2xl w-full md:w-3/4 mx-auto my-6 text-gray-700 text-center px-4">
-          Join our innovative team at Fast & Easy Solar! We are always looking
+          Join our innovative team at Apex Solar Solution! We are always looking
           for passionate individuals who are eager to make a difference in the
           renewable energy sector.
         </p>

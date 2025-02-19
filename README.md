@@ -1,9 +1,9 @@
-# Fast and Easy Solar
-![Alt text describing the image](https://www.fastandeasysolar.com/images/Full_logo.svg)
+# Apex Solar Soltuion (Formerly Fast and Easy Solar)
+![Alt text describing the image](https://www.apexsolarsolution.com/images/ApexSolarLogoW768NoBuff.webp)
 
-**Website**: [fastandeasysolar.com](https://www.fastandeasysolar.com)
+**Website**: [apexsolarsolution.com](https://www.apexsolarsolution.com)
 
-Fast & Easy Solar is a responsive and modern web application designed to streamline the process of exploring and adopting solar energy solutions. Built to provide a smooth and intuitive user experience, the site integrates advanced tools and APIs to handle key functionalities like appointment booking, location-based services, and marketing performance tracking.
+Apex Solar Solutions is a responsive and modern web application designed to streamline the process of exploring and adopting solar energy solutions. Built to provide a smooth and intuitive user experience, the site integrates advanced tools and APIs to handle key functionalities like appointment booking, location-based services, and marketing performance tracking.
 
 ## About the Project
 
@@ -51,6 +51,8 @@ This application was developed with a focus on efficiency, performance, and main
 	•	Real-Time Analytics: Tracks conversions and interactions for actionable insights.
 
 	•	Clean Codebase: Built with modular components for maintainability and scalability.
+
+	•	Quote Calculator: Calculator to give associates a foundational estimate on what a customer could qualify for before their meeting. 
 
 ### Hosting and Deployment
 	•	Hosted on Netlify:
