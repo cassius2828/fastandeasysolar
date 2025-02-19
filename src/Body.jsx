@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import Background from "./components/Background";
 import Loader from "./components/Reusables/Loader";
 import AboutV2 from "./components/About/AboutV2";
+import TestimonialCarousel from "./components/Testimonials";
 // Lazy loading all components
 const Affiliates = lazy(() => import("./components/Affiliates"));
 const Book = lazy(() => import("./components/Book"));
@@ -36,6 +37,7 @@ const Body = () => {
         <WhatWeDo />
         <FAQList />
         <Affiliates />
+        <TestimonialCarousel/>
         <Form />
         <div style={{ height: "30rem" }} className=" w-screen"></div>
         <Book />
