@@ -1,7 +1,7 @@
 # Apex Solar Soltuion (Formerly Fast and Easy Solar)
-![Alt text describing the image](https://www.apexsolarsolution.com/images/ApexSolarLogoW768NoBuff.webp)
+![Alt text describing the image](https://www.apexsolarsolution.net/images/ApexSolarLogoW768NoBuff.webp)
 
-**Website**: [apexsolarsolution.com](https://www.apexsolarsolution.com)
+**Website**: [apexsolarsolution.net](https://www.apexsolarsolution.net)
 
 Apex Solar Solutions is a responsive and modern web application designed to streamline the process of exploring and adopting solar energy solutions. Built to provide a smooth and intuitive user experience, the site integrates advanced tools and APIs to handle key functionalities like appointment booking, location-based services, and marketing performance tracking.
 
