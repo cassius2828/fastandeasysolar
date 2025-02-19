@@ -81,8 +81,9 @@ export default function Programs() {
         </div>
       </div>
       <svg
+        // having both inline style and tw styles are necessary to get the desired effect; unsure why
         style={{
-          top: isMobile ? "0" : "-110rem",
+          top: isMobile ? "0" : "-83rem",
           right: isMobile ? "" : "-140rem",
         }}
         className=" opacity-50 absolute top-0 md:-top-[110rem] md:-right-[140rem] scale-150 md:scale-125  h-full md:h-auto  animate-slow-spin"
