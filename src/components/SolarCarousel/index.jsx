@@ -104,7 +104,7 @@ function ImgContainer({ img }) {
   return (
     <div className="pb-20">
       <div
-        style={{ width: "80rem", height: "30rem" }}
+        style={{ maxWidth: "80rem", height: "30rem" }}
         className="bg-blue-950  rounded-md p-3  "
       >
         <picture>
@@ -115,8 +115,9 @@ function ImgContainer({ img }) {
           {/* Mobile */}
           <img
             src={img.mobile}
-            alt="Stock"
-            className="object-cover aspect-[16/9] w-full h-full"
+            alt="Solar panels on a home"
+            className="object-cover w-full h-full"
+            style={{ aspectRatio: "16 / 9" }}
           />
         </picture>
       </div>
