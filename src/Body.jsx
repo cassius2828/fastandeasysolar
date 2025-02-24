@@ -34,7 +34,6 @@ const Body = () => {
       >
         <AboutV2 /> 
         <TestimonialCarousel />
-     
         <ServicesFullPage />
         <ProgramsV2 />
         <WhatWeDo />
