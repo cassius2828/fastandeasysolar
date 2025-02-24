@@ -1,6 +1,5 @@
 import { UilArrowUp } from "@iconscout/react-unicons";
 import { useGlobalContext } from "../../context/useGlobalContext";
-import { UilInstagram } from "@iconscout/react-unicons";
 //////////////////////
 // Footer Component
 ////////////////////
