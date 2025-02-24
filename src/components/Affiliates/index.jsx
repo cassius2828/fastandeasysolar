@@ -1,5 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import CustomHR from "../Reusables/CustomHR";
+
+import SolarCarousel from '../SolarCarousel'
 import EverbrightLogo from "/images/logos/everbright-logo.webp";
 import { fadeInFromBottom } from "../../gsap/useGsapAnimations";
 const SunrunLogo = `${
@@ -34,7 +36,8 @@ const Affiliates = () => {
     fadeInFromBottom(".affiliate-text");
   }, {});
   return (
-    <div className="w-full flex flex-col items-center justify-center py-20 px-3 bg-gray-100 relative z-20">
+    <div className="w-full flex flex-col items-center justify-center pb-20 px-3 bg-gray-100 relative z-20">
+    <SolarCarousel/>
       <h2 className="affiliate-text text-5xl font-bold mb-0 text-blue-900 text-center">
         Certified Partners and Installers
       </h2>
