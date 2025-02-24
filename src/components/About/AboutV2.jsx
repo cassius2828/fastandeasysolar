@@ -43,7 +43,7 @@ const AboutV2 = () => {
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
               <p className="text-pretty text-xl md:text-2xl font-medium text-gray-600 fade-in-and-up">
                 Apex Solar Solutions is committed to simplifying the journey to
-                clean energy for homeowners and businesses in Northern and Central California. We believe solar
+                clean energy for homeowners and businesses in California. We believe solar
                 power should be accessible, affordable, and hassle-free. By
                 combining cutting-edge technology, industry expertise, and
                 exceptional customer service, we aim to help you save on energy

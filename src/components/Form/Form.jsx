@@ -14,7 +14,7 @@ const Form = () => {
             Ready to power your home with solar energy? Call now to get started
             or fill out the form
           </h2>
-          <span className="text-gray-500 text-lg">(Northern or Central California Residencies Only)</span>
+          <span className="text-gray-500 text-lg">(California Residencies Only)</span>
         </div>
         <div className="mt-5 w-full min-h-500px ">
           <InputGroupContact />
