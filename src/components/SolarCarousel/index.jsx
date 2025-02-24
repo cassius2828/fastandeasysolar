@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { useGSAP } from "@gsap/react";
 import { fadeInFromBottom } from "../../gsap/useGsapAnimations";
+import CarouselNavBtns from "../Reusables/CarouselNavBtns";
 
 const baseURL = `${import.meta.env.VITE_S3_OBJECT_BASE_URL}faes/stock-photos/`;
 
@@ -56,13 +57,6 @@ const stockPhotos = [
 const SolarCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % stockPhotos.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? stockPhotos.length - 1 : prev - 1));
-  };
   useGSAP(() => {
     fadeInFromBottom(".stock-photos-container");
   }, {});
@@ -75,23 +69,14 @@ const SolarCarousel = () => {
         <div className="relative flex flex-col items-center w-full  mx-auto  text-white">
           <ImgContainer img={stockPhotos[currentIndex]} />
           {/* Navigation Controls */}
-          <div className="mt-6 flex gap-4  w-screen px-5 lg:px-0 md:w-full justify-between absolute top-1/2 -translate-y-1/2">
-            <button
-              onClick={handlePrev}
-              className="px-4 py-2 bg-gray-800 outline outline-white hover:bg-gray-700 rounded-md"
-            >
-              ◀
-            </button>
-            <button
-              onClick={handleNext}
-              className="px-4 py-2 bg-gray-800 outline outline-white hover:bg-gray-700 rounded-md"
-            >
-              ▶
-            </button>
+          <div className="mt-6 flex gap-3 w-72 px-5 lg:px-0 justify-between absolute bottom-8 z-30">
+            <CarouselNavBtns
+              array={stockPhotos}
+              currentIndex={currentIndex}
+              setCurrentIndex={setCurrentIndex}
+              typeOfCarousel="stockPhotos"
+            />
           </div>
-          <span className="absolute bottom-8 text-blue-950 z-30 text-4xl">
-            {currentIndex + 1} / {stockPhotos.length}
-          </span>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CustomHR from "../Reusables/CustomHR";
 import { useGSAP } from "@gsap/react";
 import { fadeInFromBottom } from "../../gsap/useGsapAnimations";
+import CarouselNavBtns from "../Reusables/CarouselNavBtns";
 
 const testimonials = [
   {
@@ -33,15 +34,6 @@ const testimonials = [
 const TestimonialCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
-  };
   useGSAP(() => {
     fadeInFromBottom(".testimonial");
   }, {});
@@ -59,23 +51,14 @@ const TestimonialCarousel = () => {
           text={testimonials[currentIndex].text}
         />
         {/* Navigation Controls */}
-        <div className="mt-6 flex gap-4  w-full px-5 lg:px-0  justify-between absolute top-1/2 -translate-y-1/2">
-          <button
-            onClick={handlePrev}
-            className="px-4 py-2 bg-gray-800 outline rounded-md outline-white hover:bg-gray-700"
-          >
-            ◀
-          </button>
-          <button
-            onClick={handleNext}
-            className="px-4 py-2 bg-gray-800 outline outline-white hover:bg-gray-700 rounded-md"
-          >
-            ▶
-          </button>
+        <div className="mt-6 flex gap-3 w-48 px-5 lg:px-0  justify-between absolute bottom-8 md:bottom-20 z-30">
+          <CarouselNavBtns
+            array={testimonials}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+            typeOfCarousel="testimonials"
+          />
         </div>
-        <span className="absolute bottom-24 md:bottom-20 text-white z-30 text-4xl">
-          {currentIndex + 1} / {testimonials.length}
-        </span>
       </div>
     </div>
   );
