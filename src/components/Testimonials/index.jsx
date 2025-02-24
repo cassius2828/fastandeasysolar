@@ -46,12 +46,12 @@ const TestimonialCarousel = () => {
     fadeInFromBottom(".testimonial");
   }, {});
   return (
-    <div className="mx-auto max-w-5xl px-6 lg:px-8 md:pb-20 lg:pb-0 lg:pt-20">
-      <div className="relative testimonial flex flex-col items-center w-full  mx-auto p-6 text-white rounded-lg z-30">
-        <h2 className="wwdtext text-6xl font-bold text-gray-100">
+    <div className="mx-auto  px-6 lg:px-8 md:pb-20 lg:pb-0 lg:pt-20 bg-white z-30 w-full relative">
+      <div className="relative testimonial flex flex-col items-center w-full max-w-7xl  mx-auto p-6 text-white rounded-lg">
+        <h2 className="wwdtext text-6xl font-bold text-blue-950">
           Testimonials
         </h2>
-        <CustomHR gsapSelector={"wwdtext"} bgColor="#fff" />
+        <CustomHR gsapSelector={"wwdtext"} bgColor="#172554" />
 
         <Testimonial
           img={testimonials[currentIndex].img}
@@ -59,10 +59,10 @@ const TestimonialCarousel = () => {
           text={testimonials[currentIndex].text}
         />
         {/* Navigation Controls */}
-        <div className="mt-6 flex gap-4  w-screen px-5 lg:px-0 md:w-full justify-between absolute top-1/2 -translate-y-1/2">
+        <div className="mt-6 flex gap-4  w-full px-5 lg:px-0  justify-between absolute top-1/2 -translate-y-1/2">
           <button
             onClick={handlePrev}
-            className="px-4 py-2 bg-gray-800 outline outline-white hover:bg-gray-700 rounded-md"
+            className="px-4 py-2 bg-gray-800 outline rounded-md outline-white hover:bg-gray-700"
           >
             ◀
           </button>

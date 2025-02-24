@@ -67,7 +67,7 @@ const SolarCarousel = () => {
     fadeInFromBottom(".stock-photos-container");
   }, {});
   return (
-    <div className="w-screen h-full bg-white relative z-30 ">
+    <div className="w-screen h-full relative z-30 mb-20">
       <div className="mx-auto max-w-5xl px-6 lg:px-8 md:pb-20 lg:pb-0 lg:pt-20 stock-photos-container">
         {/* <h2 className="capitalize text-6xl font-bold text-blue-800 text-center mb-4">
        A look at what our services can do for you
