@@ -54,27 +54,22 @@ const baseURL = `${import.meta.env.VITE_S3_OBJECT_BASE_URL}faes/stock-photos/`;
 // ];
 const stockPhotos_02_24_2025 = [
   {
-    mobile: `${baseURL}imgv2-1-W350.webp`,
     tablet: `${baseURL}imgv2-1-W768.webp`,
     desktop: `${baseURL}imgv2-1-W1440.webp`,
   },
   {
-    mobile: `${baseURL}imgv2-2-W350.webp`,
     tablet: `${baseURL}imgv2-2-W768.webp`,
     desktop: `${baseURL}imgv2-2-W1440.webp`,
   },
   {
-    mobile: `${baseURL}imgv2-3-W350.webp`,
     tablet: `${baseURL}imgv2-3-W768.webp`,
     desktop: `${baseURL}imgv2-3-W1440.webp`,
   },
   {
-    mobile: `${baseURL}imgv2-4-W350.webp`,
     tablet: `${baseURL}imgv2-4-W768.webp`,
     desktop: `${baseURL}imgv2-4-W1440.webp`,
   },
   {
-    mobile: `${baseURL}imgv2-5-W350.webp`,
     tablet: `${baseURL}imgv2-5-W768.webp`,
     desktop: `${baseURL}imgv2-5-W1440.webp`,
   },
@@ -86,13 +81,11 @@ const SolarCarousel = () => {
   // preloads images in carousel for all responsive sizes
   const preloadImages = (imagesUrlArray) => {
     return imagesUrlArray?.map((url) => {
-      const mobileImg = new Image();
       const tabletImg = new Image();
       const desktopImg = new Image();
-      mobileImg.src = url.mobile;
       tabletImg.src = url.tablet;
       desktopImg.src = url.desktop;
-      return { mobile: mobileImg, tablet: tabletImg, desktop: desktopImg };
+      return { tablet: tabletImg, desktop: desktopImg };
     });
   };
   // waits until component is near viewport to begin preloading carousel images
@@ -156,11 +149,9 @@ function ImgContainer({ img }) {
         <picture>
           {/* Desktop */}
           <source media="(min-width: 1025px)" srcSet={img.desktop} />
-          {/* Tablet */}
-          <source media="(min-width: 500px)" srcSet={img.tablet} />
-          {/* Mobile */}
+          {/* Mobile / Tablet */}
           <img
-            src={img.mobile}
+            src={img.tablet}
             alt="Solar panels on a home"
             className="object-cover w-full h-full"
             style={{ aspectRatio: "16 / 9" }}
