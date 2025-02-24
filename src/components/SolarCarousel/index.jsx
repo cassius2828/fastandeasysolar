@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { fadeInFromBottom } from "../../gsap/useGsapAnimations";
 import CarouselNavBtns from "../Reusables/CarouselNavBtns";
@@ -56,12 +55,48 @@ const stockPhotos = [
 
 const SolarCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [shouldPreload, setShouldPreload] = useState(false);
+  const carouselRef = useRef(null);
+  // preloads images in carousel for all responsive sizes
+  const preloadImages = (imagesUrlArray) => {
+    return imagesUrlArray?.map((url) => {
+      const mobileImg = new Image();
+      const tabletImg = new Image();
+      const desktopImg = new Image();
+      mobileImg.src = url.mobile;
+      tabletImg.src = url.tablet;
+      desktopImg.src = url.desktop;
+      return { mobile: mobileImg, tablet: tabletImg, desktop: desktopImg };
+    });
+  };
+  // waits until component is near viewport to begin preloading carousel images
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldPreload(true);
+          console.log("starting preload");
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "100px" }
+    );
+    if (carouselRef.current) {
+      observer.observe(carouselRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  // preloads images based on shouldPreload state
+  useEffect(() => {
+    if (shouldPreload) preloadImages(stockPhotos);
+  }, [shouldPreload]);
 
   useGSAP(() => {
     fadeInFromBottom(".stock-photos-container");
   }, {});
   return (
-    <div className="w-screen h-full relative z-30 mb-20">
+    <div ref={carouselRef} className="w-screen h-full relative z-30 mb-20">
       <div className="mx-auto max-w-5xl px-6 lg:px-8 md:pb-20 lg:pb-0 lg:pt-20 stock-photos-container">
         {/* <h2 className="capitalize text-6xl font-bold text-blue-800 text-center mb-4">
        A look at what our services can do for you
