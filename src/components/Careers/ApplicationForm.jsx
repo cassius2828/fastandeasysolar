@@ -87,7 +87,7 @@ const ApplicationForm = () => {
     } catch (err) {
       console.error(err);
       setError(
-        "Form Submission Failed. Please reach out directly to either contact@fastandeasysolar.com or text (916) 320-7022 with the information requested in the form to submit your application if this form is not working"
+        "Form Submission Failed. Please reach out directly to either contact@apexsolarsolution.net or text (916) 320-7022 with the information requested in the form to submit your application if this form is not working"
       );
     }
 
