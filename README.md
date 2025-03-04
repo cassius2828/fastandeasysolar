@@ -7,7 +7,7 @@ Apex Solar Solutions is a responsive and modern web application designed to stre
 
 ## About the Project
 
-This application was developed with a focus on efficiency, performance, and maintainability. It supports homeowners and businesses in Northern California, offering solar energy solutions with tools to facilitate bookings, track interactions, and deliver essential information in a clear and user-friendly way.
+This application was developed with a focus on efficiency, performance, and maintainability. It supports homeowners and businesses in California, offering solar energy solutions with tools to facilitate bookings, track interactions, and deliver essential information in a clear and user-friendly way.
 
 ## Technical Highlights
 

@@ -1,97 +1,136 @@
-import { useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { fadeInFromBottom } from "../../gsap/useGsapAnimations";
+import CarouselNavBtns from "../Reusables/CarouselNavBtns";
 
 const baseURL = `${import.meta.env.VITE_S3_OBJECT_BASE_URL}faes/stock-photos/`;
 
-const stockPhotos = [
+// const stockPhotos = [
+//   {
+//     mobile: `${baseURL}img1-W350.webp`,
+//     tablet: `${baseURL}img1-W768.webp`,
+//     desktop: `${baseURL}img1-W1440.webp`,
+//   },
+//   {
+//     mobile: `${baseURL}img2-W350.webp`,
+//     tablet: `${baseURL}img2-W768.webp`,
+//     desktop: `${baseURL}img2-W1440.webp`,
+//   },
+//   {
+//     mobile: `${baseURL}img3-W350.webp`,
+//     tablet: `${baseURL}img3-W768.webp`,
+//     desktop: `${baseURL}img3-W1440.webp`,
+//   },
+//   {
+//     mobile: `${baseURL}img4-W350.webp`,
+//     tablet: `${baseURL}img4-W768.webp`,
+//     desktop: `${baseURL}img4-W1440.webp`,
+//   },
+//   {
+//     mobile: `${baseURL}img5-W350.webp`,
+//     tablet: `${baseURL}img5-W768.webp`,
+//     desktop: `${baseURL}img5-W1440.webp`,
+//   },
+//   {
+//     mobile: `${baseURL}img6-W350.webp`,
+//     tablet: `${baseURL}img6-W768.webp`,
+//     desktop: `${baseURL}img6-W1440.webp`,
+//   },
+//   {
+//     mobile: `${baseURL}img7-W350.webp`,
+//     tablet: `${baseURL}img7-W768.webp`,
+//     desktop: `${baseURL}img7-W1440.webp`,
+//   },
+//   {
+//     mobile: `${baseURL}img8-W350.webp`,
+//     tablet: `${baseURL}img8-W768.webp`,
+//     desktop: `${baseURL}img8-W1440.webp`,
+//   },
+//   {
+//     mobile: `${baseURL}img9-W350.webp`,
+//     tablet: `${baseURL}img9-W768.webp`,
+//     desktop: `${baseURL}img9-W1440.webp`,
+//   },
+// ];
+const stockPhotos_02_24_2025 = [
   {
-    mobile: `${baseURL}img1-W350.webp`,
-    tablet: `${baseURL}img1-W768.webp`,
-    desktop: `${baseURL}img1-W1440.webp`,
+    tablet: `${baseURL}imgv2-1-W768.webp`,
+    desktop: `${baseURL}imgv2-1-W1440.webp`,
   },
   {
-    mobile: `${baseURL}img2-W350.webp`,
-    tablet: `${baseURL}img2-W768.webp`,
-    desktop: `${baseURL}img2-W1440.webp`,
+    tablet: `${baseURL}imgv2-2-W768.webp`,
+    desktop: `${baseURL}imgv2-2-W1440.webp`,
   },
   {
-    mobile: `${baseURL}img3-W350.webp`,
-    tablet: `${baseURL}img3-W768.webp`,
-    desktop: `${baseURL}img3-W1440.webp`,
+    tablet: `${baseURL}imgv2-3-W768.webp`,
+    desktop: `${baseURL}imgv2-3-W1440.webp`,
   },
   {
-    mobile: `${baseURL}img4-W350.webp`,
-    tablet: `${baseURL}img4-W768.webp`,
-    desktop: `${baseURL}img4-W1440.webp`,
+    tablet: `${baseURL}imgv2-4-W768.webp`,
+    desktop: `${baseURL}imgv2-4-W1440.webp`,
   },
   {
-    mobile: `${baseURL}img5-W350.webp`,
-    tablet: `${baseURL}img5-W768.webp`,
-    desktop: `${baseURL}img5-W1440.webp`,
-  },
-  {
-    mobile: `${baseURL}img6-W350.webp`,
-    tablet: `${baseURL}img6-W768.webp`,
-    desktop: `${baseURL}img6-W1440.webp`,
-  },
-  {
-    mobile: `${baseURL}img7-W350.webp`,
-    tablet: `${baseURL}img7-W768.webp`,
-    desktop: `${baseURL}img7-W1440.webp`,
-  },
-  {
-    mobile: `${baseURL}img8-W350.webp`,
-    tablet: `${baseURL}img8-W768.webp`,
-    desktop: `${baseURL}img8-W1440.webp`,
-  },
-  {
-    mobile: `${baseURL}img9-W350.webp`,
-    tablet: `${baseURL}img9-W768.webp`,
-    desktop: `${baseURL}img9-W1440.webp`,
+    tablet: `${baseURL}imgv2-5-W768.webp`,
+    desktop: `${baseURL}imgv2-5-W1440.webp`,
   },
 ];
-
 const SolarCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % stockPhotos.length);
+  const [shouldPreload, setShouldPreload] = useState(false);
+  const carouselRef = useRef(null);
+  // preloads images in carousel for all responsive sizes
+  const preloadImages = (imagesUrlArray) => {
+    return imagesUrlArray?.map((url) => {
+      const tabletImg = new Image();
+      const desktopImg = new Image();
+      tabletImg.src = url.tablet;
+      desktopImg.src = url.desktop;
+      return { tablet: tabletImg, desktop: desktopImg };
+    });
   };
+  // waits until component is near viewport to begin preloading carousel images
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldPreload(true);
+          console.log("starting preload");
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "100px" }
+    );
+    if (carouselRef.current) {
+      observer.observe(carouselRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? stockPhotos.length - 1 : prev - 1));
-  };
+  // preloads images based on shouldPreload state
+  useEffect(() => {
+    if (shouldPreload) preloadImages(stockPhotos_02_24_2025);
+  }, [shouldPreload]);
+
   useGSAP(() => {
     fadeInFromBottom(".stock-photos-container");
   }, {});
   return (
-    <div className="w-screen h-full bg-white relative z-30 ">
+    <div ref={carouselRef} className="w-screen h-full relative z-30 mb-20">
       <div className="mx-auto max-w-5xl px-6 lg:px-8 md:pb-20 lg:pb-0 lg:pt-20 stock-photos-container">
         {/* <h2 className="capitalize text-6xl font-bold text-blue-800 text-center mb-4">
        A look at what our services can do for you
       </h2> */}
         <div className="relative flex flex-col items-center w-full  mx-auto  text-white">
-          <ImgContainer img={stockPhotos[currentIndex]} />
+          <ImgContainer img={stockPhotos_02_24_2025[currentIndex]} />
           {/* Navigation Controls */}
-          <div className="mt-6 flex gap-4  w-screen px-5 lg:px-0 md:w-full justify-between absolute top-1/2 -translate-y-1/2">
-            <button
-              onClick={handlePrev}
-              className="px-4 py-2 bg-gray-800 outline outline-white hover:bg-gray-700 rounded-md"
-            >
-              ◀
-            </button>
-            <button
-              onClick={handleNext}
-              className="px-4 py-2 bg-gray-800 outline outline-white hover:bg-gray-700 rounded-md"
-            >
-              ▶
-            </button>
+          <div className="mt-6 flex gap-3 w-72 px-5 lg:px-0 justify-between absolute bottom-8 z-30">
+            <CarouselNavBtns
+              array={stockPhotos_02_24_2025}
+              currentIndex={currentIndex}
+              setCurrentIndex={setCurrentIndex}
+              typeOfCarousel="stockPhotos"
+            />
           </div>
-          <span className="absolute bottom-8 text-blue-950 z-30 text-4xl">
-            {currentIndex + 1} / {stockPhotos.length}
-          </span>
         </div>
       </div>
     </div>
@@ -110,11 +149,9 @@ function ImgContainer({ img }) {
         <picture>
           {/* Desktop */}
           <source media="(min-width: 1025px)" srcSet={img.desktop} />
-          {/* Tablet */}
-          <source media="(min-width: 768px)" srcSet={img.tablet} />
-          {/* Mobile */}
+          {/* Mobile / Tablet */}
           <img
-            src={img.mobile}
+            src={img.tablet}
             alt="Solar panels on a home"
             className="object-cover w-full h-full"
             style={{ aspectRatio: "16 / 9" }}

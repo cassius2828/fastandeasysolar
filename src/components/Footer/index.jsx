@@ -1,6 +1,5 @@
 import { UilArrowUp } from "@iconscout/react-unicons";
 import { useGlobalContext } from "../../context/useGlobalContext";
-import { UilInstagram } from "@iconscout/react-unicons";
 //////////////////////
 // Footer Component
 ////////////////////
@@ -82,7 +81,7 @@ const Footer = () => {
         <div>
           <h4 className="text-3xl text-blue-400 mb-8 font-bold ">Contact</h4>
           <ul className="text-2xl flex flex-col justify-center items-center gap-4">
-            <li>Email: contact@fastandeasysolar.com</li>
+            <li>Email: contact@apexsolarsolution.net</li>
             <li>Office: (916) 320-7022</li>
           </ul>
         </div>
@@ -102,12 +101,12 @@ const Footer = () => {
             Business Hours
           </h4>
           <ul className="text-2xl flex flex-col justify-center items-center gap-4">
-            <li>Monday: 8am - 8pm</li>
-            <li>Tuesday: 8am - 8pm</li>
-            <li>Wednesday: 8am - 8pm</li>
-            <li>Thursday: 8am - 8pm</li>
-            <li>Friday: 8am - 8pm</li>
-            <li>Saturday: 10am - 4pm</li>
+            <li>Monday: 8am - 5pm</li>
+            <li>Tuesday: 8am - 5pm</li>
+            <li>Wednesday: 8am - 5pm</li>
+            <li>Thursday: 8am - 5pm</li>
+            <li>Friday: 8am - 5pm</li>
+            <li>Saturday: 8am - 2pm</li>
             <li>Sunday: Closed</li>
           </ul>
         </div>
@@ -124,9 +123,12 @@ const Footer = () => {
             src="/images/ApexSolarLogoW768NoBuff.webp"
             alt="company logo with slogan"
           />{" "}
-          <p>&copy; 2024 Apex Solar Solutions California. All rights reserved.</p>
+          <p>
+            &copy; 2024 Apex Solar Solutions California. All rights reserved.
+          </p>
         </div>{" "}
-        <div className="flex flex-col items-center justify-center  w-1/2">
+        {/* social media */}
+        {/* <div className="flex flex-col items-center justify-center  w-1/2">
           {" "}
           <h4 className="font-medium text-2xl text-start mb-3">Social Media</h4>
           <li>
@@ -140,7 +142,7 @@ const Footer = () => {
               <span className="text-lg">@solarsolutionnv</span>
             </a>
           </li>
-        </div>
+        </div> */}
       </div>
 
       {/* Scroll to Top Button */}

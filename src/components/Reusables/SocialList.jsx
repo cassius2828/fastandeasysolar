@@ -25,7 +25,7 @@ const SocialList = ({ size = "24" }) => {
             Facebook:
           </div>
           <span className="hover:text-blue-300 transition-all duration-200 ease-in-out cursor-pointer ml-1">
-            fastandeasysolar
+            apexsolarsolution
           </span>
         </li>
         <li className="flex items-center justify-between  w-1/2">
@@ -34,7 +34,7 @@ const SocialList = ({ size = "24" }) => {
             LinkedIn:
           </div>
           <span className="hover:text-blue-300 transition-all duration-200 ease-in-out cursor-pointer ml-1">
-            fastandeasysolar
+            apexsolarsolution
           </span>
         </li>
         <li className="flex items-center justify-between w-1/2">
@@ -43,7 +43,7 @@ const SocialList = ({ size = "24" }) => {
             YouTube:
           </div>
           <span className="hover:text-blue-300 transition-all duration-200 ease-in-out cursor-pointer ml-1">
-            fastandeasysolar
+            apexsolarsolution
           </span>
         </li>
       </ul>

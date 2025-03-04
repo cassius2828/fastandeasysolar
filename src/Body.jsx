@@ -3,7 +3,7 @@ import Background from "./components/Background";
 import Loader from "./components/Reusables/Loader";
 import AboutV2 from "./components/About/AboutV2";
 import TestimonialCarousel from "./components/Testimonials";
-import SolarCarousel from "./components/SolarCarousel";
+
 // Lazy loading all components
 const Affiliates = lazy(() => import("./components/Affiliates"));
 const Book = lazy(() => import("./components/Book"));
@@ -32,14 +32,13 @@ const Body = () => {
           </div>
         }
       >
-        <AboutV2 />
-        <SolarCarousel/>
+        <AboutV2 /> 
+        <TestimonialCarousel />
         <ServicesFullPage />
         <ProgramsV2 />
         <WhatWeDo />
         <FAQList />
         <Affiliates />
-        <TestimonialCarousel/>
         <Form />
         <div style={{ height: "30rem" }} className=" w-screen"></div>
         <Book />

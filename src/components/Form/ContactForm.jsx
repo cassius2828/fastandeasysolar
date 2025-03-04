@@ -100,7 +100,7 @@ export const InputGroupContact = () => {
       const data = await submitAssessmentForm(form);
       if (data?.noContact) {
         setError(
-          "Please agree to be contacted by checking the box below to send the form. Otherwise, you should call us directly at (916) 320-7022 or email us at contact@fastandeasysolar.com with your information. Thank you."
+          "Please agree to be contacted by checking the box below to send the form. Otherwise, you should call us directly at (916) 320-7022 or email us at contact@apexsolarsolution.net with your information. Thank you."
         );
         return;
       } else if (data?.error) {
@@ -117,7 +117,7 @@ export const InputGroupContact = () => {
     } catch (err) {
       console.error(err);
       setError(
-        "Form Submission Failed. Please reach out directly to either contact@fastandeasysolar.com or text (916) 320-7022 with the information requested in the form to request a free assessment if this form is not working"
+        "Form Submission Failed. Please reach out directly to either contact@apexsolarsolution.net or text (916) 320-7022 with the information requested in the form to request a free assessment if this form is not working"
       );
     }
   };
